@@ -1,0 +1,690 @@
+body {
+	background:none;
+}
+.clearit {
+	clear:both;
+	content:"";
+	height:0;
+	
+}
+.app_contents {
+	float: left;
+	height:100%;
+	width: 100%;
+	padding: 10px;
+	margin:5px 8px;
+	
+}
+.app_contents h4, .app_contents p {
+	margin:0;
+	padding:0;
+}
+.hts {
+float: left;
+clear:both;
+padding:0;
+margin:0;
+
+}
+.tit_h2 h2 {
+	
+	
+   color:#8248A1;
+   font-size: 16px;
+   display: block;
+   margin-bottom: 8px;
+          
+}
+
+.nav_ul, .title-tab .nav_ul {
+	
+	float:left;
+	padding:0;
+    margin:0 0 2px 0;
+	
+}
+.hts .nav_ul ul, .title-tab .nav_ul ul{	
+    float: left;
+   padding:0px;
+   margin:0px;
+    
+}
+.nav_ul ul li {
+    background: url("/s/i/tbk_nav_out.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    float: left;
+    font-size: 14px;
+    height: 25px;
+    list-style: none outside none;
+    margin-right: 4px;
+    padding-top: 2px;
+    text-align: center;
+    vertical-align: middle;
+    width: 96px;
+	
+}
+.nav_ul ul li.currs {
+    background: url("/s/i/tbk_nav_on.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 29px;
+    width: 96px;
+}
+.nav_ul ul li.currs a {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+.nav_ul ul li a {
+    color: #636363;
+    font-weight: bold;
+    text-decoration: none;
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+.chl_btn_search {
+    background: url("/s/i/btn_save_ch.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    height: 23px;
+    text-align: center;
+ 
+    width: 73px;
+}
+.chls_btn_add {
+	clear:both;
+	float:left;
+}
+.chl_btn_add {
+    background: url("/s/i/btn_size6.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    height: 23px;
+    width: 94px;
+}
+
+.div_soft{
+	clear: both;
+	float: left;
+	padding-top:0;
+	margin: 0px 0 5px 0;
+	
+}
+.reg_tip {
+	float: left;
+	clear:both;
+}
+.div_softs {
+	float:left;
+	clear:both;
+}
+.div_softs p {
+	/*margin: 3px 0;*/
+}
+.tb_des {
+	display:inline-block;
+	color:blue;
+}
+.lb {
+	margin:0 0 5px 0;
+}
+.div_softs .lb label,.titcontent .lb label {
+	font-size: 12px;
+	float:none;
+}
+
+.div_softs label {
+	display:inline;
+	float:left;
+	margin-right:7px;
+}
+.div_labs label{
+	display:inline;
+	float:left;
+	margin-right:7px;
+	
+}
+.div_in {
+	float: left;
+	display:inline-block;
+	
+}
+.div_in_rw {
+	 float: left;
+	 clear:both;
+	 margin-bottom: 10px;
+	 width: 100%;	 	
+}
+.div_in_rw h4 {
+	float:left;
+	clear:both;
+	margin:0;
+	display: block;
+	height:18px;
+}
+.AddTabChoiceDiv {
+	clear: both;
+	float:left;
+	margin-bottom: 12px;
+	width: 450px;
+	display:block;
+	height:22px;
+	line-height:22px;
+	
+}
+
+.AddTabChoiceDiv  input{
+	
+	float: left;
+	
+}
+.AddTabChoiceDiv  label {
+	display:inline;
+	margin: 0px 5px;
+	color:#8248A1;
+	
+}
+.AddTabChoiceDiv select{
+	
+	font-size:13px;
+	
+}
+.AddTabChoiceDiv span {
+	
+
+
+}
+/**---淘宝客-----*/
+
+ .softname {
+       margin-left: 0px;
+       float: left;
+}
+/*taobaoke 页面样式*/
+/*default页面样式*/
+ 
+  /*add页面*/
+ .begin
+        {
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }	
+	
+	/*-------end--------*/
+			
+.txts{
+	display: inline-block;
+    height: 18px;
+    width: 245px;
+	
+}
+ .title-tab
+{
+margin: 0px 0 10px;
+float: left;
+
+ }
+  .titcontent
+{
+float: left;
+padding: 0px;
+ height:auto;
+ }
+ .titcontents
+{
+float: left;
+clear: left;
+padding: 5px 0px;
+ height: auto;
+ 
+}
+
+ .titcontul ,.titcontck{
+padding-left: 0px;
+ margin: 2px 0;
+}
+ .titcontents ul li
+{
+ margin-bottom: 5px;
+list-style: none outside none;
+ }
+   .titcontul li input
+ {
+width: 110px;
+}
+ .titcontul li label {
+    color: black;
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    width: 35px;
+}
+.rw {
+width: 95px;
+float: left;
+display: inline-block;
+padding: 0 2px 0 0;
+		
+}
+.rcl {
+    display: inline-block;
+    float: left;
+    width: 65px;
+}
+  .rowck
+{
+display: inline;          
+padding: 0 10px 0 0;
+        }
+ .rowck input
+{
+ margin: 0 2px 0 0;
+  }
+  
+   .btn_add {
+        /*background: url("/s/skin/nduoa/i/btn_size6_zise.png") no-repeat scroll 0 0 transparent;*/
+    border: medium none;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    height: 23px;
+    width: 94px;
+}
+.btn_addCata {
+    background: url("/s/i/btn_tw.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 13px;
+    height: 23px;
+    vertical-align: middle;
+    width: 53px;
+}
+  ul.titcontck li
+ {
+display: inline;
+ list-style: none outside none;
+ margin-bottom: 5px;  
+ }
+ /*-------围脖------*/
+
+ .twitter {
+ 	
+    position: relative;
+    width: 590px;
+	float:left;
+	clear:both;
+		
+ }
+ .fmr {
+ 	margin-right:7px;
+ }
+ .div_pd {
+ 	padding-left: 68px;
+	
+ }
+ .div_inl {
+ 	margin-left: -65px;
+	float:left;
+	display:inline;
+ }
+  /*博客*/
+ 
+ .div_in_rw .div_l, .BlogItem .div_l ,.div_in_rw .div_r {
+ 	float:left;
+	display: inline-block;
+ }
+ .div_in_rw .div_l input {
+ 	width: 320px;
+	margin-right:7px;
+	
+ }
+ .BlogItem .div_l {
+    width: 300px;
+	float:left;
+	display: inline-block;
+}
+.BlogItem .div_r {
+    float: right;
+}
+.div_in_rw.div_labs .div_inr {
+	width: 410px;
+	display: inline-block;
+	
+}
+
+
+/*论坛*/
+
+.div_nof input {
+	display:inline;;
+	float:left;
+}
+.div_nof label {
+	
+	float:none;
+}
+
+
+ .forum_tab
+     {
+          padding:3px;
+          height:30px;
+         }  
+     .forum_tab ul li
+     {
+            background: url("/s/i/tab_nav_out.png") no-repeat scroll 0 0 transparent;
+            float: left;
+            height: 29px;
+            margin-right: 5px;
+            width:138px;
+            text-align:center;
+         }  
+      .forum_tab ul .currs
+      {
+          background: url("/s/i/tab_nav_on.png") no-repeat scroll 0 0 transparent;
+          }
+        .forum_tab ul a {
+            color: #636363;
+            display: block;
+             font-size:14px;
+             font-weight:bold;
+            padding-top: 2px;
+        }
+       .forum_tab ul .currs a
+       {
+       color:#ffffff;
+     }
+     .c_forum_detail
+     {
+         padding:3px;
+         }
+     .o_forum_detail
+     {
+         display:none;
+         }
+
+/*ChannelEdit.aspx 编辑应用  管理频道二级分类 弹出框 begin*/
+
+.soft-content {
+	margin: 15px 15px;
+	padding: 8px 5px;
+}
+
+.left_
+{
+	float:left;
+	overflow:hidden;
+	margin-top:3px;
+	width:85px;
+}
+.left_ .img{overflow:hidden;position:relative;padding:3px;width:70px;height:70px;border:solid 1px #c0c0c0;}
+
+.ok
+{
+	position:absolute;
+	bottom:0;
+	right:0;
+	background-color:#CCCCCC;
+}
+.del
+{
+	position:absolute;
+	top:0;
+	right:0;
+}
+.right_
+{
+	float:left;
+}
+.CE_block
+{
+	width:520px;
+	display: inline-block;
+	padding:5px 5px 30px 5px;
+}
+.style_bp
+{
+	width:360px;
+	height:85px;
+	background-color:#DDDDDD;
+	margin:5px;
+	margin-left:0px;
+}
+.style_bp li
+{
+	display:inline-block;
+	width:20%;
+	text-align:center;
+	margin-top:6px;
+	float:left;
+}
+.style_bp li img{cursor:pointer;}
+.right_ p span
+{
+	color:#999999;
+}
+
+.soft-content {
+margin: 15px 15px;
+padding: 8px 5px;
+}
+
+
+.soft-content h2 {
+ clear: left;
+ float: left;
+ font-size: 14px ;
+ color:#8248A1;
+ display: block;
+}
+.current_zimgcata
+{
+	font-weight:bold;
+	color:#ff0000;
+}
+.edit_content
+{
+    /*border:1px solid red;
+    height:550px;*/
+    }
+.edit_left
+{
+    float:left;
+    padding:5px;
+    min-height:60px;
+    width:68px;
+    /*border:1px solid green;*/
+    }
+ .edit_right
+ {
+    float:right;
+    padding:4px;
+    min-height:60px;
+    width: 417px;
+    /*border:1px solid blue;*/
+     }
+ .edit_pic
+ {
+     }
+ .edit_detail
+ {
+     width:380px;
+     padding:3px;
+     height: 25px;
+     }
+ .edit_detail ul li
+ {
+      float: left;
+      height:30px;
+      width: 76px;
+      margin-right: 5px;
+      background:url(/s/i/curr_out.png) no-repeat;
+      text-align:center;
+     }
+  .edit_detail p
+  {
+      color:#8248A1; 
+      font-weight:bold
+      }
+ .zimgselectDiv
+ {
+     padding:5px;
+     }
+ .zimguploadDiv
+ {
+     padding:5px;
+       /*margin-left: 90px;*/
+    min-height: 80px;
+ }
+  .btn_save
+  {
+      margin: 7px 0 14px;
+      _margin:0;
+      *margin: 7px 0 14px;
+      text-align:center;
+      }
+     
+  .edit_detail ul .curr
+ {
+     background:url(/s/i/curr_on.png) no-repeat;
+     }
+     
+ .curr a ,.edit_detail ul .curr a 
+ {
+       color:#ffffff;
+      font-weight:bold;
+     }
+ .edit_detail ul a
+ {
+    font-weight:bold;
+    color: #636363;
+    display: block;
+    padding-top:2px;
+     }
+	 .btn_modify {
+	  background: url("/s/i/btn_tw.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    height: 23px;
+    text-align: center;
+    vertical-align: middle;
+    width: 53px;
+	 }
+	 .soft_table tr td  {
+	 border: none;
+	 padding: 8px 5px;
+	 padding-left: 0;
+	 }
+	 
+	  
+/*编辑应用  管理频道二级分类 弹出框 end*/
+
+ 
+ 
+ /*ChannelIcon.aspx 选择图标页面弹出框 begin*/
+ 
+ .current_zimgcata
+{
+	font-weight:bold;
+	color:#ff0000;
+}
+.edit_content
+{
+    /*border:1px solid red;
+    height:550px;*/
+    }
+.edit_left
+{
+    float:left;
+    padding:5px;
+    min-height:60px;
+    width:68px;
+    /*border:1px solid green;*/
+    }
+ .edit_right
+ {
+    float:right;
+    padding:4px;
+    min-height:60px;
+    width: 417px;
+    /*border:1px solid blue;*/
+     }
+ .edit_pic
+ {
+     }
+ .edit_detail
+ {
+     width:380px;
+     padding:3px;
+     height: 25px;
+     }
+ .edit_detail ul li
+ {
+      float: left;
+      height:30px;
+      width: 76px;
+      margin-right: 5px;
+      background:url(/s/i/curr_out.png) no-repeat;
+      text-align:center;
+     }
+  .edit_detail p
+  {
+      color:#8248A1; 
+      font-weight:bold
+      }
+ .zimgselectDiv
+ {
+     padding:5px;
+     }
+	 .btn_ico {
+	background: url(/s/i/btn_save.png) no-repeat;
+	height:26px;
+	width: 66px;
+	border:none;
+	display:block;
+	
+}
+	 
+ .zimguploadDiv
+ {
+     padding:5px;
+       /*margin-left: 90px;*/
+    min-height: 80px;
+ }
+  .btn_save_ico
+  {
+      margin: 7px 0 14px;
+      _margin:0;
+      *margin: 7px 0 14px;
+      text-align:center;
+      }
+     
+  .edit_detail ul .curr
+ {
+     background:url(/s/i/curr_on.png) no-repeat;
+     }
+     
+ .curr a ,.edit_detail ul .curr a 
+ {
+       color:#ffffff;
+      font-weight:bold;
+     }
+ .edit_detail ul a
+ {
+    font-weight:bold;
+    color: #636363;
+    display: block;
+    padding-top:2px;
+     }
+ 
+ 
+ 
+
+  /*ChannelIcon.aspx 选择图标页面弹出框 end*/

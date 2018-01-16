@@ -1,0 +1,185 @@
+﻿<html>
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
+        <title>合并订单支付</title>
+	<script language = "javascript">
+	 function createOrderInfo(){
+	 var tmpDate = new Date();
+	 var day = tmpDate.getDate();
+	 var month= tmpDate.getMonth() + 1 ;
+	 var year= ""+tmpDate.getFullYear();
+	 var hours = tmpDate.getHours();
+	 var minutes = tmpDate.getMinutes();
+	 var seconds = tmpDate.getSeconds();
+
+	 month = ((month < 10) ? "0" : "") + month;
+	 day = ((day < 10) ? "0" : "") + day;
+	 hours = ((hours < 10) ? "0" : "") + hours;
+	 minutes = ((minutes < 10) ? "0" : "") + minutes;
+	 seconds = ((seconds < 10) ? "0" : "") + seconds;
+    	
+	 document.all.TranDate.value = year + month + day;
+	 document.all.TranTime.value = hours + minutes + seconds;
+	 document.all.MerOrderNo.value = "Test"+year.slice(2) + month + day+hours + minutes + seconds+"01";
+	 document.all.MerTranSerialNo.value = "Mer"+year + month + day+hours + minutes + seconds;
+	}
+    </script>
+    </head>
+
+    <body bgcolor = "#FFFFFF" text = "#000000" onLoad="createOrderInfo()" >
+        <form name = "form1" method = "post" action = "BPAYPY4102.php">
+            <p><input type = "hidden" name = "merCert" value = "">合并订单支付</p><hr>
+            <p><font color="blue">商户证书ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+            	 <input type = "text" name = "MerCertID" value ="301500053119990">正式投产时根据银行提供的实际编号修改
+            </p><hr>
+            <table width = "75%" border = "0" cellpadding = "0" cellspacing = "0">
+                <tr>
+                    <td width = "30%">交易码*</td>
+                    <td colspan="2"><input type = "text" name = "TranCode" value = "BPAYPY4102"></td>
+                </tr>
+              	<tr>
+                    <td>一级商户协议号*</td>
+                    <td colspan="2">
+                    	<input type = "text" name = "MerPtcId" value ="301500053119990">
+                    </td>
+                </tr>
+                <tr>
+                    <td>请求日期*</td>
+                    <td width="22%"><input type = "text" name = "TranDate" value = ""></td>
+                    <td width="48%">yyyyMMdd<input type = "button" name = "createOrderId" value = "生成时间" onClick = "javascript:createOrderInfo();" ></td>
+                </tr>
+                <tr>
+                    <td>请求时间*</td>
+                    <td><input type = "text" name = "TranTime" value = ""></td>
+                    <td>HHmmss</td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>商户交易流水号*</td>
+                    <td><input type = "text" name = "MerTranSerialNo" value = ""></td>
+                    <td>不可重复</td>
+                </tr>
+                <tr>
+                    <td>安全域</td>
+                    <td colspan="2"><input type = "text" name = "SafeReserved" value = ""></td>
+                </tr>
+                <tr>
+                    <td>总订单数</td>
+                    <td colspan="2"><input type = "text" name = "TotalCount" value = "1"></td>
+                </tr>
+                <tr>
+                    <td>通道接口编号*</td>
+                    <td valign = "top"><input type = "text" name = "ChannelApi" value = "0000001010"></td>
+                    <td>见接口说明文档</td>
+                </tr>
+                <tr>
+                    <td>通道所属机构</td>
+                    <td colspan="2"><input type = "text" name = "ChannelInst" value = "netpay"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;--------------------------子单循环体------------------------------&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;&nbsp;协议信息:</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;二级商户协议号</td>
+                    <td colspan="2"><input type = "text" name = "SubMerPtcId" value = ""></td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;&nbsp;业务信息:</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;平台商户（外部）订单号*</td>
+                    <td><input type = "text" name = "MerOrderNo" value = ""></td>
+                    <td>对尚未交易成功的订单,可重复。已经完成付款的订单，重复提交银行会提示‘该订单已支付’</td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;&nbsp;会员信息:</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;买家会员编号</td>
+                    <td colspan="2"><input type = "text" name = "BuyerId" value = ""></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;买家昵称</td>
+                    <td colspan="2"><input type = "text" name = "BuyerName" value = ""></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;卖家会员编号</td>
+                    <td colspan="2"><input type = "text" name = "SellerId" value = ""></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;卖家昵称</td>
+                    <td colspan="2"><input type = "text" name = "SellerName" value = ""></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">&nbsp;&nbsp;商品信息:</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;商品名称</td>
+                    <td colspan="2"><input type = "text" name = "GoodsName" value = ""></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;商品简称</td>
+                    <td colspan="2"><input type = "text" name = "GoodsTxt" value = ""></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;商品详情</td>
+                    <td colspan="2"><input type = "text" name = "GoodsDesc" value = ""></td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;&nbsp;交易信息:</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;交易方式*<br/></td>
+                    <td valign = "top"><input type = "text" name = "TranModeId" value = "D"></td>
+                    <td valign = "top">E(escrow)担保交易、D(Direct)直接到账(单层协议)</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;交易金额(须两位小数)*</td>
+                    <td valign = "top"><input type = "text" name = "TranAmt" value = "0.01"></td>
+                    <td valign = "top">F(Fastpay)即时到帐、U(Current)实时到帐</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;交易币种*</td>
+                    <td colspan="2"><input type = "text" name = "TranCry" value = "CNY"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;&nbsp;通道信息:</td>
+                </tr>
+               	<tr>
+                    <td colspan="3">&nbsp;&nbsp;备注信息:</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;买家备注</td>
+                    <td colspan="2" valign = "top"><input type = "text" name = "BuyerMemo" value = ""></td>
+              </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;卖家备注*</td>
+                    <td><input type = "text" name = "SellerMemo" value = "8012+I20+0.01+0.01+"></td>
+                    <td>跨境业务必填</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;平台商备注*</td>
+                    <td valign = "top"><input type = "text" name = "PlatMemo" value = "HG+500开头的海关注册登记编码+联通性测试商户+"></td>
+                    <td>跨境业务必填</td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;--------------------------------------------------------------------------&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>付款备注</td>
+                    <td colspan="2"><input type = "text" name = "PayMemo" value = ""></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><div align="center"><input type = "submit" id = "Submit" value = "提 交" name = "submit"></div></td>
+                </tr>
+          </table>
+            <p>&nbsp;</p>
+        </form>
+    </body>
+</html>

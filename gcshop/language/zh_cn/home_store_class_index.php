@@ -1,0 +1,50 @@
+<?php
+defined('GcWebShop') or exit('Access Invalid!');
+
+$lang['index_no_record']				= '没有找到符合条件的商品';
+$lang['all_category']					= '全部分类';
+$lang['all_brand']						= '全部品牌';
+$lang['all_goods']						= '全部商品';
+$lang['all_store']						= '全部店铺';
+$lang['class_select']					= '分类筛选';
+$lang['store_classname']				= '店鋪類目';
+$lang['all']							= '全部';
+$lang['default']						= '默认';
+$lang['sales']							= '销量';
+$lang['credit']							= '信用';
+/**
+ * index
+ */
+$lang['store_class_index_all_class']	= '所有分类';
+$lang['store_class_index_default']		= '默认';
+$lang['store_class_index_sold']			= '销量';
+$lang['store_class_index_sold_asc']		= '点击按销量从低到高排序';
+$lang['store_class_index_sold_desc']	= '点击按销量从高到低排序';
+$lang['store_class_index_credit']		= '信用';
+$lang['store_class_index_credit_asc']	= '点击按信用从低到高排序';
+$lang['store_class_index_credit_desc']	= '点击按信用从高到低排序';
+$lang['store_class_index_credit_value']	= '信用度';
+$lang['store_class_index_praise_rate']	= '好评率';
+$lang['store_class_index_store_class']	= '店铺分类';
+$lang['store_class_index_store_name']	= '店铺名称';
+$lang['store_class_index_owner']		= '店主';
+$lang['store_class_index_location']		= '所在地';
+$lang['store_class_index_store']		= '店铺';
+$lang['store_class_index_goods_amount']	= '商品数量';
+$lang['store_class_index_message']		= '发站内信';
+$lang['store_class_index_no_record']	= '没有找到符合条件的店铺';
+
+$lang['store_class_index_deal']			= '最近成交';
+$lang['store_class_index_jian']			= '笔';
+
+$lang['store_class_index_shop_rate']	= '店铺动态评分';
+$lang['store_class_index_description_of']	= '描述相符';
+$lang['store_class_index_service_attitude']	= '服务态度';
+$lang['store_class_index_delivery_speed']	= '发货速度';
+$lang['store_class_index_grade']		= '分';
+$lang['store_class_index_store_class']	= '店铺类目';
+$lang['store_class_index_store_zy']	= '主营商品';
+$lang['store_class_index_goods_hiden']	= '收起相关商品';
+$lang['store_class_index_goods_show']	= '展开相关商品';
+
+

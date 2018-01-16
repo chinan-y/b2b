@@ -1,0 +1,23 @@
+/*全局样式*/
+*{ margin:0; padding:0;}
+body{ font-family:"Hiragino Sans GB","Microsoft Yahei",arial,宋体,"Helvetica Neue",Helvetica,STHeiTi,sans-serif; font-size:12px;}
+ul{ list-style-type:none;}
+a{ text-decoration:none;}
+input,button{ outline:none;}
+h3{font-size:100%;font-weight:normal;} 
+table{ border-collapse: collapse; border-spacing: 0;}
+
+.audit{ width:96%; margin:50px 0 20px 0; height:35px; line-height:35px; border-bottom:1px solid #deeffb; padding-bottom:30px;}
+.audit h2{ width:90px; float:left; color:#0099cc; font-size:16px; padding-left:20px;}
+.audit span{ background:#333333; border-radius:5px; color:#FFF; padding:1px 6px; font-size:12px;}
+.data{ width:95%; margin-left:20px;}
+.data table{ width:100%;} 
+.data table tr{ border-bottom:1px dashed #ccdfec; height:50px;}
+.data table th{ background:#cccccc; color:#ffffff;}
+.data table .one th{ padding-left:20px; border:1px solid #ccc;}
+.data table th{ text-align:left;}
+.data table tr td{ color:#727272; text-align:right; border:1px solid #ccc;}
+.data table tr td.two{ text-align:left; color:#333333; padding-left:10px;}
+.data table tr td img{ display:block; float:left; margin:10px 20px 10px 0; width:360px; height:250px;}
+.data table tr td.three{ vertical-align:top; padding-top:15px;}
+.data table tr td a{ color:#0d93bf;}

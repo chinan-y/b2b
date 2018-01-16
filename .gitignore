@@ -1,0 +1,17 @@
+.buildpath
+.DS_Store
+.settings
+.project
+*.bak
+/.idea
+/configuration
+/data/cache
+/data/config
+/data/log
+/data/session
+/data/upload
+/gcshop/api/mess/log
+/sql_back
+/tags
+
+

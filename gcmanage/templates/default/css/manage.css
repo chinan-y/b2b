@@ -1,0 +1,30 @@
+﻿/*全局样式*/
+*{ margin:0; padding:0;}
+body{ font-family:"Hiragino Sans GB","Microsoft Yahei",arial,宋体,"Helvetica Neue",Helvetica,STHeiTi,sans-serif; font-size:12px;}
+ul{ list-style-type:none;}
+a{ text-decoration:none;}
+input,button{ outline:none;}
+h3{font-size:100%;font-weight:normal;} 
+table{ border-collapse: collapse; border-spacing: 0;}
+
+.audit{ width:96%; margin:50px auto 20px auto; height:35px; line-height:35px; border-bottom:1px solid #deeffb; padding-bottom:14px;}
+.audit h2{ width:90px; float:left; color:#0099cc; font-size:16px; padding-left:20px;}
+.audit span{ background:#333333; border-radius:5px; color:#FFF; padding:1px 6px; font-size:12px;}
+.check{ width:500px; height:45px; line-height:45px; margin-left:56px;}
+.check span{ color:#6c6c6c; padding:0 10px 0 0; display:block; float:left;}
+.check .text{ width:230px; height:24px; border:1px solid #767676; border-radius:4px; color:#c7c7c7; font-size:12px; text-indent:10px; display:block; float:left; margin-top:8px;}
+.check .button{ background:url(../images/m.jpg) no-repeat center center; background-size:16px 16px; width:24px; height:24px; border:1px solid #b5b7bc; border-radius:3px; margin-left:10px; cursor:pointer; display:block; float:left; margin-top:9px;}
+.list{ width:96%; margin:auto;}
+.list li{ border-bottom:1px solid #ddd; border-bottom-style:dashed;}
+.list li h3{ height:35px; line-height:35px; color:#0099cc; font-weight:bold; font-size:14px; padding-left:20px; background:url(images/san.jpg) no-repeat 105px center; cursor:pointer;}
+.list li h3 img{ display:block; float:left; margin-top:9px; margin-right:6px;}
+.list li .sel{ background:url(../images/san01.jpg) no-repeat 105px center;}
+.list li dl{ padding-left:20px; font-size:12px; line-height:24px; color:#88889d;}
+.list li dl,.list li dl div{ display:none;}
+.list li dl a{ color:#09C; cursor:pointer;}
+.data{ width:96%; height:670px; overflow:auto; margin:0 auto;}
+.data table{ width:100%;} 
+.data table tr{ border-bottom:1px dashed #ccdfec; height:50px;}
+.data table tr th{text-align:center;}
+.data table tr td{ color:#727272; text-align:center;}
+.data table tr td a{ color:#0d93bf;}

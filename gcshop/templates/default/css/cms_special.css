@@ -1,0 +1,19 @@
+@charset "utf-8";
+body{font:12px "Microsoft Yahei";}
+ul , ol , li { list-style-image: none; list-style-type: none; }
+
+.cms-special-detail-content .special-content-goods-list {width:245px;float: left; border: solid 1px #D8D8D8;background:#fff;}
+.cms-special-detail-content .special-content-goods-list li {width:245px;}
+.cms-special-detail-content .special-content-goods-list img { height:200px;margin-left: 22px;}
+.cms-special-detail-content .special-content-goods-list .goods_name{ height:50px;margin:10px 7px 2px 7px; color:#595757;font-size:13px;}
+.cms-special-detail-content .special-content-goods-list .goods-pr-price {font: 600 18px/36px "microsoft yahei", Arial; color: #e6387f; height:36px;margin:0 4px 0 6px;float:left;}
+.cms-special-detail-content .special-content-goods-list .goods-price {margin-right:10px;height:36px;line-height:36px;text-decoration:line-through;float:left;color:#595757;}
+.cms-special-detail-content .special-content-goods-list .goods-buy {height:30px;line-height:30px;float:right;margin-right:6px;padding:0 12px;background:#e6387f;border-radius: 5px;}
+.cms-special-detail-content .special-content-goods-list .goods-buy a{color:#fff;font-size:14px; text-decoration:none;}
+.cms-special-detail-content .special-content-goods-list .goods-buy.hover{background:red;}
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<?php
+defined('GcWebShop') or exit('Access Invalid!');
+$lang['member_printorder_ordererror']		= 'order information error';
+
+$lang['member_printorder_title']			= 'invoice';
+$lang['member_printorder_orderno']			= 'Order number';
+$lang['member_printorder_orderadddate']		= 'order time';
+$lang['member_printorder_shippingcode']		= 'consignment number';
+$lang['member_printorder_truename']     	= 'consignee';
+$lang['member_printorder_area']     		= 'location';
+$lang['member_printorder_address']     		= 'address';
+$lang['member_printorder_zip_code']     	= 'zip code';
+$lang['member_printorder_tel_phone']     	= 'telephone';
+$lang['member_printorder_mob_phone']     	= 'mobile phone';
+$lang['member_printorder_serialnumber']		= 'serial number';
+$lang['member_printorder_goodsname']     	= 'commodity name';
+$lang['member_printorder_specification']	= 'specifications';
+$lang['member_printorder_goodsprice']     	= 'unit Price';
+$lang['member_printorder_goodsnum']     	= 'number';
+$lang['member_printorder_subtotal']     	= 'subtotal';
+$lang['member_printorder_amountto']     	= 'total';
+$lang['member_printorder_totle']     		= 'total';
+$lang['member_printorder_freight']   		= 'freight';
+$lang['member_printorder_privilege']  		= 'Discount';
+$lang['member_printorder_orderamount']  	= 'total order';
+$lang['member_printorder_shop']  			= 'shop';
+$lang['member_printorder_shopowner']  		= 'shop name';
+$lang['member_printorder_shoptelephone']  	= 'telephone';
+$lang['member_printorder_shopww']  			= 'Wangwang';
+$lang['member_printorder_pagetext_1']  		= 'No.';
+$lang['member_printorder_pagetext_2']  		= 'page';
+$lang['member_printorder_pagetext_3']  		= 'common';
+$lang['member_printorder_print']  			= 'print';
+$lang['member_printorder_print_tip']	  	= '<br/><br/>select the inkjet or laser printer <br/> to set the <br/> and print the shipping documents according to the following paper description';
+$lang['member_printorder_print_tip_A5']  	= 'A5、、A51。when the print settings select A5 paper, print, no margin when each A5 printing paper can output 1 page order.';
+$lang['member_printorder_print_tip_A4']  	= 'A4、、A42。when the print settings choose A4 paper, vertical print, no margin when each A4 printing paper can output 2 page order.';

@@ -1,0 +1,475 @@
+﻿/*** Share Bar ***/
+.shareBar
+{
+    margin: 5px 0 0px 0;
+   /* padding:0 0 35px;
+  padding-bottom:0px !important;
+  position: relative;
+  */
+   
+    
+     _padding-bottom:0px;
+    _width: 725px;
+    _margin-left: -15px;
+    _height: 31px;
+}
+.shareBar a#none
+{
+}
+.shareBar a #none:hover
+{
+    background: none;
+    border: 1px solid #ffffff;
+}
+.shareBar a#none span
+{
+    cursor: default;
+}
+.shareBar a
+{
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #ffffff;
+    color: #000000;
+    display: block;
+    float: left;
+    font-family: Verdana;
+    font-size: 12px !important;
+    height: 20px;
+    margin: 1px 0;
+    padding: 3px 5px 0px 0px;
+    text-decoration: none;
+    width: 75px;
+    _width: 68px;
+}
+.shareBar a:hover
+{
+    background: none repeat scroll 0 0 #f2f2f2;
+    border: 1px solid #e5e5e5;
+    text-decoration: none;
+}
+.share
+{
+    background: url("../i/iShare_ico.png") no-repeat scroll left center transparent;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    line-height: 16px;
+    
+   /* display: block !important;
+    height: 16px !important;
+    line-height: 16px !important;
+    overflow: hidden;*/
+    padding-left: 20px !important;
+}
+.share_copy
+{
+    background-position: 0 0;
+}
+.share_email
+{
+    background-position: 0 -32px;
+}
+.share_fav
+{
+    background-position: 0 -16px;
+}
+.share_buzz
+{
+    background-position: 0 -48px;
+}
+.share_qzone
+{
+    background-position: 0 -64px;
+}
+.share_baidu
+{
+    background-position: 0 -80px;
+}
+.share_tsina
+{
+    background-position: 0 -96px;
+}
+.share_tsohu
+{
+    background-position: 0 -112px;
+}
+.share_t163
+{
+    background-position: 0 -128px;
+}
+.share_tqq
+{
+    background-position: 0 -144px;
+}
+.share_renren
+{
+    background-position: 0 -160px;
+}
+.share_kaixin001
+{
+    background-position: 0 -176px;
+}
+.share_sohu
+{
+    background-position: 0 -192px;
+}
+.share_taobao
+{
+    background-position: 0 -208px;
+}
+.share_hi
+{
+    background-position: 0 -224px;
+}
+.share_xiaoyou
+{
+    background-position: 0 -240px;
+}
+.share_youshi
+{
+    background-position: 0 -256px;
+}
+.share_gmail
+{
+    background-position: 0 -272px;
+}
+.share_hotmail
+{
+    background-position: 0 -288px;
+}
+.share_ymail
+{
+    background-position: 0 -304px;
+}
+.share_feixin
+{
+    background-position: 0 -320px;
+}
+.share_51
+{
+    background-position: 0 -336px;
+}
+.share_google
+{
+    background-position: 0 -352px;
+}
+.share_youdao
+{
+    background-position: 0 -368px;
+}
+.share_qq
+{
+    background-position: 0 -384px;
+}
+.share_sina
+{
+    background-position: 0 -400px;
+}
+.share_live
+{
+    background-position: 0 -416px;
+}
+.share_yahoo
+{
+    background-position: 0 -432px;
+}
+.share_115
+{
+    background-position: 0 -448px;
+}
+.share_hexun
+{
+    background-position: 0 -464px;
+}
+.share_myspace
+{
+    background-position: 0 -480px;
+}
+.share_139
+{
+    background-position: 0 -496px;
+}
+.share_tieba
+{
+    background-position: 0 -512px;
+}
+.share_haoei
+{
+    background-position: 0 -528px;
+}
+.share_digu
+{
+    background-position: 0 -544px;
+}
+.share_douban
+{
+    background-position: 0 -560px;
+}
+.share_zhuaxia
+{
+    background-position: 0 -576px;
+}
+.share_xianguo
+{
+    background-position: 0 -592px;
+}
+.share_zuosa
+{
+    background-position: 0 -608px;
+}
+.share_renjian
+{
+    background-position: 0 -624px;
+}
+.share_follow5
+{
+    background-position: 0 -640px;
+}
+.share_delicious
+{
+    background-position: 0 -656px;
+}
+.share_digg
+{
+    background-position: 0 -672px;
+}
+.share_fb
+{
+    background-position: 0 -688px;
+}
+.share_twitter
+{
+    background-position: 0 -704px;
+}
+.share_myspacecn
+{
+    background-position: 0 -720px;
+}
+.share_poco
+{
+    background-position: 0 -736px;
+}
+.share_wealink
+{
+    background-position: 0 -752px;
+}
+.share_cnfol
+{
+    background-position: 0 -768px;
+}
+.share_leshou
+{
+    background-position: 0 -784px;
+}
+.share_diglog
+{
+    background-position: 0 -800px;
+}
+.share_tongxue
+{
+    background-position: 0 -816px;
+}
+.share_waakee
+{
+    background-position: 0 -832px;
+}
+.share_shouker
+{
+    background-position: 0 -848px;
+}
+.share_cyzone
+{
+    background-position: 0 -864px;
+}
+.share_9fav
+{
+    background-position: 0 -880px;
+}
+.share_114la
+{
+    background-position: 0 -896px;
+}
+.share_99earth
+{
+    background-position: 0 -912px;
+}
+.share_chouti
+{
+    background-position: 0 -928px;
+}
+.share_dig24
+{
+    background-position: 0 -944px;
+}
+.share_douban9dian
+{
+    background-position: 0 -960px;
+}
+.share_digbuz
+{
+    background-position: 0 -976px;
+}
+.share_hemidemi
+{
+    background-position: 0 -992px;
+}
+.share_baohe
+{
+    background-position: 0 -1008px;
+}
+.share_yijee
+{
+    background-position: 0 -1024px;
+}
+.share_pdfonline
+{
+    background-position: 0 -1040px;
+}
+.share_printfriendly
+{
+    background-position: 0 -1056px;
+}
+.share_translate
+{
+    background-position: 0 -1072px;
+}
+.share_googlereader
+{
+    background-position: 0 -1088px;
+}
+.share_diigo
+{
+    background-position: 0 -1104px;
+}
+.share_evernote
+{
+    background-position: 0 -1120px;
+}
+.share_friendfeed
+{
+    background-position: 0 -1136px;
+}
+.share_linkedin
+{
+    background-position: 0 -1152px;
+}
+.share_mixx
+{
+    background-position: 0 -1168px;
+}
+.share_netlog
+{
+    background-position: 0 -1184px;
+}
+.share_netvibes
+{
+    background-position: 0 -1200px;
+}
+.share_phonefavs
+{
+    background-position: 0 -1216px;
+}
+.share_pingfm
+{
+    background-position: 0 -1232px;
+}
+.share_plaxo
+{
+    background-position: 0 -1248px;
+}
+.share_polladium
+{
+    background-position: 0 -1264px;
+}
+.share_reddit
+{
+    background-position: 0 -1280px;
+}
+.share_wong
+{
+    background-position: 0 -1296px;
+}
+.share_stumbleupon
+{
+    background-position: 0 -1312px;
+}
+.share_plurk
+{
+    background-position: 0 -1328px;
+}
+.share_funp
+{
+    background-position: 0 -1344px;
+}
+.share_blogsina
+{
+    background-position: 0 -1360px;
+}
+.share_myshare
+{
+    background-position: 0 -1376px;
+}
+.share_fwisp
+{
+    background-position: 0 -1392px;
+}
+.share_more
+{
+    background-position: 0 -1408px;
+}
+.share_msn
+{
+    background-position: 0 -1424px;
+}
+.share_fanfou
+{
+    background-position: 0 -1440px;
+}
+.share_i139
+{
+    background-position: 0 -1456px;
+}
+.share_dream163
+{
+    background-position: 0 -1472px;
+}
+.share_thexun
+{
+    background-position: 0 -1488px;
+}
+.share_tianya
+{
+    background-position: 0 -1505px;
+}
+.share_w3c
+{
+    background-position: 0 -1521px;
+}
+.share_tifeng
+{
+    background-position: 0 -1537px;
+}
+.share_bitly
+{
+    background-position: 0 -1553px;
+}
+.share_woshao
+{
+    background-position: 0 -1569px;
+}
+.share_ganniu
+{
+    background-position: 0 -1585px;
+}
+.share_189cn
+{
+    background-position: 0 -1601px;
+}
+.share_masar
+{
+    background-position: 0 -1617px;
+}
+.share_renmaiku
+{
+    background-position: 0 -1633px;
+}

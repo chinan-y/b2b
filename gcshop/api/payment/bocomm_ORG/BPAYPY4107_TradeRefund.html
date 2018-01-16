@@ -1,0 +1,86 @@
+﻿<html>
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
+        <title>订单退款界面</title>
+	<script language = "javascript">
+	 function createOrderInfo(){
+	 var tmpDate = new Date();
+	 var day = tmpDate.getDate();
+	 var month= tmpDate.getMonth() + 1 ;
+	 var year= ""+tmpDate.getFullYear();
+	 var hours = tmpDate.getHours();
+	 var minutes = tmpDate.getMinutes();
+	 var seconds = tmpDate.getSeconds();
+
+	 month = ((month < 10) ? "0" : "") + month;
+	 day = ((day < 10) ? "0" : "") + day;
+	 hours = ((hours < 10) ? "0" : "") + hours;
+	 minutes = ((minutes < 10) ? "0" : "") + minutes;
+	 seconds = ((seconds < 10) ? "0" : "") + seconds;
+    	
+	 document.all.TranDate.value = year + month + day;
+	 document.all.TranTime.value = hours + minutes + seconds;
+	 document.all.MerTranSerialNo.value = "Mer"+year + month + day+hours + minutes + seconds;
+	}
+        </script>
+    </head>
+
+    <body bgcolor = "#FFFFFF" text = "#000000" onLoad="createOrderInfo()" >
+        <form name = "form1" method = "post" action = "BPAYPY4107.php">
+            <p><input type = "hidden" name = "merCert" value = ""> 订单退款测试界面</p><hr>
+            <p><font color="blue">商户证书ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+            	 <input type = "text" name = "MerCertID" value ="301500053119990">GuangCai-301500053119990
+            </p><hr>
+            <table width = "74%" border = "0" cellpadding = "0" cellspacing = "0">
+                <tr>
+                    <td width = "30%">交易码</td>
+                    <td colspan="2"><input type = "text" name = "TranCode" value = "BPAYPY4107"></td>
+                </tr>
+              	<tr>
+                    <td>一级商户协议号*</td>
+                    <td colspan="2">
+						<input type = "text" name = "MerPtcId" value ="301500053119990">GuangCai-301500053119990
+                    </td>
+                </tr>
+                <tr>
+                    <td>请求日期*</td>
+                    <td width="22%"><input type = "text" name = "TranDate" value = ""></td>
+                    <td width="48%">yyyyMMdd
+                  <input type = "button" name = "createOrderId" value = "生成时间" onClick = "javascript:createOrderInfo();" ></td>
+                </tr>
+                <tr>
+                    <td>请求时间*</td>
+                    <td><input type = "text" name = "TranTime" value = ""></td>
+                    <td>HHmmss</td>
+                </tr>
+                <tr>
+                    <td>商户交易流水号*</td>
+                    <td colspan="2"><input type = "text" name = "MerTranSerialNo" value = ""></td>
+                </tr>
+                <tr>
+                    <td colspan="3">业务信息:</td>
+                </tr>
+		<tr>
+                    <td>&nbsp;&nbsp;平台商户（外部）订单号*</td>
+                    <td colspan="2"><input type = "text" name = "MerOrderNo" value = ""></td>
+		</tr>
+                <tr>
+                    <td>&nbsp;&nbsp;退款金额(须两位小数)*</td>
+                    <td colspan="2"><input type = "text" name = "RefundAmt" value = ""></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;交易币种*</td>
+                    <td colspan="2"><input type = "text" name = "RefundCry" value = "CNY"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;退款备注</td>
+                    <td colspan="2"><input type = "text" name = "RefundMemo" value = ""></td>
+                </tr>
+		<tr>
+                    <td colspan="3"><div align="center"><input type = "submit" id = "Submit" value = "提 交" name = "submit"></div></td>
+              </tr>
+          </table>
+            <p>&nbsp;</p>
+        </form>
+    </body>
+</html>

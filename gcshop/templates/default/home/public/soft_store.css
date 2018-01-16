@@ -1,0 +1,49 @@
+﻿body { font-family: "Microsoft YaHei",Georgia; }
+
+.footer { margin: 0 auto; }
+a.capture { color: #ff5500; font-weight: bold; text-decoration: underline; }
+.setup { margin: 4px 0 0 0px; }
+.setup img { }
+.soft_down_logo { width: 100px; padding-top: 15px; padding-left: 10px; }
+.soft_down_des { width: 530px; padding: 20px 5px 0; }
+.soft_down_scan { width: 110px; padding-top: 24px; padding-right: 10px; text-align: center; margin: 0 auto; }
+.soft_down_scan p label { font-size: 12px; font-weight: 600; }
+.soft_down_logo img { width: 64px; height: 64px; display: block; border: none; padding: 18px; background: url(../i/sd_logo.png) no-repeat center center; }
+.mncz_btn { width: 72px; height: 20px; line-height: 20px; margin: 0 auto; border-radius: 5px; font-size: 13px; display: block; }
+.soft_name_nums strong { font-size: 15px; color: #a21f1f; font-weight: 400; padding-right: 10px; }
+.soft_name_nums label { font-weight: normal; font-size: 14px; }
+.soft_name_nums label span { font-size: 12px; color: #1b82d3; }
+.soft_description { line-height: 18px; font-size: 12px; padding-bottom: 10px; }
+.soft_description label { font-size: 14px; color: #3f3e3e; font-weight: 600; }
+.soft_shares { display: block; line-height: 20px; }
+.soft_shares span { display: inline-block; line-height: 20px; text-align: center; }
+.soft_shares a { display: inline-block; margin: 0 2px; }
+.soft_shares a img { display: inline-block; height: 16px; width: 16px; }
+.soft_show_img { width: 460px; padding: 10px 0 0 5px; height: 320px; overflow: hidden; }
+img.soft_show_imgs { width: 210px; height: 310px; padding: 5px 4px 5px 10px; }
+.soft_mobile_down { padding: 22px 5px 0 5px; width: 290px; }
+.soft_mobile_down h3 { font-size: 16px; font-weight: normal; }
+.soft_aiw li { background: url(../i/soft_dbg.png) no-repeat center center; height: 69px; width: 267px; padding: 12px 2px; }
+.soft_aiw li .imgs_div { float: left; width: 90px; height: 60px; }
+.soft_aiw li .imgs_div .imgs { padding: 5px 22px 5px 15px; }
+.to_mob { width: 67px;display: inline-block;margin-right: 8px;float: left;float: left; }
+.a_div { height: 70px; width: 170px; float: left; text-align: center; }
+.to_pcs {width: 67px; display: inline-block; }
+.to_weixin{ width: 67px !important;height: auto!important;margin-right: 20px;}
+.version_down { height: 59px; padding: 5px 0 5px; }
+.version_down label { height: 18px; display: block; margin-bottom: 10px; }
+.soft_aiw li a.versions { display: block; height: 70px; }
+.soft_aiw li a.versions.dn { display: none; }
+.soft_aiw li .versions img { height: 50px; padding: 10px 0 5px; margin-left: -5px; }
+.soft_aiw li:hover .versions, .soft_aiw li.curr .versions { display: none; }
+.soft_aiw li:hover .version_down, .soft_aiw li.curr .version_down { display: block; }
+.reg_text { font-size: 11px; }
+.new { display: inline-block; height: 20px; left: 85px; position: absolute; top: 140px; width: 25px; }
+.soft_supportList ul li { width: 160px; height: 65px; padding: 20px 10px 5px; }
+.infopanel { width: 200px; }
+.popupmenu_popup { padding: 5px; }
+.infopanel ul li { border: 0 none; height: auto; padding: 0; }
+.infopanel ul li.down { text-align: left; width: 200px; }
+.infopanel ul li.down a { width: 94px; }
+.infopanel ul li.down a.hurl, .infopanel ul li.down a.wurl { float: left; height: 15px; width: 110px; margin-top: -3px; }
+.GotoStore_a { display: inline-block; margin: -32px 0 0 -5px; }

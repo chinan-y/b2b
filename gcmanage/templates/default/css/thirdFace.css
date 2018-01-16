@@ -1,0 +1,25 @@
+/*全局样式*/
+*{ margin:0; padding:0;}
+body{ font-family:"Hiragino Sans GB","Microsoft Yahei",arial,宋体,"Helvetica Neue",Helvetica,STHeiTi,sans-serif; font-size:12px;}
+ul{ list-style-type:none;}
+a{ text-decoration:none;}
+input,button{ outline:none;}
+h3{font-size:100%;font-weight:normal;} 
+table{ border-collapse: collapse; border-spacing: 0;}
+
+.audit{ width:96%;  height:35px; line-height:35px;}
+.audit h2{ width:120px; float:left; color:#0099cc; font-size:16px; padding-left:20px;}
+.form{width:100%;margin-top:50px;margin-left:20px;}
+.form h4{color:#31444D;margin-top:50px;}
+#file span{margin-left:110px;}
+#data div span{font-size:14px;display:inline-block;width:100px;}
+#data div.block{margin:10px;} 
+#data div.btn input[type='submit']{display:block;height:30px;width:50px;margin-left:110px;} 
+#file div.btn input[type='submit']{margin-top:40px;margin-left:-255px;height:30px;width:50px;} 
+.third,.goods,.recive,.message{width:25%;float:left;}
+
+.data{ width:96%; height:670px; overflow:auto; margin:0 auto;border-top:3px solid #71cbf0;}
+.data table{ width:100%;} 
+.data table tr{ border-bottom:1px dashed #ccdfec; height:50px;}
+.data table tr td,.data table tr th{ color:#727272; text-align:center;}
+.data table tr td a{ color:#0d93bf;}

@@ -1,0 +1,20 @@
+/*全局样式*/
+*{ margin:0; padding:0;}
+ul{margin-left:20px;}
+input[name="class_name"]{margin-left:5px;}
+b{display: inline-block;width: 34px;margin-left: -40px;border-top: 1px gray solid;height: 5px;}
+.class_live_one{margin-left:45px;}
+.class_live_one .one{display: block;margin-left: 10px;margin-top: -40px;padding:20px;}
+.class_live_one .one ul{margin-left:6px;padding:0 0 0 30px;border-left:1px gray solid;}
+.class_live_one .one ul li{padding:10px;}
+.codeSpan{margin-left:5px;}
+.addInput{margin-left:8px;}
+.addLi i{margin-left:3px}
+.addImage{margin-left:5px;}
+.addLi span{margin-left:5px;}
+.addLi input{margin-left:3px}
+.add{background:url('../images/jia.png') no-repeat; display:inline-block;height:12px;width:20px;}
+.jian{background:url('../images/jian.png') no-repeat; display:inline-block;height:12px;width:20px;}
+.delet_class{margin-left:10px;}
+.choseAll,.invert,input[type="submit"]{height:25px;width:84px;margin-left:45px;}
+.one_evea_class{height:25px;width:84px}
