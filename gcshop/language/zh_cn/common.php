@@ -176,7 +176,7 @@ $lang['member_control_inform']			= "违规举报";
 $lang['member_control_mallconsult']		= "平台客服";
 
 $lang['member_control_info_manage']		= "资料管理";
-$lang['member_control_infomation']		= "账户信息";
+$lang['member_control_infomation']		= "个人信息";
 $lang['member_control_security']		= "账户安全";
 $lang['member_control_identity']		= "身份信息"; //新
 $lang['member_control_address']			= "收货地址";

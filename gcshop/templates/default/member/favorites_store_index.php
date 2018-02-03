@@ -30,7 +30,7 @@
         <td class="w70"><div class="ncm-goods-thumb"><a href="<?php echo urlShop('show_store', 'index', array('store_id' => $favorites['store']['store_id']), $favorites['store']['store_domain']);?>" ><img src="<?php echo getStoreLogo($favorites['store']['store_avatar']);?>" onMouseOver="toolTip('<img src=<?php echo getStoreLogo($favorites['store']['store_avatar']);?>>')" onMouseOut="toolTip()"/></a></div></td>
         <td class="tl"><dl class="goods-name">
             <dt><a href="<?php echo urlShop('show_store', 'index', array('store_id'=>$favorites['store']['store_id']), $favorites['store']['store_domain'])?>" ><?php echo $favorites['store']['store_name'];?></a> </dt>
-            <dd><?php echo $lang['favorite_message'].$lang['nc_colon'];?><span member_id="<?php echo $favorites['store']['member_id'];?>"></span>
+            <dd style="display:none;"><?php echo $lang['favorite_message'].$lang['nc_colon'];?><span member_id="<?php echo $favorites['store']['member_id'];?>"></span>
               <?php if(!empty($favorites['store']['store_qq'])){?>
               <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $favorites['store']['store_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $favorites['store']['store_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $favorites['store']['store_qq'];?>:52" style=" vertical-align: middle;"/></a>
               <?php }?>

@@ -106,7 +106,7 @@ $lang['cart_step1_right_true_idnum']	= '请正确填写您的身份证号码';
 $lang['home_member_save_identity']		= '保存信息'; //新
 $lang['home_member_member_identity']	= '身份信息'; //新
 $lang['home_member_needing_attention1']	= '由于跨境保税、海外购等需办理入境申报，请配合填写您真实正确的姓名和身份证号码。'; //新
-$lang['home_member_needing_attention2']	= '光彩全球承诺所填身份证仅用于您购买保税商品办理清关手续，不做其他用途。'; //新
+$lang['home_member_needing_attention2']	= '本站承诺所填身份证仅用于您购买保税商品办理清关手续，不做其他用途。'; //新
 $lang['home_member_needing_attention3']	= '您所填写的身份信息需要和支付人的身份信息一致，以免造成海关审核失败。'; //新
 /**
  * 订单

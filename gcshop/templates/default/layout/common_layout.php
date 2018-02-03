@@ -225,7 +225,7 @@ $(function(){
   <header class="public-head-layout index-width">
     
 	
-	<h1 class="site-logo"><a href="<?php echo BASE_SITE_URL;?>"><img src="<?php echo UPLOAD_SITE_URL.DS.ATTACH_COMMON.DS.$output['setting_config']['site_logo']; ?>" class="pngFix"><img src="<?php echo SHOP_TEMPLATES_URL;?>/images/shop/logo_bg.png"></a></h1>
+	<h1 class="site-logo"><a href="<?php echo BASE_SITE_URL;?>"><img src="<?php echo UPLOAD_SITE_URL.DS.ATTACH_COMMON.DS.$output['setting_config']['site_logo']; ?>" class="pngFix"></a></h1>
     
     <div style="clear:both"></div>
     

@@ -6,7 +6,7 @@
 <?php include template('buy/buy_fcode');?>
 <div class="ncc-main">
   <div class="ncc-title">
-	<p class="ncc-p"><a target="_blank" href="http://gss.mof.gov.cn/zhengwuxinxi/zhengcefabu/201603/t20160324_1922968.html
+	<p class="ncc-p"  style="display:none;"><a target="_blank" href="http://gss.mof.gov.cn/zhengwuxinxi/zhengcefabu/201603/t20160324_1922968.html
 "><?php echo $lang['cart_index_import_duty_notice'];?></a><?php echo $lang['cart_index_customs_notice'];?></p>
   </div>
     <?php include template('buy/buy_address');?>
@@ -45,6 +45,8 @@
     <!-- 默认使用的发票 -->
     <input value="<?php echo $output['inv_info']['inv_id'];?>" name="invoice_id" id="invoice_id" type="hidden">
     <input value="<?php echo getReferer();?>" name="ref_url" type="hidden">
+	
+    <input value=1 name="third" type="hidden">
 	
 </div>
 </form>

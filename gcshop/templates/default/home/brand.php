@@ -9,7 +9,7 @@
       <li><a href="<?php echo urlShop('category', 'index');?>"><?php echo $lang['all_category']?></a></li>
       <li class="current"><a href="javascript:void(0);"><?php echo $lang['all_brand']?></a></li>
       <li><a href="<?php echo urlShop('search', 'index');?>"><?php echo $lang['all_goods']?></a></li>
-	  <li><a href="<?php echo urlShop('store_list', 'index');?>"><?php echo $lang['all_store']?></a></li>
+	  <!--li><a href="<?php echo urlShop('store_list', 'index');?>"><?php echo $lang['all_store']?></a></li-->
     </ul>
   </div>
   <?php if(!empty($output['brand_r'])){?>

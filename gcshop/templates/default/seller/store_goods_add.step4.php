@@ -1,4 +1,8 @@
-
+<?php if ($output['edit_goods_sign']) {?>
+<div class="tabmenu">
+  <?php include template('layout/submenu');?>
+</div>
+<?php } else {?>
 <ul class="add-goods-step">
   <li><i class="icon icon-list-alt"></i>
     <h6>STEP.1</h6>
@@ -12,31 +16,65 @@
     <h6>STEP.3</h6>
     <h2>上传商品图片</h2>
     <i class="arrow icon-angle-right"></i> </li>
-  <li class="current"><i class="icon icon-ok-circle"></i>
+  <li class="current"><i class="icon icon-edit"></i>
     <h6>STEP.4</h6>
+    <h2>添加价格规则</h2>
+    <i class="arrow icon-angle-right"></i> 
+  </li>
+  <li><i class="icon icon-ok-circle"></i>
+    <h6>STEP.5</h6>
     <h2>商品发布成功</h2>
   </li>
 </ul>
-<div class="alert alert-block hr32">
-  <h2><i class="icon-ok-circle mr10"></i><?php echo $lang['store_goods_step3_goods_release_success'];?>&nbsp;&nbsp;<?php if (C('goods_verify')) {?>等待管理员审核商品！<?php }?></h2>
-  <div class="hr16"></div>
-  <div>
-    <?php if ($output['allow_gift']) {?>
-    <a class="ncsc-btn ncsc-btn-green ml30" href="<?php echo urlShop('store_goods_online', 'add_gift', array('commonid' => $_GET['commonid'], 'ref_url' => urlShop('store_goods_online', 'index')));?>"><i class="icon-gift"></i>为该商品添加赠品捆绑</a>
-    <?php }?>
-    <?php if ($output['allow_combo']) {?>
-    <a class="ncsc-btn ncsc-btn-orange ml10" href="<?php echo urlShop('store_goods_online', 'add_combo', array('commonid' => $_GET['commonid'], 'ref_url' => urlShop('store_goods_online', 'index')));?>"><i class="icon-thumbs-up "></i>为该商品添加推荐组合</a></div>  
-    <?php }?>
-  <div class="hr16"></div>
-  <strong>
-    <a class="ml30" href="<?php echo urlShop('goods', 'index', array('goods_id'=>$output['goods_id']));?>"><?php echo $lang['store_goods_step3_viewed_product'];?>&gt;&gt;</a>
-    <a class="ml30" href="<?php echo urlShop('store_goods_online', 'edit_goods', array('commonid' => $_GET['commonid'], 'ref_url' => urlShop('store_goods_online', 'index')));?>"><?php echo $lang['store_goods_step3_edit_product'];?>&gt;&gt;</a>    
-  </strong>  
-  <div class="hr16"></div>
-  <h4 class="ml10"><?php echo $lang['store_goods_step3_more_actions'];?></h4>
-  <ul class="ml30">
-    <li>1. <?php echo $lang['store_goods_step3_continue'];?> &quot; <a href="<?php echo urlShop('store_goods_add', 'index');?>"><?php echo $lang['store_goods_step3_release_new_goods'];?></a>&quot;</li>
-    <li>2. <?php echo $lang['store_goods_step3_access'];?> &quot; <?php echo $lang['nc_seller'];?>&quot; <?php echo $lang['store_goods_step3_manage'];?> &quot;<a href="<?php echo urlShop('store_goods_online', 'index');?>"><?php echo $lang['nc_member_path_goods_list'];?></a>&quot;</li>
-    <li>3. <?php echo $lang['store_goods_step3_participation'];?> &quot; <a href="<?php echo urlShop('store_activity', 'store_activity');?>"><?php echo $lang['store_goods_step3_special_activities'];?></a> &quot;</li>
+<?php }?>
+<style type="text/css">
+.ncsc-default-table tbody .num input{width:50px;}
+.ncsc-default-table tbody .price input{width:80px}
+</style>
+<div class="alert alert-info alert-block">
+  <div class="faq-img"></div>
+  <h4>说明：</h4>
+  <ul>
+    <li>1.商品批量购买价格规则；</li>
+    <li>2.数量是商品的购买数量，价格是购买数量对应的商品单价；</li>
+    <li>3.从上到下数量递增，最多设置5个规格，可空。</li>
   </ul>
 </div>
+<form method="post" action="<?php if ($output['edit_goods_sign']) { echo urlShop('store_goods_online', 'edit_save_rule'); } else { echo urlShop('store_goods_add', 'save_rule');}?>">
+  <input type="hidden" name="form_submit" value="ok">
+  <input type="hidden" name="ref_url" value="<?php echo $_GET['ref_url'];?>" />
+  <input type="hidden" name="commonid" value="<?php echo intval($_GET['commonid']);?>" />
+     
+  <table class="ncsc-default-table">
+  <thead>
+	<tr>
+	  <th class="w50">数量</th>
+	  <th class="w100">价格</th>
+	</tr>
+  </thead>
+  <tbody>
+	<tr>
+	  <td class="num"><input type="text" name="num1" value="<?php echo $output['rule_info']['num1'];?>"></td>
+	  <td class="price"><input type="text" name="price1" value="<?php echo $output['rule_info']['price1'];?>"></td>
+	</tr>
+	<tr>
+	  <td class="num"><input type="text" name="num2" value="<?php echo $output['rule_info']['num2'];?>"></td>
+	  <td class="price"><input type="text" name="price2" value="<?php echo $output['rule_info']['price2'];?>"></td>
+	</tr>
+	<tr>
+	  <td class="num"><input type="text" name="num3" value="<?php echo $output['rule_info']['num3'];?>"></td>
+	  <td class="price"><input type="text" name="price3" value="<?php echo $output['rule_info']['price3'];?>"></td>
+	</tr>
+	<tr>
+	  <td class="num"><input type="text" name="num4" value="<?php echo $output['rule_info']['num4'];?>"></td>
+	  <td class="price"><input type="text" name="price4" value="<?php echo $output['rule_info']['price4'];?>"></td>
+	</tr>
+	<tr>
+	  <td class="num"><input type="text" name="num5" value="<?php echo $output['rule_info']['num5'];?>"></td>
+	  <td class="price"><input type="text" name="price5" value="<?php echo $output['rule_info']['price5'];?>"></td>
+	</tr>
+  </tbody>
+</table>
+  <div class="bottom tc hr32"><label class="submit-border"><input type="submit" class="submit" value="<?php if ($output['edit_goods_sign']) { echo '提交'; } else { ?><?php echo $lang['store_goods_add_next'];?>，确认商品发布<?php }?>" /></label></div>
+  
+</form>

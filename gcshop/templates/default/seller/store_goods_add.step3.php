@@ -17,8 +17,13 @@
     <h6>STEP.3</h6>
     <h2>上传商品图片</h2>
     <i class="arrow icon-angle-right"></i> </li>
-  <li><i class="icon icon-ok-circle"></i>
+  <li><i class="icon icon-edit"></i>
     <h6>STEP.4</h6>
+    <h2>添加价格规则</h2>
+    <i class="arrow icon-angle-right"></i> 
+  </li>
+  <li><i class="icon icon-ok-circle"></i>
+    <h6>STEP.5</h6>
     <h2>商品发布成功</h2>
   </li>
 </ul>
@@ -73,7 +78,7 @@
     </ul><h4>建议:</h4><ul><li>1. 主图为白色背景正面图。</li><li>2. 排序依次为正面图->背面图->侧面图->细节图。</li></ul></div></div>
   </div>
   <?php }?>
-  <div class="bottom tc hr32"><label class="submit-border"><input type="submit" class="submit" value="<?php if ($output['edit_goods_sign']) { echo '提交'; } else { ?><?php echo $lang['store_goods_add_next'];?>，确认商品发布<?php }?>" /></label></div>
+  <div class="bottom tc hr32"><label class="submit-border"><input type="submit" class="submit" value="<?php if ($output['edit_goods_sign']) { echo '提交'; } else { ?><?php echo $lang['store_goods_add_next'];?>，添加价格规则<?php }?>" /></label></div>
 </form>
 <script type="text/javascript" src="<?php echo RESOURCE_SITE_URL;?>/js/ajaxfileupload/ajaxfileupload.js" charset="utf-8"></script>
 <script src="<?php echo RESOURCE_SITE_URL;?>/js/jquery.ajaxContent.pack.js" type="text/javascript"></script>

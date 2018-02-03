@@ -31,7 +31,7 @@
           <?php }else{?>
           <a href="javascript:collect_store('<?php echo $goods_list[0]['goods']['store_id'];?>','store','')" title="<?php echo $lang['favorite_collect_store'];?>" nc_store="<?php echo $goods_list[0]['goods']['store_id'];?>"><i class=" icon-plus-sign"></i></a>
           <?php }?>
-          </span><span class="ml5"><?php echo $lang['favorite_message'].$lang['nc_colon'];?><i member_id="<?php echo $goods_list[0]['goods']['member_id'];?>"></i>
+          </span><span class="ml5" style="display:none;"><?php echo $lang['favorite_message'].$lang['nc_colon'];?><i member_id="<?php echo $goods_list[0]['goods']['member_id'];?>"></i>
           <?php if(!empty($goods_list[0]['goods']['store_qq'])){?>
           <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $goods_list[0]['goods']['store_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $goods_list[0]['goods']['store_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $goods_list[0]['goods']['store_qq'];?>:52" style=" vertical-align: middle;"/></a>
           <?php }?>

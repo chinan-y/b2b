@@ -10,8 +10,8 @@
       <ul id="favoritesGoodsList" class="jcarousel-skin-tango">
         <?php foreach($output['favorites_list'] as $key=>$favorites){?>
         <li>
-          <div class="ncm-goods-thumb-120"><a href="<?php echo urlShop('goods','index',array('goods_id'=>$favorites['goods']['goods_id']));?>" target="_blank"><img alt="<?php echo $favorites['goods']['goods_name'];?>" src="<?php echo thumb($favorites['goods'], 240);?>"></a>
-            <div class="ncm-goods-price"><em>￥<?php echo ncPriceFormat($favorites['goods']['goods_price']);?></em></div>
+          <div class="ncm-goods-thumb-120" title="<?php echo $favorites['goods']['goods_name'];?>" ><a href="<?php echo urlShop('goods','index',array('goods_id'=>$favorites['goods']['goods_id']));?>" target="_blank"><img alt="<?php echo $favorites['goods']['goods_name'];?>" src="<?php echo thumb($favorites['goods'], 240);?>"></a>
+            
           </div>
           <div class="ncm-goods-name"><a href="<?php echo urlShop('goods','index',array('goods_id'=>$favorites['goods']['goods_id']));?>" title="<?php echo $favorites['goods']['goods_name'];?>" target="_blank"><?php echo $favorites['goods']['goods_name'];?></a></div>
         </li>
@@ -30,7 +30,7 @@
     <?php } ?>
   </div>
 </div>
-<div id="favoritesStore" class="normal">
+<!--div id="favoritesStore" class="normal">
   <div class="outline">
     <div class="title">
       <h3>店铺收藏</h3>
@@ -60,4 +60,4 @@
     </dl>
     <?php } ?>
   </div>
-</div>
+</div-->

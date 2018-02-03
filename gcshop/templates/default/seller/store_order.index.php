@@ -76,7 +76,7 @@
       <!-- S 合并TD -->
       <?php if (($order['goods_count'] > 1 && $k ==0) || ($order['goods_count']) == 1){ ?>
       <td class="bdl" rowspan="<?php echo $order['goods_count'];?>"><div class="buyer"><?php echo $order['buyer_name'];?>
-          <p member_id="<?php echo $order['buyer_id'];?>">
+          <p member_id="<?php echo $order['buyer_id'];?>" style="display:none;">
             <?php if(!empty($order['extend_member']['member_qq'])){?>
             <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $order['extend_member']['member_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $order['extend_member']['member_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $order['extend_member']['member_qq'];?>:52" style=" vertical-align: middle;"/></a>
             <?php }?>

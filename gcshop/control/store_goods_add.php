@@ -611,11 +611,52 @@ class store_goods_addControl extends BaseSellerControl {
             }
         }
     }
-
-    /**
-     * 商品发布第四步
+	
+	/**
+     * 第四步添加价格规则
      */
     public function add_step_fourOp() {
+        $common_id = intval($_GET['commonid']);
+        if ($common_id <= 0) {
+            showMessage(L('wrong_argument'), urlShop('seller_center'), 'html', 'error');
+        }
+
+        Tpl::output('store_id', $_SESSION['store_id']);
+        Tpl::output('commonid', $common_id);
+        Tpl::showpage('store_goods_add.step4');
+    }
+	
+	/**
+     * 保存价格规则
+     */
+    public function save_ruleOp() {
+		$goods = Model('goods')->getGoodsInfo(array('goods_commonid'=>$_POST['commonid']),'goods_id');
+		$data = array();
+		$data['goods_id'] = $goods['goods_id'];
+		$data['num1'] = $_POST['num1'] >0 ? $_POST['num1'] : null;
+		$data['num2'] = $_POST['num2'] >0 ? $_POST['num2'] : null;
+		$data['num3'] = $_POST['num3'] >0 ? $_POST['num3'] : null;
+		$data['num4'] = $_POST['num4'] >0 ? $_POST['num4'] : null;
+		$data['num5'] = $_POST['num5'] >0 ? $_POST['num5'] : null;
+		$data['price1'] = $_POST['price1'] >0 ? $_POST['price1'] : null;
+		$data['price2'] = $_POST['price2'] >0 ? $_POST['price2'] : null;
+		$data['price3'] = $_POST['price3'] >0 ? $_POST['price3'] : null;
+		$data['price4'] = $_POST['price4'] >0 ? $_POST['price4'] : null;
+		$data['price5'] = $_POST['price5'] >0 ? $_POST['price5'] : null;
+		
+		$result = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods['goods_id']))->insert($data);
+		
+		if ($result) {
+			redirect(urlShop('store_goods_add', 'add_step_five', array('commonid' => $_POST['commonid'])));
+		} else {
+			showDialog(L('nc_common_save_fail'), urlShop('store_goods_online', 'index'));
+		}
+	}
+
+    /**
+     * 商品发布第五步
+     */
+    public function add_step_fiveOp() {
         // 单条商品信息
         $goods_info = Model('goods')->getGoodsInfo(array('goods_commonid' => $_GET['commonid']));
 
@@ -633,7 +674,7 @@ class store_goods_addControl extends BaseSellerControl {
         Tpl::output('allow_gift', Model('goods')->checkGoodsIfAllowGift($goods_info));
         Tpl::output('allow_combo', Model('goods')->checkGoodsIfAllowCombo($goods_info));
         Tpl::output('goods_id', $goods_info['goods_id']);
-        Tpl::showpage('store_goods_add.step4');
+        Tpl::showpage('store_goods_add.step5');
     }
 
     /**

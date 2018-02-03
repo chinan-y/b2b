@@ -35,9 +35,9 @@ label.error { color: #F30;}
 
 
 /* 注册表单样式 */
-.nc-login-layout { width: 850px; margin: 0 auto;}
+.nc-login-layout { width: 870px; margin: 0 auto;}
 .nc-login { width: 400px; float:left;}
-.nc-login .top-title{height:80px;text-align:center;}
+.nc-login .top-title{height:18px;text-align:center;}
 
 
 .username-login{width: 400px; float:right;margin-right:-20px;}
@@ -66,14 +66,15 @@ label.error { color: #F30;}
 
 .nc-login-title { background:#F9F9F9; border: #D8D8D8 solid; border-width: 1px 1px 0 1px;}
 .nc-login-title h3 {font-size:18px; font-family: "microsoft yahei"; font-weight:700; line-height: 20px; padding:15px 0 25px 25px; color: #555;}
-.nc-login-content { background:#F9F9F9; padding: 0 20px; border: #D8D8D8 solid; border-width: 0 1px 0 1px; overflow:hidden; zoom:1;width:358px;}
-.nc-login-content dl { width: 100%; float:left; clear: both; padding: 0;margin-top:10px;}
+.nc-login-content { background:#F9F9F9; padding: 0 20px; border: #D8D8D8 solid; border-width: 0 1px 0 1px; overflow:hidden; zoom:1;width:358px;height: 330px;}
+.nc-login-content dl { width: 100%; float:left; clear: both; padding: 0;margin-top:5px;}
 .nc-login-content dt { font-size:14px; line-height: 28px; color: #777; text-align: right; width: 22%; float:left; }
 .nc-login-content dd { text-align:left; width:75%; float:right;}
+.nc-login-content .regist-dl{ margin-top:20px;}
+.nc-login-content .regist a{ font-weight:600; color:#e6387f; margin-right:40px;float:right;}
 
-
-.leftpic{overflow:hidden;position:absolute;margin-top:-15px;}
-.nc-login-content dd label { clear:both; float:left; line-height: 24px; height:24px; width:200px; margin:0;}
+.leftpic{overflow:hidden;position:absolute;}
+.nc-login-content dd label { clear:both; float:left; line-height: 24px; height:24px; width:230px; margin:0;}
 .nc-login-content dd .text{ font-family: Tahoma; width: 220px; height: 20px; line-height: 20px; background-color:#FFF; padding: 3px!important; border: solid 1px; border-color: #BBB;}
 .nc-login-content dd .text:focus{ background-color:#FFF; border-color: #EFA100; outline: 2px solid #FFDC97;}
 .nc-login-content dd .c_code_msg{width:100px;height:27px;border-style:none;padding:0 4px;border:1px solid #C8C8C8;margin-right:10px;outline:none;margin-right:10px;}
@@ -86,23 +87,20 @@ label.error { color: #F30;}
 .nc-login-content dl  .email-close-eye{margin-left:13px;}
 .nc-login-content dl  .username-open-eye{margin-left:13px;}
 .nc-login-content dl  .email-open-eye{margin-left:13px;}
-.nc-login-content .submit:hover{ background: url(../images/login.png) no-repeat scroll 0px -90px; }
+.nc-login-content .submit:hover{  background: #FF6600;}
 
 .nc-login-title div{display:inline;line-height:60px;font-size:17px;padding:4px 15px;}
 .nc-login-title a{color: #777;font-weight:600;text-decoration:none;}
 .nc-login-title a:hover{color: #e6387f;}
 .nc-login-title .one{color: #e6387f;}
 
-
-
-.nc-login-layout a.forget { font-weight:700; color:#06C; vertical-align: middle; margin-right:10px;float:right;}
+.nc-login-layout a.forget { font-weight:600; color:#e6387f; vertical-align: middle; margin-right:20px;float:right;}
 .forget1{font-weight:700; color:#c53801; vertical-align: middle; margin-right:10px;}
 .nc-login-layout a.register { font-weight: 600; line-height: 26px; color: #555; background: #FFF url(../images/login.png) no-repeat scroll -98px -56px; text-align: center; display:inline-block; width: 50px; height: 26px; margin: 0 6px;}
 .nc-login-layout a:hover.register {background-position: -98px -82px; color: #000;text-decoration: none;}
 .nc-login-layout a.agreement { color: #c53801; font-weight:600; }
 .nc-login-layout a.agreement:hover { text-decoration: underline; }
 
-.nc-login-other { border-top: dashed 1px #D8D8D8; padding:10px 0px 20px 28%;}
 .nc-login-other p { line-height: 20px; color: #777;}
 .nc-login-other a { text-decoration: none; display: inline-block; background: url(../images/login.png) no-repeat scroll; vertical-align: middle; margin-top: 10px; height: 28px;}
 .nc-login-other a.qq { background-position: -88px 0px; width: 78px;}
@@ -112,13 +110,13 @@ label.error { color: #F30;}
 
 .nc-login-bottom { clear: both; background: url(../images/login.png) no-repeat scroll 0px -124px; width: 400px; height: 40px;}
 
-.nc-login-layout .left-pic { background-color: #FFF; width: 450px; height: 350px; float:left; position: relative; z-index:1;}
+.nc-login-layout .left-pic { background-color: #FFF; width: 450px; height: 350px; float:left; position: relative; z-index:1; margin-right: 20px;}
 .nc-login-layout .left-pic img { width: 450px; height: 350px; position: absolute; z-index:1; top:0; left:0 }
 .nc-login-layout .left-pic span { position:absolute; z-index: 2; top:220px; left:100px; line-height:32px; font-size: 24px; font-family:"microsoft yahei"; width: 250px; text-align: center; }
 .nc-login-layout .left-pic p a { color: #FFF; position:absolute; z-index: 2; top:270px; left: 165px; line-height:28px; font-size: 12px; width: 120px; text-align: center; }
-.nc-login-left { line-height: 22px; color: #626A73; display: inline; width: 450px; float: left; margin: 10px 0;}
+.nc-login-left { line-height: 22px; color: #626A73; display: inline; width: 450px; float: left; margin-left:20px;}
 .nc-login-left h3 { font-size:18px; font-family: "microsoft yahei"; font-weight:700; color: #555; line-height: 30px; margin-top: 4px; margin-bottom: 6px;}
-.nc-login-left ol { width: 420px; margin-top: 10px;  border-bottom: dashed 1px #E7E7E7;}
+.nc-login-left ol { width: 420px; border-bottom: dashed 1px #E7E7E7;}
 .nc-login-left ol li {float:left; font-family: "microsoft yahei"; font-size: 14px; line-height: 48px; display: block; vertical-align: middle; width: 100px; height:32px;  padding: 0 0 12px 0; margin: 0 0 5px 120px; overflow: hidden;}
 .nc-login-left ol li i { display: inline-block; background: url(../images/login.png) no-repeat scroll; vertical-align: middle; width: 48px; height: 48px; margin-right:10px;}
 .nc-login-left ol li.ico01 i { background-position: -256px 0;}

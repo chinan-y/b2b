@@ -52,7 +52,7 @@
         &nbsp;<?php if ($order_info['order_from'] == 2){?><i class="icon-mobile-phone"></i><?php }?></span><span>下单时间：<?php echo date("Y-m-d H:i",$order_info['add_time']);?></span><span><a href="<?php echo urlShop('show_store','index',array('store_id'=>$order_info['store_id']));?>" title="<?php echo $order_info['store_name'];?>"><?php echo $order_info['store_name'];?></a></span>
 
         <!-- QQ -->
-          <span member_id="<?php echo $order_info['extend_store']['member_id'];?>">
+          <span member_id="<?php echo $order_info['extend_store']['member_id'];?>" style="display:none;">
           <?php if(!empty($order_info['extend_store']['store_qq'])){?>
           <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $order_info['extend_store']['store_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $order_info['extend_store']['store_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $order_info['extend_store']['store_qq'];?>:52" style=" vertical-align: middle;"/></a>
           <?php }?>

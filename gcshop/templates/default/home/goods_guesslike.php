@@ -43,7 +43,7 @@
 .jcarousel-next-disabled-horizontal:active { background-position: -240px -76px; cursor: default;}
 
 </style>
-<div class="goods-guess-like">
+<div class="goods-guess-like" style="display:none;">
   <div class="title">猜您喜欢的宝贝</div>
   <div class="content">
     <?php if(!empty($output['goodslist']) && is_array($output['goodslist'])){ ?>

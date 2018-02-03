@@ -37,30 +37,6 @@
   </div>
 </div>-->
 
-
-
-
-
-
-<!--//zmr>>>-->
-<div class="ncs-sidebar-container">
-        <div class="title">
-          <h4><?php echo $lang['nc_store_qrcode'] ?></h4>
-        </div>
-        <div class="content">
-         <div class="ncs-goods-code">
-            <p><img src="<?php echo storeQRCode($output['store_info']['store_id']);?>"  title="<?php echo urlShop('show_store', 'goods_all', array('store_id' => $output['store_info']['store_id'],'ref' => $_SESSION['member_id']));?>"></p>
-            <span class="ncs-goods-code-note"><i></i><?php echo $lang['nc_store_sacn_qrcode'] ?></span> </div>
-        </div>
-      </div>
-      
-<!--//mmr<<<-->
-
-
-
-
-
-
 <div class="ncs-sidebar-container ncs-top-bar">
   <div class="title">
     <h4><?php echo $lang['nc_goods_rankings'];?></h4>
@@ -87,9 +63,6 @@
                <!--<p><span class="thumb size100"><i></i><img src="<?php echo thumb($val, 240);?>" onload="javascript:DrawImage(this,100,100);" title="<?php echo $val['goods_name']?>"><big></big><small></small></span></p>-->
                </dd>		
 			<?php } ?>
-			<?php if($val['store_from']!=6){ ?>
-            <dd class="price pngFix"><?php echo $lang['currency'].$val['goods_promotion_price']?><strong><?php echo $lang['currency'].$val['goods_marketprice']?></strong></dd>
-            <?php } ?>
 			<dd class="selled pngFix" style="display:none"><?php echo $lang['nc_sell_out'];?><strong><?php echo $val['goods_salenum'];?></strong><?php echo $lang['nc_bi'];?></dd>
           </dl>
         </li>
@@ -114,9 +87,6 @@
 				<!--<p><span class="thumb size100"><i></i><img src="<?php echo thumb($val, 240);?>" onload="javascript:DrawImage(this,100,100);" title="<?php echo $val['goods_name']?>"><big></big><small></small></span></p>-->
 				</dd>
 			<?php } ?>
-			<?php if($val['store_from']!=6){ ?>
-            <dd class="price pngFix"><?php echo $lang['currency'].$val['goods_promotion_price']?><strong><?php echo $lang['currency'].$val['goods_marketprice']?></strong></dd>
-            <?php } ?>
 			<dd class="collection pngFix"><?php echo $lang['nc_collection_popularity'].$lang['nc_colon'];?><strong><?php echo $val['goods_collect'];?></strong></dd>
           </dl>
         </li>
@@ -124,7 +94,6 @@
       </ol>
       <?php }?>
     </div>
-    <p><a href="<?php echo urlShop('show_store', 'goods_all', array('store_id' => $output['store_info']['store_id'],'ref' => $_SESSION['member_id']));?>"><?php echo $lang['nc_look_more_store_goods'];?></a></p>
   </div>
 </div>
 <script type="text/javascript">

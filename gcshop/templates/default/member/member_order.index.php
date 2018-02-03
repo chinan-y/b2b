@@ -77,18 +77,8 @@
 
           <!-- store_name -->
           <span><a href="<?php echo urlShop('show_store','index',array('store_id'=>$order_info['store_id']), $order_info['extend_store']['store_domain']);?>" title="<?php echo $order_info['store_name'];?>"><?php echo $order_info['store_name']; ?></a></span>
-
-          <!-- QQ -->
-          <span member_id="<?php echo $order_info['extend_store']['member_id'];?>">
-          <?php if(!empty($order_info['extend_store']['store_qq'])){?>
-          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $order_info['extend_store']['store_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $order_info['extend_store']['store_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $order_info['extend_store']['store_qq'];?>:52" style=" vertical-align: middle;"/></a>
-          <?php }?>
-
-          <!-- wang wang -->
-          <?php if(!empty($order_info['extend_store']['store_ww'])){?>
-          <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<?php echo $order_info['extend_store']['store_ww'];?>&site=cntaobao&s=2&charset=<?php echo CHARSET;?>"  class="vm" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid=<?php echo $order_info['extend_store']['store_ww'];?>&site=cntaobao&s=2&charset=<?php echo CHARSET;?>" alt="Wang Wang"  style=" vertical-align: middle;"/></a>
-          <?php }?>
-          </span>  <?php if($order_info['goods_count'] == 1){ ?><a href="javascript:void(0)" class="share-goods" nc_type="sharegoods" data-param='{"gid":"<?php echo $order_info['goods_list'][0]['goods_id'];?>"}'><i class="icon-share"></i><?php echo $lang['member_order_snsshare'];?></a><?php } ?>
+ 
+		  <?php if($order_info['goods_count'] == 1){ ?><a href="javascript:void(0)" class="share-goods" nc_type="sharegoods" data-param='{"gid":"<?php echo $order_info['goods_list'][0]['goods_id'];?>"}'><i class="icon-share"></i><?php echo $lang['member_order_snsshare'];?></a><?php } ?>
 
           <!-- 放入回收站 -->
 

@@ -264,7 +264,7 @@
     <tfoot>
       <tr>
         <td colspan="20">
-			<div class="ncc-all-account"><em style="float: left;font-size:14px;"><a href="https://www.qqbsmall.com/gcshop/index.php?gct=pointvoucher&gp=index" target="_blank">兑换代金券</a></em>应付总额：<em id="orderTotal"></em><?php echo $lang['currency_zh'];?></div>
+			<div class="ncc-all-account">应付金额：<em id="orderTotal"></em><?php echo $lang['currency_zh'];?></div>
 		</td>
       </tr>
     </tfoot>

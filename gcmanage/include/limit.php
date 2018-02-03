@@ -7,7 +7,7 @@ defined('GcWebShop') or exit('Access Invalid!');
 $_limit =  array(
 	array('name'=>$lang['nc_config'], 'child'=>array(
 		array('name'=>$lang['nc_web_set'], 'gp'=>null, 'gct'=>'setting'),
-		array('name'=>$lang['nc_web_account_syn'], 'gp'=>null, 'gct'=>'account'),
+		// array('name'=>$lang['nc_web_account_syn'], 'gp'=>null, 'gct'=>'account'),
 		array('name'=>$lang['nc_upload_set'], 'gp'=>null, 'gct'=>'upload'),
 		array('name'=>$lang['nc_seo_set'], 'gp'=>'seo', 'gct'=>'setting'),
 		array('name'=>$lang['nc_pay_method'], 'gp'=>null, 'gct'=>'payment'),
@@ -100,7 +100,7 @@ $_limit =  array(
 	    array('name'=>$lang['nc_logistics_station'], 'gp'=>null, 'gct'=>'delivery'),
 
 		)),
-	array('name'=>$lang['nc_stat'], 'child'=>array(
+	/*array('name'=>$lang['nc_stat'], 'child'=>array(
 	    array('name'=>$lang['nc_statgeneral'], 'gp'=>null, 'gct'=>'stat_general'),
 	    array('name'=>$lang['nc_statindustry'], 'gp'=>null, 'gct'=>'stat_industry'),
 		array('name'=>$lang['nc_statmember'], 'gp'=>null, 'gct'=>'stat_member'),
@@ -131,9 +131,9 @@ $_limit =  array(
 	array('name'=>'对象存储', 'child'=>array(
 		array('name'=>'阿里云参数', 'gp'=>null, 'gct'=>'aliyunset'),
 		array('name'=>'对象存储', 'gp'=>null, 'gct'=>'oss_aliyun'),
-		)),	
+		)),	*/
 );
-if (C('mess_isuse') !== NULL){
+/*if (C('mess_isuse') !== NULL){
 	$_limit[] = array('name'=>$lang['nc_custom_api'], 'child'=>array(
 		array('name'=>$lang['nc_custom_basic_set'], 'gp'=>NULL, 'gct'=>'mess'),
 		array('name'=>$lang['nc_custom_goods_audit'], 'gp'=>NULL, 'gct'=>'mess_sku'),
@@ -202,7 +202,7 @@ if (C('circle_isuse') !== NULL){
 		array('name'=>$lang['nc_circle_informnamage'], 'gp'=>null, 'gct'=>'circle_inform'),
 		array('name'=>$lang['nc_circle_advmanage'],'gp'=>'adv_manage', 'gct'=>'circle_setting')
 		));
-}
+}*/
 
 
 return $_limit;

@@ -76,7 +76,7 @@
               </ul>
             </div>
             </a>
-            <div class="msg"> <span member_id="<?php echo $output['order_info']['extend_store']['member_id'];?>"></span>
+            <div class="msg" style="display:none;"> <span member_id="<?php echo $output['order_info']['extend_store']['member_id'];?>"></span>
               <?php if(!empty($output['order_info']['extend_store']['store_qq'])){?>
               <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $output['order_info']['extend_store']['store_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $order_info['extend_store']['store_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $output['order_info']['extend_store']['store_qq'];?>:52" style=" vertical-align: middle;"/></a>
               <?php }?>

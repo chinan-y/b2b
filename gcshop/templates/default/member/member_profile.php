@@ -147,7 +147,7 @@
             </select>
             </span> </dd>
         </dl>
-        <dl>
+        <dl style="display:none;">
           <dt><?php echo $lang['home_member_wangwang'].$lang['nc_colon'];?></dt>
           <dd><span class="w400">
             <input name="member_ww" type="text" class="text" maxlength="50" id="member_ww" value="<?php echo $output['member_info']['member_ww'];?>" />

@@ -8,7 +8,7 @@
     <tbody>
       <tr>
         <td class="w12"></td>
-        <td>欢迎使用，技术支持请联系。<a href="#" title="技术支持" target="_blank">E-mail：674297688@qq.com</a></td>
+        <td>欢迎使用，技术支持请联系。<a href="JavaScript:void(0);" title="技术支持" target="_blank">E-mail：269085923@qq.com</a></td>
       </tr>
     </tbody><tfoot>
       <tr class="tfoot">

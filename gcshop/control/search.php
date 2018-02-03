@@ -171,6 +171,31 @@ class searchControl extends BaseHomeControl {
                     }
                 }
 				
+				$member = Model('member')->getMemberInfo(array('member_id'=>$_SESSION['member_id']), 'member_examine,member_company_name');
+				if(!$_SESSION['member_id']){
+					$goods_list[$key]['goods_href'] = urlShop('login', 'index');
+					$goods_list[$key]['show_note'] = '登录后查看价格';
+					$goods_list[$key]['add_cart'] = '登录后查看';
+					$goods_list[$key]['show_price'] = 1;
+				}else if($member['member_examine'] ==0 && !$member['member_company_name']){
+					$goods_list[$key]['goods_href'] = urlShop('login', 'member_verify');
+					$goods_list[$key]['show_note'] = '认证后查看价格';
+					$goods_list[$key]['add_cart'] = '认证后查看';
+					$goods_list[$key]['show_price'] = 1;
+				}else if($member['member_examine'] ==0 && $member['member_company_name']){
+					$goods_list[$key]['goods_href'] = urlShop('login', 'await_verify');
+					$goods_list[$key]['show_note'] = '审核后查看价格';
+					$goods_list[$key]['add_cart'] = '审核后查看';
+					$goods_list[$key]['show_price'] = 1;
+				}else{
+					$goods_list[$key]['goods_href'] = urlShop('goods','index',array('goods_id'=>$value['goods_id']));
+				}
+				
+				$rule = Model()->table('goods_price_rule')->where(array('goods_id'=>$value['goods_id']))->find();
+				if($rule && $_SESSION['member_id'] && $member['member_company_name'] && $member['member_examine']){
+					$goods_list[$key]['rule_info'] = $rule;
+				}
+				
                 // 店铺的开店会员编号
                 $store_id = $value['store_id'];
                 $goods_list[$key]['member_id'] = $store_list[$store_id]['member_id'];

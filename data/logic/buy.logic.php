@@ -706,10 +706,10 @@ class buyLogic {
         foreach ($store_cart_list as $store_id => $goods_list) {
     		
 			//满及送优惠(统一版的订单商品价格需要减去满及送的价格)
-            $mansong_total = !empty(floor($store_mansong_rule_list[$store_id]['discount'])) ? floor($store_mansong_rule_list[$store_id]['discount']) : 0;
+            $mansong_total = !empty($store_mansong_rule_list[$store_id]['discount']) ? $store_mansong_rule_list[$store_id]['discount'] : 0;
 			
 			//使用代金券的金额(统一版的订单商品价格需要加上代金券的金额)
-            $voucher_total = !empty(floor($input_voucher_list[$store_id]['voucher_price'])) ? floor($input_voucher_list[$store_id]['voucher_price']) : 0;
+            $voucher_total = !empty($input_voucher_list[$store_id]['voucher_price']) ? $input_voucher_list[$store_id]['voucher_price'] : 0;
 			
 			//所有优惠(包括代金券 满及送优惠，计算返利使用)
 			$promotion_total = !empty($store_promotion_total[$store_id]) ? $store_promotion_total[$store_id] : 0;

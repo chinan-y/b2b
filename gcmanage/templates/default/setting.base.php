@@ -36,8 +36,8 @@
           <td class="vatop tips"><span class="vatop rowform">默认网站LOGO,通用头部显示，最佳显示尺寸为240*60像素</span></td>
         </tr>
         
-        <!--//zmr>v30-->
-         <tr>
+        <!--
+        <tr>
           <td colspan="2" class="required"><label for="site_mobile_logo">手机网站LOGO:</label></td>
         </tr>
         <tr class="noborder">
@@ -48,7 +48,7 @@
             </span></td>
           <td class="vatop tips"><span class="vatop rowform">默认手机网站LOGO,通用头部显示，最佳显示尺寸为116*43像素</span></td>
         </tr>
-        
+        -->
         
         <tr>
           <td colspan="2" class="required"><label for="member_logo"><?php echo $lang['member_logo'];?>:</label></td>
@@ -119,7 +119,7 @@
         </tr>
 		<!-- 400 电话 -->	
 	
-        <!--平台付款账号，前台暂时无调用-->
+        <!--平台付款账号，前台暂时无调用
         <tr>
           <td colspan="2" class="required"><label for="site_bank_account"><?php echo $lang['site_bank_account'];?>:</label></td>
         </tr>
@@ -127,7 +127,8 @@
           <td class="vatop rowform"><input id="site_bank_account" name="site_bank_account" value="<?php echo $output['list_setting']['site_bank_account'];?>" class="txt" type="text" /></td>
           <td class="vatop tips"><span class="vatop rowform"><?php echo $lang['site_bank_account_notice'];?></span></td>
         </tr>
-
+		-->
+		
         <tr>
           <td colspan="2" class="required"><label for="site_email"><?php echo $lang['site_email'];?>:</label></td>
         </tr>
@@ -201,6 +202,7 @@
           <td class="vatop tips"><span class="vatop rowform"><?php echo $lang['site_state_notice'];?></span></td>
         </tr>
 		
+		<!--
 		<tr>
           <td colspan="2" class="required"><?php echo $lang['site_state1'];?>:</td>
         </tr>
@@ -211,6 +213,7 @@
             <input id="site_buy0" name="site_buy" <?php if($output['list_setting']['site_buy'] == '0'){ ?>checked="checked"<?php } ?> value="0" type="radio"></td>
           <td class="vatop tips"><span class="vatop rowform"><?php echo $lang['site_state_notice1'];?></span></td>
         </tr>
+		-->
 		
         <tr>
           <td colspan="2" class="required"><label for="closed_reason"><?php echo $lang['closed_reason'];?>:</label></td>

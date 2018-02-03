@@ -223,11 +223,10 @@ i[class*="icon-mobile-phone"]{font-size: 22px;vertical-align:middle;}
 .set-container .menu-list dl { font-size: 12px; vertical-align: top; letter-spacing: normal; word-spacing: normal; display: inline-block; *display: inline; width: 22%; margin-left: 3%; *zoom: 1;}
 .set-container .menu-list dt { font-weight: 600; color: #333; height: 20px; padding: 4px 0;}
 .set-container .menu-list dd { line-height: 20px; height: 20px; padding: 3px 0;}
-.set-container .menu-list dd:nth-child(7) { margin-top: 7px;}
 .set-container .menu-list dd.checked { color: #B22D00; font-weight: 600;}
 .set-container .menu-list dd .checkbox { vertical-align: middle; margin-right: 6px;}
 .set-container .bottom { width: 98%; padding: 10px 0 5px 0; margin: 10px auto 0 auto; border-top: solid 1px #F5F5F5;}
-.set-container .bottom .setting { color: #FFF; background-color: #E43E41; width: 46px; height: 26px; margin-left: 15px; border: none; border-radius: 3px; cursor: pointer;}
+.set-container .bottom .setting { color: #FFF; background-color: #E43E41;height: 26px; margin-left: 15px; border: none; border-radius: 3px; cursor: pointer;}
 .set-container .bottom .cancel { color: #333; line-height: 24px; background-color: #F6F6F6; vertical-align: top; text-align: center; display: inline-block; *display: inline; width: 44px; height: 24px; margin-left: 5px; border: solid 1px #DDD; border-radius: 3px; *zoom: 1; cursor: pointer;}
 .set-container .bottom a:hover { text-decoration: none;}
 
@@ -260,7 +259,6 @@ i[class*="icon-mobile-phone"]{font-size: 22px;vertical-align:middle;}
 .ncm-sidebar li.side-menu:first-child li a:hover { background: #F0F0F0;}
 .ncm-sidebar li.side-menu:first-child .selected a { color: #000; background: #E7E7E7;}
 .ncm-sidebar li.side-menu:last-child { border-bottom: 0;}
-.ncm-sidebar li.side-menu:first-child ul li:nth-child(6) { margin-top: 8px; padding-top: 8px; border-top: solid 1px #EEE;}
 
 .ncm-quick-menu { background: #FF966E !important; margin-top: 0!important; border: none;}
 .ncm-quick-menu li.side-menu-quick { background: #FF966E; width: 100%; margin: 0; overflow: hidden;}

@@ -115,16 +115,17 @@ body { background-color: #FEFEFE; min-width: 1200px;}
 .squares .goods-promotion { font: 700 12px/15px "microsoft yahei"; color: #FFF; background: url(../images/2014shop_background_img.png) no-repeat 0 -100px; text-align: center; width: 30px; height: 30px; padding: 20px 9px 15px 9px; position: absolute; z-index: 2; top: 5px; right: 5px;}
 .squares .goods-sold {background: url(../images/sold.png) no-repeat; text-align: center; width: 100px; height: 80px; position: absolute; z-index: 2; top: 15px; right: 15px;}
 .squares .goods-new {background: #fefefe; width: 60px;height: 22px;text-align: center;line-height: 20px;font-size: 14px; font-weight:bold;position: absolute; z-index: 2; top: 0; right: 0;color: #e6387f; }
-.squares .goods-price { font: 12px/20px Arial; color: #C00; background-color: #FFF; white-space: nowrap; display: block; height: 20px; padding: 5px 10px; overflow: hidden;}
+.squares .goods-price { font: 12px/20px Arial; color: #C00; background:rgba(255,255,255,0.9); white-space: nowrap; display: block; height: 20px; padding: 12px 10px 0px 10px; overflow: hidden;}
 .squares .goods-price em.sale-price { font-size: 16px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; max-width:70px; float: left; overflow: hidden;}
 .squares .goods-price em.market-price { color: #999; text-decoration: line-through; text-overflow: ellipsis; white-space: nowrap; max-width:50px; float: left; margin-left: 10px; overflow: hidden;}
+.squares .goods-price em.show_note { color: #999; float: left;}
 /* 评价评分样式 */
 .squares .goods-price .raty { font-size: 0; line-height: 0; *word-spacing:-1px/*IE6、7*/; float: right;}
 .squares .goods-price .raty img { letter-spacing: normal; word-spacing: normal; display: inline-block; width: 16px; height: 16px; margin: 2px 0;}
 
-.squares .goods-name { font-size: 12px; line-height: 16px; color: #999; background-color: #FFF; height: 32px; display: block; padding: 0 10px; overflow: hidden;}
+.squares .goods-name { font-size: 12px; line-height: 16px; color: #999; background:rgba(255,255,255,0.9); height: 32px; display: block; padding: 0 10px; overflow: hidden;}
 .squares .goods-name em { color: #e6387f;}
-.squares .goods-sub { font-size: 0; *word-spacing: -1px/*IE6、7*/;  height: 24px; padding: 5px 10px 10px; }
+.squares .goods-sub { font-size: 0; *word-spacing: -1px/*IE6、7*/;  height: 24px; padding: 5px 10px 10px;background:rgba(255,255,255,0.9); }
 .squares .goods-sub span { font-size: 12px; font-family: "microsoft yahei"; color: #FFF; line-height: 24px; vertical-align: middle; letter-spacing: normal; word-spacing: normal; text-align: center; display: inline-block; *display: inline/*IE7*/; height: 24px; padding: 0 4px; border-radius: 2px; *zoom:1; cursor: pointer;}
 .squares .goods-sub span.virtual { background-color: #3598DC;}
 .squares .goods-sub span.fcode { background-color: #9C59B8;}
@@ -148,14 +149,14 @@ body { background-color: #FEFEFE; min-width: 1200px;}
 .squares  .stores{text-align: center; }
 .squares .add-cart { display: block;}
 .squares .add-carts{ display: block;margin-top:10px;}
-.squares .add-cart a { font-weight: 600; font-size: 14px; line-height: 20px; color: #F5CDBF; text-shadow: -2px 0 0 rgba(0,0,0,0.05); background-color: #e6387f; text-align: center; display: block; height: 20px; padding: 8px 0;}
+.squares .add-cart a { font-weight: 600; font-size: 15px; line-height: 30px; color: #F5CDBF; text-shadow: -2px 0 0 rgba(0,0,0,0.05); background-color: #e6387f; text-align: center; display: block; height: 30px; padding: 8px 0;}
 .squares  .join{font-weight: 600; font-size: 15px; line-height: 20px; color:  #e6387f; text-shadow: -2px 0 0 rgba(0,0,0,0.05);  text-align: center; display: block; height: 20px; padding: 8px 0;}
 .squares .add-cart a i { margin-right: 4px;}
 .squares .add-cart a:hover { color: #FFF; text-decoration: none;}
 .squares .add-carts .a { font-weight: 600; font-size: 14px; line-height: 20px; color: #F5CDBF; text-shadow: -2px 0 0 rgba(0,0,0,0.05); background-color: #e6387f; text-align: center; display: block; height: 20px; padding: 8px 0;}
 .squares .add-carts a i { margin-right: 4px;}
 .squares .add-carts a:hover { color: #FFF; text-decoration: none;}
-.squares li:hover .goods-content { height: 394px; margin: 0; border: solid 4px #e6387f; border-radius: 0; box-shadow: 0px 4px 4px rgba(102,102,102,0.65);}
+.squares li:hover .goods-content { height: 367px; margin: 0; border: solid 4px #e6387f; border-radius: 0; box-shadow: 0px 4px 4px rgba(102,102,102,0.65);}
 
 
 .squares .list_pic dl dd.promotion-price { width:65px; }

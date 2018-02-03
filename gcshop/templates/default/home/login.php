@@ -23,10 +23,9 @@
 .nc-login-other a:hover.wechat {
     background-position: -1px -28px;
 }
+#demo-form-site{height:290px;}
 </style>
-      <dl class="mt">
-        <dd><?php echo $lang['login_index_regist_now_1'];?><a title="" href="index.php?gct=login&gp=register&ref_url=<?php echo urlencode($output['ref_url']);?>" class="register"><?php echo $lang['login_index_regist_now_2'];?></a></dd>
-      </dl>
+      
 <div class="nc-login-layout">
   <div class="left-pic"><img src="<?php echo $output['lpic'];?>"  border="0"></div>
   <div class="nc-login">
@@ -41,14 +40,14 @@
         <dl>
           <dt><?php echo $lang['login_index_username'];?></dt>
           <dd style="min-height:54px;">
-            <input type="text" class="text" autocomplete="off"  name="user_name" id="user_name" placeholder="<?php echo $lang['login_index_username_content']?>" autofocus >
+            <input type="text" class="text" autocomplete="off"  name="user_name" id="user_name" maxlength="11" placeholder="<?php echo $lang['login_index_username_content']?>" >
             <label></label>
           </dd>
         </dl>
         <dl>
           <dt><?php echo $lang['login_index_password'];?> </dt>
           <dd style="min-height:54px;">
-            <input type="password" class="text" name="password" autocomplete="off"  id="password" placeholder="<?php echo $lang['login_index_password_content']?>">
+            <input type="password" class="text" name="password" autocomplete="off"  id="password" maxlength="20" placeholder="<?php echo $lang['login_index_password_content']?>">
             <label></label>
           </dd>
         </dl>
@@ -66,10 +65,12 @@
           <dt>&nbsp;</dt>
           <dd>
             <input type="submit" class="submit" value="<?php echo $lang['login_index_login'];?>">
-            <a class="forget" href="index.php?gct=login&gp=forget_password"><?php echo $lang['login_index_forget_password'];?></a>
-            <input type="hidden" value="<?php echo $_GET['ref_url']?>" name="ref_url">
+            <input type="hidden" value="" name="ref_url">
           </dd>
         </dl>
+		<dl class="regist-dl">
+		  <dd class="regist"><a href="index.php?gct=login&gp=register&ref_url=<?php echo urlencode($output['ref_url']);?>" class=""><?php echo $lang['login_index_regist_now_2'];?></a><a class="forget" href="index.php?gct=login&gp=forget_password"><?php echo $lang['login_index_forget_password'];?></a></dd>
+		</dl>
       </form>
       <dl>
         <dd class="nc-login-other">

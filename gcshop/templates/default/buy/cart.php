@@ -20,7 +20,7 @@
   <div class="ncc-title">
     
 	<?php if ($_SESSION['member_id']){?> 
-	<p class="ncc-p"><a target="_blank" href="http://gss.mof.gov.cn/zhengwuxinxi/zhengcefabu/201603/t20160324_1922968.html"><?php echo $lang['cart_index_import_duty_notice'];?></a><?php echo $lang['cart_index_customs_notice'];?></p>
+	<p class="ncc-p" style="display:none;"><a target="_blank" href="http://gss.mof.gov.cn/zhengwuxinxi/zhengcefabu/201603/t20160324_1922968.html"><?php echo $lang['cart_index_import_duty_notice'];?></a><?php echo $lang['cart_index_customs_notice'];?></p>
 	<?php }else {?>
     <div class="ncc-cookie">
 		<img src="/gcshop/templates/default/images/xx.jpg" />
@@ -384,7 +384,7 @@ $(function(){
 	  
       <tfoot>
         <tr>
-          <td colspan="20"><div class="ncc-all-account"><em style="float: left;font-size:14px;"><a href="https://www.qqbsmall.com/gcshop/index.php?gct=pointvoucher&gp=index" target="_blank">兑换代金券</a></em><?php echo $lang['cart_index_goods_sumary'];?><span style="font-size:12px; color:#333;">（不含运费和税金）</span>：<em id="cartTotal"><?php echo $output['cart_totals']; ?></em><?php echo $lang['currency_zh'];?></div></td>
+          <td colspan="20"><div class="ncc-all-account"><?php echo $lang['cart_index_goods_sumary'];?><span style="font-size:12px; color:#333;"></span>：<em id="cartTotal"><?php echo $output['cart_totals']; ?></em><?php echo $lang['currency_zh'];?></div></td>
         </tr>
       </tfoot>
     </table>

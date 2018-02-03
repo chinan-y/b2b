@@ -1,6 +1,6 @@
 <?php defined('GcWebShop') or exit('Access Invalid!');?>
 
-  <div id="friendsShare" class="normal">
+  <!--div id="friendsShare" class="normal">
     <div class="outline">
       <div class="title">
         <h3>好友动态</h3>
@@ -63,7 +63,7 @@
       </dl>
       <?php } ?>
     </div>
-  </div>
+  </div-->
   <div id="browseMark" class="normal">
     <div class="outline">
       <div class="title">
@@ -77,7 +77,6 @@
                 <div class="ncm-goods-pic"><a href="<?php echo $goods_info['url'];?>" target="_blank"><img alt="<?php echo $goods_info['goods_name'];?>" src="<?php echo $goods_info['goods_image'];?>"></a></div>
                 <dl>
                   <dt class="ncm-goods-name"><a href="<?php echo $goods_info['url'];?>" title="<?php echo $goods_info['goods_name'];?>" target="_blank"><?php echo $goods_info['goods_name'];?></a></dt>
-                  <dd class="ncm-goods-price"><em>￥<?php echo $goods_info['goods_promotion_price'];?></em></dd>
                 </dl>
               </li>
             <?php } ?>

@@ -677,11 +677,11 @@ td.trigger i:hover { color: #27A9E3;}
 
 /*发布流程步骤提示*/
 .add-goods-step { font-size: 0; background-color: #FFF; *word-spacing:-1px/*IE6、7*/; margin: 0 0 20px 20px; }
-.add-goods-step li { color: #CCC; vertical-align: top; letter-spacing: normal; word-spacing: normal; display: inline-block; width:25%; *width: 24%; height: 50px; position: relative; z-index: 1;}
+.add-goods-step li { color: #CCC; vertical-align: top; letter-spacing: normal; word-spacing: normal; display: inline-block; width:20%; *width: 24%; height: 45px; position: relative; z-index: 1;}
 .add-goods-step li { *display: inline/*IE6,7*/; zoom: 1;}
-.add-goods-step li .icon { font-size: 32px; line-height: 50px; text-align: center; width: 40px; height: 50px; position: absolute; z-index: 1; top: 0; left: 5px;}
-.add-goods-step li h6 { font-size: 11px; line-height: 16px; position: absolute; z-index: 1; top: 0; left: 50px; -webkit-text-size-adjust:none;}
-.add-goods-step li h2 { font-size: 22px; font-weight: lighter; line-height: 30px; color: #CCC; position: absolute; z-index: 1; top: 16px; left: 50px;}
+.add-goods-step li .icon { font-size: 26px; line-height: 30px; text-align: center; width: 30px; height: 30px; position: absolute; z-index: 1; top: 0; left: 5px;}
+.add-goods-step li h6 { font-size: 11px; line-height: 0px; position: absolute; z-index: 1; top: 0; left: 38px; -webkit-text-size-adjust:none;}
+.add-goods-step li h2 { font-size: 18px; font-weight: lighter; color: #CCC; position: absolute; z-index: 1;  left: 38px;}
 .add-goods-step li .arrow { font-size: 20px; line-height: 50px; color: #CCC; text-align: center; width: 20px; height: 50px; position: absolute; z-index: 1; top: 0; right: 0;}
 .add-goods-step li.current,
 .add-goods-step li.current h2 { color: #27A9E3;}

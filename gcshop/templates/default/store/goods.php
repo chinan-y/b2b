@@ -6,6 +6,8 @@
 .ncs-goods-picture .levelD { cursor: url(<?php echo SHOP_TEMPLATES_URL;?>/images/gcshop/hand.cur), move\9;}
 
 #img{width: 120px;height: 120px;display: block;position: absolute;z-index: 999;}
+.rule-info .price{color:#D61F1F;font-weight:600;}
+.rule-info dd{ border: 1px solid #ccc;border-radius: 2px;padding: 2px !important;margin-right: 10px;}
 </style>
 
 
@@ -63,33 +65,63 @@
         <span class="yes"><strong><font  ><?php echo str_replace("\n", "<br>", $output['goods']['goods_jingle']);?></font></strong> <span>
 	  </div>
       <div class="ncs-meta">
-       
-	    <!-- S 商品参考价格 -->
-        <dl class="">
-		<dt><?php echo $lang['goods_index_goods_cost_price'];?><?php echo $lang['nc_colon'];?></dt>
-        <dd class="cost-price"><strong><?php echo $lang['currency'].$output['goods']['goods_marketprice'];?></strong></dd>
-        </dl>
-        <!-- E 商品参考价格 -->
-        <!-- S 商品发布价格 -->
-        <dl class="inline">
-          <dt><?php echo $lang['goods_index_goods_price'];?><?php echo $lang['nc_colon'];?></dt>
-          <dd class="price">
-            <?php if (isset($output['goods']['title']) && $output['goods']['title'] != '') {?>
-            <span class="tag"><?php echo $output['goods']['title'];?></span>
-            <?php }?>
-            <?php if (isset($output['goods']['promotion_price']) && !empty($output['goods']['promotion_price'])) {?>
-            <strong><?php echo $lang['currency'].$output['goods']['promotion_price'];?></strong><em>(原售价<?php echo $lang['nc_colon'];?><?php echo $lang['currency'].$output['goods']['goods_price'];?>)</em>
-            <?php } else {?>
-          	<strong><?php echo $lang['currency'].$output['goods']['goods_price'];?></strong><font style="font-size:12px; color:#FFF;"></font>&nbsp;			
+        <?php if ($output['goods']['show_price']) {?>
+			<dd class="show-price"><strong><?php echo $output['goods']['show_note'];?></strong></dd>
+		<?php } else {?>
+			<!-- S 商品参考价格 -->
+			<dl class="">
+			<dt><?php echo $lang['goods_index_goods_cost_price'];?><?php echo $lang['nc_colon'];?></dt>
+			<dd class="cost-price"><strong><?php echo $lang['currency'].$output['goods']['goods_marketprice'];?></strong></dd>
+			</dl>
+			<!-- E 商品参考价格 -->
+			<!-- S 商品发布价格 -->
+			<dl class="inline">
+			  <dt><?php echo 'XX售价';?><?php echo $lang['nc_colon'];?></dt>
+			  <dd class="price">
+				<?php if (isset($output['goods']['title']) && $output['goods']['title'] != '') {?>
+				<span class="tag"><?php echo $output['goods']['title'];?></span>
+				<?php }?>
+				<?php if (isset($output['goods']['promotion_price']) && !empty($output['goods']['promotion_price'])) {?>
+				<strong><?php echo $lang['currency'].$output['goods']['promotion_price'];?></strong><em>(原售价<?php echo $lang['nc_colon'];?><?php echo $lang['currency'].$output['goods']['goods_price'];?>)</em>
+				<?php } else {?>
+				<strong><?php echo $lang['currency'].$output['goods']['goods_price'];?></strong><font style="font-size:12px; color:#FFF;"></font>&nbsp;			
+				<?php }?>
+			  </dd>
+			</dl>
+			<?php if($output['goods']['rule'] && $output['goods']['rule']['price1']){?>
+			<dl class="rule-info">
+				<dt><?php echo '批量价';?><?php echo $lang['nc_colon'];?></dt>
+				<?php if($output['goods']['rule']['num1']){?>
+				  <dd class="cost-price">
+					<span><?php echo $output['goods']['rule']['num1'];?></span>件起 &nbsp;<span class="price"><?php echo $lang['currency'].$output['goods']['rule']['price1'];?></span>
+				  </dd>
+				<?php }?>
+				<?php if($output['goods']['rule']['num2']){?>
+				  <dd class="cost-price">
+					<span><?php echo $output['goods']['rule']['num2'];?></span>件起 &nbsp;<span class="price"><?php echo $lang['currency'].$output['goods']['rule']['price2'];?></span>
+				  </dd>
+				<?php }?>
+				<?php if($output['goods']['rule']['num3']){?>
+				  <dd class="cost-price">
+					<span><?php echo $output['goods']['rule']['num3'];?></span>件起 &nbsp;<span class="price"><?php echo $lang['currency'].$output['goods']['rule']['price3'];?></span>
+				  </dd>
+				<?php }?>
+				<?php if($output['goods']['rule']['num4']){?>
+				  <dd class="cost-price">
+					<span><?php echo $output['goods']['rule']['num4'];?></span>件起 &nbsp;<span class="price"><?php echo $lang['currency'].$output['goods']['rule']['price4'];?></span>
+				  </dd>
+				<?php }?>
+				<?php if($output['goods']['rule']['num5']){?>
+				  <dd class="cost-price">
+					<span><?php echo $output['goods']['rule']['num5'];?></span>件起 &nbsp;<span class="price"><?php echo $lang['currency'].$output['goods']['rule']['price5'];?></span>
+				  </dd>
+				<?php }?>
+			</dl>
 			<?php }?>
-          </dd>
-        </dl>
+		<?php }?>
         <!-- E 商品发布价格 -->
-		
-		
-		
 		<!-- S 手机购买 -->
-        <dl class="goods_code inline">
+        <dl class="goods_code inline" style="display:none;">
 			<dt ><?php echo $lang['goods_index_mobile_buy']	?><img  class="mobile_img" src="<?php echo SHOP_SITE_URL?>/templates/default/images/mobile.png"/><i><img  class="bottom_img" src="<?php echo SHOP_SITE_URL?>/templates/default/images/bottom.png"/><i></dt>
 				<img class="code_img" src="<?php echo goodsQRCode($output['goods']);?>"/>
         </dl>
@@ -128,11 +160,6 @@
         </dl>
         <?php }?>
         <!-- E 促销 -->
-		<?php if ($output['goods']['store_from'] == 1 || $output['goods']['store_from'] == 2) {?>
-			<div class="goods_waring">
-			在光彩全球购买的保税商品仅限个人使用，不得进行二次销售。<br />
-			</div>
-		<?php }?>
       </div>
       <div class="ncs-plus">
         <!-- S 物流运费  预售商品不显示物流 -->
@@ -315,7 +342,11 @@
           <?php //if ($output['goods']['promotion_type'] != groupbuy) {?>
           <!-- 加入购物车-->
 		  <?php if(C('pc_cart')){?>
-			<a href="javascript:void(0);" nctype="addcart_submit" class="addcart <?php if ($output['goods']['goods_state'] == 0 || $output['goods']['goods_storage'] <= 0) {?>no-addcart<?php }?>" title="<?php echo $lang['goods_index_add_to_cart'];?>"><i class="icon-shopping-cart"></i><?php echo $lang['goods_index_add_to_cart'];?></a>
+			<?php if($output['goods']['show_price']){?>
+			   <a href="<?php echo $output['goods']['goods_href'];?>"  class="addcart <?php if ($output['goods']['goods_state'] == 0 || $output['goods']['goods_storage'] <= 0) {?>no-addcart<?php }?>" ><?php echo $output['goods']['add_cart'];?></a>
+			<?php }else{ ?>
+			   <a href="javascript:void(0);" nctype="addcart_submit" class="addcart <?php if ($output['goods']['goods_state'] == 0 || $output['goods']['goods_storage'] <= 0) {?>no-addcart<?php }?>" title="<?php echo $lang['goods_index_add_to_cart'];?>"><i class="icon-shopping-cart"></i><?php echo $lang['goods_index_add_to_cart'];?></a>
+			<?php } ?>
           <?php } ?>
           <?php //} ?>
 		    <?php if (!empty($output['bundling_array'])) {?><a href="#buygroup" class="addcart">优惠套装</a><?php } ?>		
@@ -326,7 +357,7 @@
 		  <div class="ncs-handle">
 		  <a name="buygroup"></a>
 			<!-- S 对比 -->
-			<a href="javascript:void(0);" class="compare" nc_type="compare_<?php echo $output['goods']['goods_id'];?>" data-param='{"gid":"<?php echo $output['goods']['goods_id'];?>"}'><img class="compare_img" src="<?php echo SHOP_SITE_URL?>/templates/default/images/compare.png"/><?php echo $lang['goods_index_join_contrast'] ?></a>
+			<a href="javascript:void(0);" class="compare" nc_type="compare_<?php echo $output['goods']['goods_id'];?>" data-param='{"gid":"<?php echo $output['goods']['goods_id'];?>"}'><img class="compare_img" src="<?php echo SHOP_SITE_URL?>/templates/default/images/compare.png"/><?php echo '对比' ?></a>
 			
 			<!-- S 分享 -->
 			<a href="javascript:void(0);" class="share" nc_type="sharegoods" data-param='{"gid":"<?php echo $output['goods']['goods_id'];?>"}'><img class="share_img" src="<?php echo SHOP_SITE_URL?>/templates/default/images/share.png"/><i></i><?php echo $lang['goods_index_snsshare_goods'];?></a>
@@ -382,7 +413,7 @@
     </div>
 	
 	<?php if(!empty($output['goods_commend']) && is_array($output['goods_commend']) && count($output['goods_commend'])>1){?>
-      <div class="ncs-recommend">
+      <div class="ncs-recommend" style="display:none;">
         <div class="title">
           <h2><?php echo $lang['goods_index_goods_commend'];?></h2>
         </div>

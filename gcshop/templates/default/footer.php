@@ -56,7 +56,7 @@
   </div>
 </div>
 <div id="footer" class="wrapper">
-	<a href="http://www.customs.gov.cn" target ="_balnk"><img src="<?php echo UPLOAD_SITE_URL.DS.ATTACH_COMMON.DS."chinacustoms_logo.jpg"; ?>" width="150px"></a>
+	<!--a href="http://www.customs.gov.cn" target ="_balnk"><img src="<?php echo UPLOAD_SITE_URL.DS.ATTACH_COMMON.DS."chinacustoms_logo.jpg"; ?>" width="150px"></a>
 	<a href="http://www.aqsiq.gov.cn" target ="_balnk"><img src="<?php echo UPLOAD_SITE_URL.DS.ATTACH_COMMON.DS."chinaiq_logo.jpg"; ?>" width="150px"></a>
 	<a href="http://www.cqkjs.com" target ="_balnk"><img src="<?php echo UPLOAD_SITE_URL.DS.ATTACH_COMMON.DS."cqkj_logo.png"; ?>" width="150px"></a>
 	<a href="http://www.alipay.com" target ="_balnk"><img src="<?php echo UPLOAD_SITE_URL.DS.ATTACH_COMMON.DS."alipay_logo.jpg"; ?>" width="150px"></a>
@@ -77,9 +77,8 @@
     <?php }?>
     <?php }?>
     <?php }?>
-  </p>
+  </p-->
   <div class="shop_tlink">
-	   <em>友情链接：</em>
 		<?php $model_link = Model('link');
 		      $link_list = $model_link->getIndexLinkList(1000);
 			  if(is_array($link_list)) {
@@ -87,7 +86,7 @@
 				foreach($link_list as $val) {
 					if($val['link_pic'] == ''){
 			  ?>
-		<span><i></i><a href="<?php echo $val['link_url']; ?>" target="_blank" title="<?php echo $val['link_title']; ?>"><?php echo str_cut($val['link_title'],16);?></a></span>
+		<em>友情链接：</em><span><i></i><a href="<?php echo $val['link_url']; ?>" target="_blank" title="<?php echo $val['link_title']; ?>"><?php echo str_cut($val['link_title'],16);?></a></span>
 		<?php
 					}
 				}
@@ -99,15 +98,6 @@
   <?php echo html_entity_decode($output['setting_config']['statistics_code'],ENT_QUOTES); ?>
   <?php echo html_entity_decode($output['setting_config']['statistics_code_baidu'],ENT_QUOTES); ?>
 
-	<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1662233123&site=qq&menu=yes">
-    <img border="0" src="http://wpa.qq.com/pa?p=2:1662233123:41" alt="光彩全球报税服务售前" title="光彩全球报税服务售前"/>
-	</a>
-	<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1662233123&site=qq&menu=yes">
-    <img border="0" src="http://wpa.qq.com/pa?p=2:1662233123:41" alt="光彩全球报税服务售后" title="光彩全球报税服务售后"/>
-	</a>
-	<a href="http://webscan.360.cn/index/checkwebsite/url/www.qqbsmall.com">
-	<img border="0" src="http://img.webscan.360.cn/status/pai/hash/203b0e7381415007efddc6383b776889/?size=74x27"/>
-	</a>
   </div>
 <?php if (C('debug') == 1){?>
 <div id="think_page_trace" class="trace">

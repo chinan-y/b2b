@@ -16,6 +16,10 @@
 	right: 25%;
 	top: 0;
 }
+.lt-item{line-height: 20px;background:rgba(255,255,255,0.9);}
+.lt-item em{color:#666;font-weight:600;}
+.rule-num{margin-left:20px;}
+.rule-price{float: right;margin-right:20px;color:#666;font-weight:600;}
 </style>
 <div class="squares" nc_type="current_display_mode">
     <input type="hidden" id="lockcompare" value="unlock" />
@@ -58,7 +62,11 @@
             </ul>
           </div>
           <div class="goods-name"><a href="<?php echo urlShop('goods','index',array('goods_id'=>$value['goods_id'],'ref'=>$_SESSION['member_id']));?>" target="_blank" title="<?php echo $value['goods_jingle'];?>"><?php  echo $value['goods_name_highlight'];?><em><?php  echo $value['goods_jingle'];?></em></a></div>
-          <div class="goods-price"> <em class="sale-price" title="<?php echo $lang['goods_class_index_store_goods_price'].$lang['nc_colon'].$lang['currency'].$value['groupby_rebate'];?>"><?php echo ncPriceFormatForList($value['goods_promotion_price']);?></em> <em class="market-price" title="市场价：<?php echo $lang['currency'].$value['goods_marketprice'];?>"><?php echo ncPriceFormatForList($value['goods_marketprice']);?></em> <span class="raty" data-score="<?php echo $value['evaluation_good_star'];?>"></span> </div>
+		  <?php if ($value['show_price']) {?>
+			<div class="goods-price"><em class="show_note" ><?php echo $value['show_note'];?></em></div>
+		  <?php }else{?>
+			<div class="goods-price"> <em class="sale-price" ><?php echo ncPriceFormatForList($value['goods_promotion_price']);?></em> <em class="market-price" ><?php echo ncPriceFormatForList($value['goods_marketprice']);?></em> <!--span class="raty" data-score="<?php echo $value['evaluation_good_star'];?>"></span--> </div>
+		  <?php }?>
           <div class="goods-sub">
 			<span class="rate" style="display:none"><em>总奖励：</em><?php echo $value['goods_rebate_rate']*100;?>%</span>
             <?php if ($value['is_virtual'] == 1) {?>
@@ -74,9 +82,26 @@
             <span class="gift" title="捆绑赠品">赠品</span>
             <?php }?>
             <span class="goods-compare" nc_type="compare_<?php echo $value['goods_id'];?>" data-param='{"gid":"<?php echo $value['goods_id'];?>"}'><i></i><?php echo $lang['goods_index_join_contrast'] ?></span> </div>
-         
-          <div class="store"><a href="<?php echo urlShop('show_store','index',array('store_id'=>$value['store_id'],'ref'=>$_SESSION['member_id']), $value['store_domain']);?>" title="<?php echo $value['store_name'];?>" class="name"><?php echo $value['store_name'];?></a></div>
-          
+			<?php if($value['rule_info']['num1']){?>
+				<input type="hidden" value="<?php echo $value['rule_info']['num1'];?>" class="input1"/>
+				<div class="lt-item"><span class="rule-num"><em><?php echo $value['rule_info']['num1'];?></em> 件起</span><span class="rule-price"><?php echo ncPriceFormatForList($value['rule_info']['price1']);?></span></div>
+			<?php }?>
+			<?php if($value['rule_info']['num2']){?>
+				<input type="hidden" value="<?php echo $value['rule_info']['num2'];?>" class="input2"/>
+				<div class="lt-item"><span class="rule-num"><em><?php echo $value['rule_info']['num2'];?></em> 件起</span><span class="rule-price"><?php echo ncPriceFormatForList($value['rule_info']['price2']);?></span></div>
+			<?php }?>
+			<?php if($value['rule_info']['num3']){?>
+				<input type="hidden" value="<?php echo $value['rule_info']['num3'];?>" class="input3"/>
+				<div class="lt-item"><span class="rule-num"><em><?php echo $value['rule_info']['num3'];?></em> 件起</span><span class="rule-price"><?php echo ncPriceFormatForList($value['rule_info']['price3']);?></span></div>
+			<?php }?>
+			<?php if($value['rule_info']['num4']){?>
+				<input type="hidden" value="<?php echo $value['rule_info']['num4'];?>" class="input4"/>
+				<div class="lt-item"><span class="rule-num"><em><?php echo $value['rule_info']['num4'];?></em> 件起</span><span class="rule-price"><?php echo ncPriceFormatForList($value['rule_info']['price4']);?></span></div>
+			<?php }?>
+			<?php if($value['rule_info']['num5']){?>
+				<input type="hidden" value="<?php echo $value['rule_info']['num5'];?>" class="input5"/>
+				<div class="lt-item"><span class="rule-num"><em><?php echo $value['rule_info']['num5'];?></em> 件起</span><span class="rule-price"><?php echo ncPriceFormatForList($value['rule_info']['price5']);?></span></div>
+			<?php }?>
 		  <div class="add-cart">
             <?php if ($value['goods_storage'] == 0) {?>
 				<?php if ($value['is_appoint'] == 1) {?>
@@ -89,7 +114,7 @@
 					<!--a href="javascript:void(0);" nctype="buy_now" data-param="{goods_id:<?php echo $value['goods_id'];?>}"><i class="icon-shopping-cart"></i>立即购买</a-->
 				<?php //}?> 
 				<?php if(C('pc_cart')){?>
-					<a href="javascript:void(0);" nctype="add_cart" data-param="{goods_id:<?php echo $value['goods_id'];?>, store_id:<?php echo $value['store_id'];?>}" src="<?php echo thumb($value, 240);?>"><i class="icon-shopping-cart"></i>加入购物车</a>
+					<a href="<?php echo $value['goods_href'];?>" data-param="{goods_id:<?php echo $value['goods_id'];?>, store_id:<?php echo $value['store_id'];?>}" src="<?php echo thumb($value, 240);?>"><?php if($value['add_cart']){ echo $value['add_cart'];?><?php }else{?><i class="icon-shopping-cart"></i>去下单<?php }?></a>
 				<?php }?>
             <?php }?>
           </div>

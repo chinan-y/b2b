@@ -45,7 +45,7 @@ class cartControl extends BaseBuyControl {
 		//$cart_list	= $model_cart->order('goods_id asc')->listCart('db',array('buyer_id'=>$_SESSION['member_id']));
 
         //购物车列表 [得到最新商品属性及促销信息] 
-        $cart_list = $logic_buy_1->getGoodsCartList($cart_list);
+        $cart_list = $logic_buy_1->getGoodsCartList($cart_list,1);
 
         //购物车商品以店铺ID分组显示,并计算商品小计,店铺小计与总价由JS计算得出
         $store_cart_list = array();
@@ -151,9 +151,6 @@ class cartControl extends BaseBuyControl {
 	 *
 	 */
 	public function addOp() {
-		if($_GET['store_id'] != 6){
-			if(!C('site_buy')) halt(C('closed_reason')); //关闭商品购买流程
-		}
 	    $model_goods = Model('goods');
 	    $logic_buy_1 = Logic('buy_1');
         if (is_numeric($_GET['goods_id'])) {
@@ -163,7 +160,49 @@ class cartControl extends BaseBuyControl {
             $quantity = intval($_GET['quantity']);
             if ($goods_id <= 0) return ;
             $goods_info	= $model_goods->getGoodsOnlineInfoAndPromotionById($goods_id);
-
+			$rule = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods_id))->find();
+			if(is_array($rule) && $rule['num1'] && $rule['price1']){
+				if($quantity < $rule['num1']){
+					$goods_info['goods_price'] = $goods_info['goods_price'];
+				}else{
+					if(!$rule['num2']){
+						$goods_info['goods_price'] = $rule['price1'];
+					}else{
+						if($quantity < $rule['num2']){
+							$goods_info['goods_price'] = $rule['price1'];
+						}else{
+							if(!$rule['num3']){
+								$goods_info['goods_price'] = $rule['price2'];
+							}else{
+								if($quantity < $rule['num3']){
+									$goods_info['goods_price'] = $rule['price2'];
+								}else{
+									if(!$rule['num4']){
+										$goods_info['goods_price'] = $rule['price3'];
+									}else{
+										if($quantity < $rule['num4']){
+											$goods_info['goods_price'] = $rule['price3'];
+										}else{
+											if(!$rule['num5']){
+												$goods_info['goods_price'] = $rule['price4'];
+											}else{
+												if($quantity < $rule['num5']){
+													$goods_info['goods_price'] = $rule['price4'];
+												}else{
+													$goods_info['goods_price'] = $rule['price5'];
+												}
+											}
+										}
+									}
+								}
+							}
+							
+						}
+					}
+				}
+			}else{
+				$goods_info['goods_price'] = $goods_info['goods_price'];
+			}
             //抢购
             $logic_buy_1->getGroupbuyInfo($goods_info);
 
@@ -353,6 +392,49 @@ class cartControl extends BaseBuyControl {
 		    //普通商品
 		    $goods_id = intval($cart_info['goods_id']);
 		    $goods_info	= $logic_buy_1->getGoodsOnlineInfo($goods_id,$quantity);
+			$rule = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods_id))->find();
+			if(is_array($rule) && $rule['num1'] && $rule['price1']){
+				if($quantity < $rule['num1']){
+					$goods_info['goods_price'] = $goods_info['goods_price'];
+				}else{
+					if(!$rule['num2']){
+						$goods_info['goods_price'] = $rule['price1'];
+					}else{
+						if($quantity < $rule['num2']){
+							$goods_info['goods_price'] = $rule['price1'];
+						}else{
+							if(!$rule['num3']){
+								$goods_info['goods_price'] = $rule['price2'];
+							}else{
+								if($quantity < $rule['num3']){
+									$goods_info['goods_price'] = $rule['price2'];
+								}else{
+									if(!$rule['num4']){
+										$goods_info['goods_price'] = $rule['price3'];
+									}else{
+										if($quantity < $rule['num4']){
+											$goods_info['goods_price'] = $rule['price3'];
+										}else{
+											if(!$rule['num5']){
+												$goods_info['goods_price'] = $rule['price4'];
+											}else{
+												if($quantity < $rule['num5']){
+													$goods_info['goods_price'] = $rule['price4'];
+												}else{
+													$goods_info['goods_price'] = $rule['price5'];
+												}
+											}
+										}
+									}
+								}
+							}
+							
+						}
+					}
+				}
+			}else{
+				$goods_info['goods_price'] = $goods_info['goods_price'];
+			}
 		    if(empty($goods_info)) {
 		        $return['state'] = 'invalid';
 		        $return['msg'] = '商品已被下架';

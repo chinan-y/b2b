@@ -13,7 +13,7 @@ _behavior: url(<?php echo SHOP_TEMPLATES_URL;
       <li><a href="<?php echo urlShop('category', 'index');?>"><?php echo $lang['all_category'] ?></a></li>
       <li><a href="<?php echo urlShop('brand', 'index');?>"><?php echo $lang['all_brand'] ?></a></li>
       <li  class="current"><a href="javascript:void(0);"><?php echo $lang['all_goods'] ?></a></li>
-	  <li><a href="<?php echo urlShop('store_list', 'index');?>"><?php echo $lang['all_store'] ?></a></li>
+	  <!--li><a href="<?php echo urlShop('store_list', 'index');?>"><?php echo $lang['all_store'] ?></a></li-->
     </ul>
   </div>
 <div style="height:10px; line-height:10px;"></div>
@@ -66,7 +66,6 @@ _behavior: url(<?php echo SHOP_TEMPLATES_URL;
               <div class="goods-pic"><a href="<?php echo urlShop('goods','index',array('goods_id'=>$v['goods_id'],'ref'=>$_SESSION['member_id'])); ?>" target="_blank"><img src="<?php echo thumb($v, 60); ?>" title="<?php echo $v['goods_name']; ?>" alt="<?php echo $v['goods_name']; ?>" ></a></div>
               <dl>
                 <dt><a href="<?php echo urlShop('goods','index',array('goods_id'=>$v['goods_id'],'ref'=>$_SESSION['member_id'])); ?>" target="_blank"><?php echo $v['goods_name']; ?></a></dt>
-                <dd><?php echo $lang['currency'];?><?php echo $v['goods_promotion_price']; ?></dd>
               </dl>
             </li>
             <?php } ?><?php } ?>

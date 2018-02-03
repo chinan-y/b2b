@@ -14,7 +14,7 @@
 	padding-top: 30px;
 }
 </style>
-      <div class="nc-login-now1 mt"><span class="ml20"><?php echo $lang['login_register_login_now_1'];?><a href="index.php?gct=login&ref_url=<?php echo urlencode($output['ref_url']); ?>" title="<?php echo $lang['login_register_login_now'];?>" class="register"><?php echo $lang['login_register_login_now_2'];?></a></span><span><?php echo $lang['login_register_login_now_3'];?><a class="forget1" href="index.php?gct=login&gp=forget_password"><?php echo $lang['login_register_login_forget'];?></a></span></div>
+      
 <div class="nc-login-layout">
    <div class="nc-login">
 		<div class="nc-login-title top-title">
@@ -22,12 +22,11 @@
     <div class="nc-login-content">
       <form id="register_form" method="post" action="<?php echo SHOP_SITE_URL;?>/index.php?gct=login&gp=usersave">
       <?php Security::getToken();?>
-		<!--增加手机注册-->
 		<div class="mobile-login">	
 			<dl>
 			  <dt class="number"><?php echo $lang['login_register_mobile'];?></dt>
 			  <dd style="min-height:54px;">
-				<input type="text" id="mobile" name="mobile" class="text tip" minlength="11" maxlength="11" title="<?php echo $lang['login_register_input_valid_mobile'];?>" autofocus />
+				<input type="text" id="mobile" name="mobile" class="text tip" maxlength="11" title="<?php echo $lang['login_register_input_valid_mobile'];?>"/>
 				<label></label>
 			  </dd>
 			</dl>
@@ -41,7 +40,7 @@
 			  </dd>
 			</dl>
 			<?php } ?>
-			<dl id="dl_mobile_captcha" style="display:none;">
+			<dl id="dl_mobile_captcha">
 			  <dt><?php echo $lang['login_register_mobile_code'];?></dt>
 			  <dd style="min-height:54px;">
 				<input type="text" id="mobile_captcha" name="mobile_captcha" class="text tip c_code_msg" maxlength="6" title="<?php echo $lang['login_register_input_mobile_code'];?>" />
@@ -64,7 +63,11 @@
 				<input type="submit" id="Submit" value="<?php echo $lang['login_register_regist_now'];?>" class="submit" title="<?php echo $lang['login_register_regist_now'];?>" />
 				<input name="agree" type="checkbox" class="vm ml10" id="clause" value="1" checked="checked" />
 				<span for="clause" class="ml5"><?php echo $lang['login_register_agreed'];?><a href="<?php echo urlShop('document', 'index',array('code'=>'agreement'));?>" target="_blank" class="agreement" title="<?php echo $lang['login_register_agreed'];?>"><?php echo $lang['login_register_agreement'];?></a></span>
-				<label></label>
+			  </dd>
+			</dl>
+			<dl>
+			  <dd class="regist">
+				<a href="index.php?gct=login&ref_url=<?php echo urlencode($output['ref_url']); ?>"><?php echo '账号登录';?></a>
 			  </dd>
 			</dl>
 			<input type="hidden" value="<?php echo $_GET['ref_url']?>" name="ref_url">
@@ -132,7 +135,7 @@
 		//获取短信验证码
 		$("#send_message").click (function  () {
 			if(left_time < 60 && left_time > 0){
-				alert("请等待！");
+				alert("请等待");
 				return;
 			}else{
 				left_time = 60;
@@ -140,20 +143,20 @@
 			
 			var mobile=$('#mobile').val().trim();
 			if(mobile == ''){
-				alert("请您填写您的电话！");
+				alert("请输入您的手机号码");
 				return;
 			}		
 			var tel = /^(13|14|15|17|18)\d{9}$/;
 			if (!tel.test(mobile)) {
 				$("#mobile").focus();
-				alert("请填写正确的手机号码！");
+				alert("请输入正确的手机号码");
 				return;
 			}
 			
 			var captcha=$('#captcha').val().trim();
 			if(captcha == ''){
 				$("#captcha").focus();
-				alert("请填写验证码！");
+				alert("请输入验证码");
 				return;
 			}
 			

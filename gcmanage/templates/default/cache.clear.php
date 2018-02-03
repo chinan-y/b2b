@@ -111,7 +111,7 @@
   </form>
   
   
-  <form method="post" action='index.php?gct=cache&gp=clear_groupbuy'>
+  <!--form method="post" action='index.php?gct=cache&gp=clear_groupbuy'>
     <table class="table nobdb">
 	  <tbody>
 		<tr>
@@ -173,7 +173,7 @@
         </tr>
       </tfoot>
     </table>
-  </form>
+  </form-->
 </div>
 <script>
 //按钮先执行验证再提交表

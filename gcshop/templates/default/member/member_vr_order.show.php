@@ -152,7 +152,7 @@
           <th colspan="20"><span class="ml10" title="虚拟订单号">虚拟订单号：<?php echo $output['order_info']['order_sn'];?></span><span>下单时间：<?php echo date("Y-m-d H:i",$output['order_info']['add_time']);?></span><span><a href="<?php echo urlShop('show_store','index',array('store_id'=>$output['order_info']['store_id']));?>" title="<?php echo $output['order_info']['store_name'];?>"><?php echo $output['store_info']['store_name'];?></a></span>
 
             <!-- QQ -->
-            <span member_id="<?php echo $output['store_info']['member_id'];?>">
+            <span member_id="<?php echo $output['store_info']['member_id'];?>" style="display:none;">
             <?php if(!empty($output['store_info']['store_qq'])){?>
             <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $output['store_info']['store_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $output['store_info']['store_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $output['store_info']['store_qq'];?>:52" style=" vertical-align: middle;"/></a>
             <?php }?>

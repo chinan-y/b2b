@@ -415,7 +415,7 @@ class BaseMemberControl extends Control {
 		$isseller = $model->getfby_member_id($_SESSION['member_id'],'is_seller');
 		$ismanager = $model->getfby_member_id($_SESSION['member_id'],'is_manager');     
 
-	if( $isseller==1)
+	/*if( $isseller==1)
 		{
 	        $menu_list = array(
                 'trade' => array('name' => L('member_control_trade_manage'), 'child' => array(
@@ -458,17 +458,17 @@ class BaseMemberControl extends Control {
                 ))
 		);
 	}
-	else{
+	else{*/
 		$menu_list = array(
                 'trade' => array('name' => L('member_control_trade_manage'), 'child' => array(
                         'member_order'      => array('name' => L('member_control_orderlist'), 'url'=>urlShop('member_order', 'index')),
-                        'member_vr_order'   => array('name' => L('member_control_vr_order'), 'url'=>urlShop('member_vr_order','index')),
+                        // 'member_vr_order'   => array('name' => L('member_control_vr_order'), 'url'=>urlShop('member_vr_order','index')),
                         'member_favorites'  => array('name' => L('member_control_favorites'), 'url'=>urlShop('member_favorites', 'fglist')),
-                        'member_evaluate'   => array('name' => L('member_control_evaluate'), 'url'=>urlShop('member_evaluate', 'list')),
+                        // 'member_evaluate'   => array('name' => L('member_control_evaluate'), 'url'=>urlShop('member_evaluate', 'list')),
                         'predeposit'        => array('name' => L('member_control_predeposit'), 'url'=>urlShop('predeposit', 'pd_log_list')),
                         'member_points'     => array('name' => L('member_control_points'), 'url'=>urlShop('member_points', 'index')),
-					    'member_flea'     	=> array('name' => L('member_control_flea'), 'url'=>urlShop('member_flea', 'index')),
-						'voucher_lingqu'    => array('name' => L('member_control_lingqu_voucher'), 'url'=>urlShop('pointvoucher', 'index')),
+					    // 'member_flea'     	=> array('name' => L('member_control_flea'), 'url'=>urlShop('member_flea', 'index')),
+						// 'voucher_lingqu'    => array('name' => L('member_control_lingqu_voucher'), 'url'=>urlShop('pointvoucher', 'index')),
                         'member_voucher'    => array('name' => L('member_control_voucher'), 'url'=>urlShop('member_voucher', 'index'))			    	
                 )),
                 'serv' => array('name' => L('member_control_client_services'), 'child' => array(
@@ -486,7 +486,7 @@ class BaseMemberControl extends Control {
                         'member_message'    => array('name' => L('member_control_message'), 'url'=>urlShop('member_message', 'message')),
                         'member_snsfriend'  => array('name' => L('member_control_snsfriend'), 'url'=>urlShop('member_snsfriend', 'find')),
 						'member_invite'  	=> array('name' => L('member_control_invite'), 'url'=>urlShop('invite', 'index')),
-                        'member_goodsbrowse'=> array('name' => L('member_control_goodsbrowse'), 'url'=>urlShop('member_goodsbrowse', 'list')),
+                        'member_goodsbrowse'=> array('name' => L('member_control_goodsbrowse'), 'url'=>urlShop('member_goodsbrowse', 'list'))/*,
                         'member_connect'    => array('name' => L('member_control_connect'), 'url'=>urlShop('member_connect', 'qqbind')),
                         'member_sharemanage'=> array('name' => L('member_control_sharemanage'), 'url'=>urlShop('member_sharemanage', 'index'))
                 )),
@@ -494,10 +494,10 @@ class BaseMemberControl extends Control {
                         'sns'               => array('name' => L('member_control_sns'), 'url'=>urlShop('member_snshome', 'index')),
                         'cms'               => array('name' => L('member_control_cms'), 'url'=>urlCMS('member_article', 'article_list')),
                         'circle'            => array('name' => L('member_control_circle'), 'url'=>urlCircle('p_center', 'index')),
-                        'microshop'         => array('name' => L('member_control_microshop'), 'url'=>urlMicroshop('home', 'index', array('member_id' => $_SESSION['member_id'])))
+                        'microshop'         => array('name' => L('member_control_microshop'), 'url'=>urlMicroshop('home', 'index', array('member_id' => $_SESSION['member_id'])))*/
                 ))
 		);
-	}
+	// }
         return $menu_list;
     }
 }

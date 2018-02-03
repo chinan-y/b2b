@@ -17,7 +17,7 @@
       <dd>
         <ul>
           <li class="w50pre normal"><a href="index.php?gct=member&gp=member"><?php echo $lang['dashboard_wel_new_add'];?><sub><em id="statistics_week_add_member"></em></sub></a></li>
-          <li class="w50pre none"><a href="index.php?gct=predeposit&gp=pd_cash_list"><?php echo $lang['dashboard_wel_predeposit_get'];?><sub><em id="statistics_cashlist">0</em></sub></a></li>
+		  <li class="w50pre none"><a href="index.php?gct=member&gp=member"><?php echo '等待审核';?><sub><em id="statistics_verify">0</em></sub></a></li>
         </ul>
       </dd>
     </dl>
@@ -85,7 +85,7 @@
         </ul>
       </dd>
     </dl>
-
+<!--
     <?php if (C('cms_isuse') != null) {?>
     <dl class="cms">
       <dt>
@@ -170,14 +170,14 @@
         </ul>
       </dd>
     </dl>
-	
+-->	
     <div class="clear"></div>
     <div class="system-info"></div>
   </div>
 </div>
 <script type="text/javascript">
 var normal = ['week_add_member','week_add_product'];
-var work = ['store_joinin','store_bind_class_applay','store_reopen_applay','store_expired','store_expire','brand_apply','cashlist','groupbuy_verify_list','points_order','complain_new_list','complain_handle_list', 'product_verify','inform_list','refund','return','vr_refund','cms_article_verify','cms_picture_verify','circle_verify','check_billno','pay_billno','mall_consult','delivery_point','offline','league'];
+var work = ['store_joinin','store_bind_class_applay','store_reopen_applay','store_expired','store_expire','brand_apply','cashlist','groupbuy_verify_list','points_order','complain_new_list','complain_handle_list', 'product_verify','inform_list','refund','return','vr_refund','cms_article_verify','cms_picture_verify','circle_verify','check_billno','pay_billno','mall_consult','delivery_point','offline','league','verify'];
 $(document).ready(function(){
 	$.getJSON("index.php?gct=dashboard&gp=statistics", function(data){
 	  $.each(data, function(k,v){

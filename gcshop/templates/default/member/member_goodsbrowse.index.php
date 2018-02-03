@@ -33,7 +33,7 @@
             <div class="goods-thumb"><a href="<?php echo urlShop('goods', 'index', array('goods_id'=>$v['goods_id'])); ?>" target="_blank"><img src="<?php echo cthumb($v['goods_image'], 60);?>" /></a> </div>
             <dl class="goods-info">
               <dt><a target="_blank" href="<?php echo urlShop('goods', 'index', array('goods_id'=>$v['goods_id'])); ?>"><?php echo $v['goods_name'];?></a></dt>
-              <dd>商城价：
+              <dd style="display:none;">商城价：
               <!-- <?php if ($v['goods_promotion_type'] == 1){?>
               <span class="pricetag">抢购</span>
               <?php } elseif ($v['goods_promotion_type'] == 2){ ?>

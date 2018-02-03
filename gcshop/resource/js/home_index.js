@@ -351,13 +351,24 @@ $(function() {
 					$("#loadMeinvMOre").hide();
 				}
 				for (var i = 0; i < data.length; i++) {//每次加载时模拟随机加载图片
-					var html = "";
-					//html = '<li><div class="water_pic"><a target="_blank" title="'+data[i]['goods_name']+'" href="'+data[i]['href']+'"><img src = "'+ data[i]['goods_image'] + '" ></a></div><div class="water_user">'+data[i]['goods_name']+'</div><div class="water_option"><a href="javascript:;" class="option_item">当前价 '+data[i]['goods_promotion_price']+'</a><span class="split"></span><a href="javascript:;" class="option_item option_comt">销量 '+data[i]['goods_salenum']+'</a><span class="split"></span><a href="javascript:;" class="option_item option_relay">评论 '+data[i]['evaluation_count']+'</a></div></li>';					
-					if(data[i]['store_from']!=6){
-					  html='<li><div class="goods-content"><div class="goods-pic"><a target="_blank" title="'+data[i]['goods_name']+'" href="'+data[i]['goods_href']+'"><img src = "'+ data[i]['goods_image'] + '" alt="'+ data[i]['goods_name'] +'" ></a></div><div class="goods-info"><div class="goods-name">'+data[i]['goods_name']+'</div><div class="goods-price"><em class="sale-price" title="商城价：￥">￥'+data[i]['goods_promotion_price']+'</em><span class="raty" data-score="5" title="很满意" style="width: 80px;"><img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意">&nbsp;<img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意">&nbsp;<img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意">&nbsp;<img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意">&nbsp;<img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意"></span></div><div class="store"><a href="'+data[i]['store_href']+'" title="'+data[i]['store_name']+'" class="name">'+data[i]['store_name']+'</a></div><div class="add-cart"><a href="javascript:void(0);" nctype="add_cart" goods_id="'+data[i]['goods_id']+'" src = "'+ data[i]['goods_image'] + '"><i class="icon-shopping-cart"></i>加入购物车</a></div></div></div></li>';
-				    }else{
-				      html='<li><div class="goods-content"><div class="goods-pic"><a target="_blank" title="'+data[i]['goods_name']+'" href="index.php?gct=goodsdetail&gp=goodsdetail&goods_id='+data[i]['goods_id']+'"><img src = "'+ data[i]['goods_image'] + '" alt="'+ data[i]['goods_name'] +'" ></a></div><div class="goods-info"><div class="goods-name">'+data[i]['goods_name']+'</div><div class="goods-price"><span class="raty" data-score="5" title="很满意" style="width: 80px;"><img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意">&nbsp;<img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意">&nbsp;<img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意">&nbsp;<img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意">&nbsp;<img src="'+RESOURCE_SITE_URL+'/js/jquery.raty/img/star-on.png" alt="1" title="很满意"></span></div><div class="store"><a href="index.php?gct=goodsdetail&gp=goodsdetail&goods_id='+data[i]['goods_id']+'" title="'+data[i]['store_name']+'" class="name">'+data[i]['store_name']+'</a></div><div class="add-cart"><a href="index.php?gct=goodsdetail&gp=goodsdetail&goods_id='+data[i]['goods_id']+'" nctype="add_carts" goods_id="'+data[i]['goods_id']+'" src = "'+ data[i]['goods_image'] + '"><i class="icon-shopping-cart"></i>申请代理</a></div></div></div></li>';
+					var html = "";				
+					html='<li><div class="goods-content"><div class="goods-pic"><a target="_blank" title="'+data[i]['goods_name']+'" href="index.php?gct=goods&gp=index&goods_id='+data[i]['goods_id']+'"><img src = "'+ data[i]['goods_image'] + '" alt="'+ data[i]['goods_name'] +'" ></a></div><div class="goods-info"><div class="goods-name">'+data[i]['goods_name']+'</div><div class="goods-price"><em class="sale-price" >￥'+data[i]['goods_promotion_price']+'</em></div><div>';
+					if(data[i]['num1']){
+						html+='<input type="hidden" value="'+data[i]['num1']+'" class="input1"/><div class="lt-item"><span class="rule-num"><em>'+data[i]['num1']+'</em> 件起</span><span class="rule-price">￥'+data[i]['price1']+'</span></div>';
 					}
+					if(data[i]['num2']){
+						html+='<input type="hidden" value="'+data[i]['num2']+'" class="input2"/><div class="lt-item"><span class="rule-num"><em>'+data[i]['num2']+'</em> 件起</span><span class="rule-price">￥'+data[i]['price2']+'</span></div>';
+					}
+					if(data[i]['num3']){
+						html+='<input type="hidden" value="'+data[i]['num3']+'" class="input3"/><div class="lt-item"><span class="rule-num"><em>'+data[i]['num3']+'</em> 件起</span><span class="rule-price">￥'+data[i]['price3']+'</span></div>';
+					}
+					if(data[i]['num4']){
+						html+='<input type="hidden" value="'+data[i]['num4']+'" class="input4"/><div class="lt-item"><span class="rule-num"><em>'+data[i]['num4']+'</em> 件起</span><span class="rule-price">￥'+data[i]['price4']+'</span></div>';
+					}
+					if(data[i]['num5']){
+						html+='<input type="hidden" value="'+data[i]['num5']+'" class="input5"/><div class="lt-item"><span class="rule-num"><em>'+data[i]['num5']+'</em> 件起</span><span class="rule-price">￥'+data[i]['price5']+'</span></div>';
+					}
+					html+='</div><div class="add-cart"><a href="'+data[i]['goods_href']+'" nctype="add_cart" goods_id="'+data[i]['goods_id']+'" store_id="'+data[i]['store_id']+'" src = "'+ data[i]['goods_image'] + '"><i class="icon-shopping-cart"></i>'+data[i]['add_cart']+'</a></div></div></div></li>';
 					$minUl = getMinUl();
 					$minUl.append(html);
 				}
@@ -386,20 +397,21 @@ $(function() {
 		});
 		return $minUl;
 	}
-	//鼠标经过显示更多加载
-	$("#loadMeinvMOre").hover(function() {
+	//鼠标点击显示更多加载
+	$("#loadMeinvMOre").click(function() {
 		$minUl = getMinUl();
 		loadMeinv();
 	});
 	
 	 // 加入购物车
-    $('a[nctype="add_cart"]').live('click' ,function() {
+    /*$('a[nctype="add_cart"]').live('click' ,function() {
         var _parent = $(this).parent(), thisTop = _parent.offset().top, thisLeft = _parent.offset().left;
 		var img = $(this).attr('src');
+		var store_id = $(this).attr('store_id');
         animatenTop(img, thisTop, thisLeft), !1;
         eval('var goods_id = ' + $(this).attr('goods_id'));
-        addcart(goods_id,1,'');
-    });
+        addcart(store_id,goods_id,1,'');
+    });*/
 	
 	function animatenTop(img, thisTop, thisLeft) {
 		var CopyDiv = '<img id="img" src="'+img+'" style="top:' + thisTop + "px;left:" + thisLeft + 'px;">', topLength = $(".go_cart").offset().top, leftLength = $(".go_cart").offset().left;
@@ -416,8 +428,23 @@ $(function() {
 	}
 	
 	var $content=$(".col li");
-	$content.live("mouseover",function(){$(this).find(".goods-info").stop(true,false).animate({top:"10px"},400)});
+	$content.live("mouseover",function(){
+		if($(this).find('.input5').val()){
+			$(this).find(".goods-info").stop(true,false).animate({top:"-70px"},200)
+		}else if($(this).find('.input4').val()){
+			$(this).find(".goods-info").stop(true,false).animate({top:"-50px"},200)
+		}else if($(this).find('.input3').val()){
+			$(this).find(".goods-info").stop(true,false).animate({top:"-30px"},200)
+		}else if($(this).find('.input2').val()){
+			$(this).find(".goods-info").stop(true,false).animate({top:"-10px"},200)
+		}else if($(this).find('.input1').val()){
+			$(this).find(".goods-info").stop(true,false).animate({top:"10px"},200)
+		}else{
+			$(this).find(".goods-info").stop(true,false).animate({top:"30px"},200)
+		}
+	});
 	$content.live("mouseout",function(){$(this).find(".goods-info").stop(true,false).animate({top:"70px"},400)});
+	
 	
 	/* 平拍列表每隔5秒循环 */
 	var index =0;

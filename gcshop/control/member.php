@@ -16,8 +16,15 @@ class memberControl extends BaseMemberControl{
      */
     public function homeOp() {
 		$member_info = $this->member_info;
-        $member_info['security_level'] = Model('member')->getMemberSecurityLevel($member_info);
-        Tpl::showpage('member_home');
+		if(!$member_info['member_company_name']){
+			redirect('index.php?gct=login&gp=member_verify');
+		}else if($member_info['member_examine'] == 0){
+			redirect('index.php?gct=login&gp=await_verify');
+		}else{
+			$member_info['security_level'] = Model('member')->getMemberSecurityLevel($member_info);
+			Tpl::showpage('member_home');
+		}
+        
     }
 
     public function ajax_load_member_infoOp() {
@@ -26,6 +33,10 @@ class memberControl extends BaseMemberControl{
         
         //代金券数量
         $member_info['voucher_count'] = Model('voucher')->getCurrentAvailableVoucherCount($_SESSION['member_id']);
+		$member_info['member_mobile_bind'] = $this->member_info['member_mobile_bind'];
+		$member_info['member_email_bind'] = $this->member_info['member_email_bind'];
+		$member_info['member_paypwd'] = $this->member_info['member_paypwd'];
+		$member_info['security_level'] = Model('member')->getMemberSecurityLevel($member_info);
         Tpl::output('home_member_info',$member_info);
 
         Tpl::showpage('member_home.member_info','null_layout');

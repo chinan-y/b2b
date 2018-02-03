@@ -917,6 +917,67 @@ class store_goods_onlineControl extends BaseSellerControl {
             }
         }
     }
+	
+	/**
+     * 编辑价格规则
+     */
+    public function edit_ruleOp() {
+        $common_id = intval($_GET['commonid']);
+        if ($common_id <= 0) {
+            showMessage(L('wrong_argument'), urlShop('seller_center'), 'html', 'error');
+        }
+        $model_goods = Model('goods');
+        $common_list = $model_goods->getGoodeCommonInfoByID($common_id, 'store_id,goods_lock');
+        if ($common_list['store_id'] != $_SESSION['store_id'] || $common_list['goods_lock'] == 1) {
+            showMessage(L('wrong_argument'), urlShop('seller_center'), 'html', 'error');
+        }
+		$goods = $model_goods->getGoodsInfo(array('goods_commonid'=>$common_id),'goods_id');	
+		$rule_info = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods['goods_id']))->find();
+        Tpl::output('rule_info', $rule_info);
+
+        $menu_promotion = array(
+                'lock' => $common_list['goods_lock'] == 1 ? true : false,
+                'gift' => $model_goods->checkGoodsIfAllowGift($common_list),
+                'combo' => $model_goods->checkGoodsIfAllowCombo($common_list)
+        );
+        $this->profile_menu('edit_detail', 'edit_rule', $menu_promotion);
+        Tpl::output('edit_goods_sign', true);
+        Tpl::showpage('store_goods_add.step4');
+    }
+	
+	/**
+     * 保存价格规则
+     */
+    public function edit_save_ruleOp() {
+		if (chksubmit()) {
+			$goods = Model('goods')->getGoodsInfo(array('goods_commonid'=>$_POST['commonid']),'goods_id');
+			$data = array();
+			$data['num1'] = $_POST['num1'] >0 ? $_POST['num1'] : null;
+			$data['num2'] = $_POST['num2'] >0 ? $_POST['num2'] : null;
+			$data['num3'] = $_POST['num3'] >0 ? $_POST['num3'] : null;
+			$data['num4'] = $_POST['num4'] >0 ? $_POST['num4'] : null;
+			$data['num5'] = $_POST['num5'] >0 ? $_POST['num5'] : null;
+			$data['price1'] = $_POST['price1'] >0 ? $_POST['price1'] : null;
+			$data['price2'] = $_POST['price2'] >0 ? $_POST['price2'] : null;
+			$data['price3'] = $_POST['price3'] >0 ? $_POST['price3'] : null;
+			$data['price4'] = $_POST['price4'] >0 ? $_POST['price4'] : null;
+			$data['price5'] = $_POST['price5'] >0 ? $_POST['price5'] : null;
+			$rule = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods['goods_id']))->find();
+			if(is_array($rule) && empty($rule)){
+				$data['goods_id'] = $goods['goods_id'];
+				$result = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods['goods_id']))->insert($data);
+			}else{
+				$result = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods['goods_id']))->update($data);
+			}
+			if ($result) {
+			// 添加操作日志
+			$this->recordSellerLog('编辑商品价格规则，平台货号：'.$_POST['commonid']);
+				showDialog(L('nc_common_op_succ'), $_POST['ref_url'], 'succ');
+			} else {
+				showDialog(L('nc_common_save_fail'), urlShop('store_goods_online', 'index'));
+			}
+		}
+	}
 
     /**
      * 编辑分类
@@ -1380,6 +1441,7 @@ class store_goods_onlineControl extends BaseSellerControl {
                     $menu_array = array(
                         array('menu_key' => 'edit_detail',  'menu_name' => '编辑商品', 'menu_url' => urlShop('store_goods_online', 'edit_goods', array('commonid' => $_GET['commonid'], 'ref_url' => $_GET['ref_url']))),
                         array('menu_key' => 'edit_image',   'menu_name' => '编辑图片', 'menu_url' => urlShop('store_goods_online', 'edit_image', array('commonid' => $_GET['commonid'], 'ref_url' => ($_GET['ref_url'] ? $_GET['ref_url'] : getReferer())))),
+						array('menu_key' => 'edit_rule',  'menu_name' => '价格规则', 'menu_url' => urlShop('store_goods_online', 'edit_rule', array('commonid' => $_GET['commonid'], 'ref_url' => $_GET['ref_url']))),
                     );
                 }
                 if ($allow_promotion['gift']) {

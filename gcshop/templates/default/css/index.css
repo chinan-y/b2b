@@ -608,7 +608,7 @@ width: 72px; height: 72px; float: left; padding: 3px; border: solid 1px #EBF5EC;
 #masonry_box{width:1200px;margin:30px auto 0;}
 #masonry_box ul{width:214px;list-style:none;float:left;margin-right:20px;}
 
-#masonry_box ul li{padding: 0;margin-bottom:20px; -moz-border-bottom-colors:none; -moz-border-left-colors:none; -moz-border-right-colors:none; -moz-border-top-colors:none; background-color:#fff; background-image:linear-gradient(to bottom, #FFFFFF, #E6E6E6); background-repeat:repeat-x; border-color:#e6e6e6 #e6e6e6 #B3B3B3; border-image:none; border-radius:4px 4px 4px 4px; border-style:solid; border-width:1px; box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05); }
+#masonry_box ul li{padding: 0;margin-bottom:20px; -moz-border-bottom-colors:none; -moz-border-left-colors:none; -moz-border-right-colors:none; -moz-border-top-colors:none; background-color:#fff; background-repeat:repeat-x; border-color:#e6e6e6 #e6e6e6 #B3B3B3; border-image:none; border-radius:4px 4px 4px 4px; border-style:solid; border-width:1px; box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05); }
 #masonry_box ul li img{width:210px;height: 220px;}
 #masonry_box .water_user{color:#666;padding:10px;}
 #masonry_box .water_option{background:#f5f5f5;border-top:1px #f0f0f0 solid;padding:5px 0 5px 10px;}

@@ -33,7 +33,19 @@ $(function(){
     //鼠标经过弹出图片信息
     $(".item").hover(
         function() {
-            $(this).find(".goods-info").animate({"top": "180px"}, 400, "swing");
+			if($(this).find('.input5').val()){
+				$(this).find(".goods-info").animate({"top": "80px"}, 200, "swing");
+			}else if($(this).find('.input4').val()){
+				$(this).find(".goods-info").animate({"top": "100px"}, 200, "swing");
+			}else if($(this).find('.input3').val()){
+				$(this).find(".goods-info").animate({"top": "120px"}, 200, "swing");
+			}else if($(this).find('.input2').val()){
+				$(this).find(".goods-info").animate({"top": "140px"}, 200, "swing");
+			}else if($(this).find('.input1').val()){
+				$(this).find(".goods-info").animate({"top": "160px"}, 200, "swing");
+			}else{
+				$(this).find(".goods-info").animate({"top": "180px"}, 200, "swing");
+			}
         },function() {
             $(this).find(".goods-info").stop(true,false).animate({"top": "230px"}, 400, "swing");
         }

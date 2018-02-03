@@ -25,12 +25,10 @@ if(fragment){
 
 	#masonry_box .goods-content>.goods-pic>img{max-width: 210px;}
 
-	#masonry_box .goods-pic{background-color: #fff;margin: 0;position: relative;z-index: 1;overflow: hidden;}
+	#masonry_box .goods-pic{background-color: #fff;margin: 0;position: relative;z-index: 1;overflow: hidden;height: 220px;}
 
-	#masonry_box .goods-info{width: 210px;padding-top: 5px;position: relative;top: 70px;}
+	#masonry_box .goods-info{width: 210px;padding-top: 5px;position: relative;top: 70px; z-index: 11;background:rgba(255,255,255,0.9);}
 	
-	#masonry_box .store{line-height: 20px;/*background-color: #f5f5f5;*/text-align: center;display: block;height: 20px;clear: both;padding: 8px 0;/*border-top: 1px #eee solid;*/}
-
 	#masonry_box .store a.name :link{text-decoration: none;color: #333;
 	}
 
@@ -40,13 +38,18 @@ if(fragment){
 
 	#masonry_box .goods-name{padding: 1px 5px 1px 5px;/*white-space: nowrap;*/overflow: hidden;text-overflow: ellipsis;height:35px;}
 
-	#masonry_box .goods-price{padding: 1px 5px 1px 5px;}
+	#masonry_box .goods-price{padding: 5px 5px 1px 5px;height: 26px;}
 
 	#masonry_box .goods-info .goods-price em.sale-price{font-size: 14px;font-weight: 600;font-style: normal;/*text-overflow: ellipsis;*/white-space: nowrap;max-width: 70px;float: left;/*overflow: hidden;*/}
 
 	#masonry_box .goods-info .goods-price .raty{font-size: 0;line-height: 0;float: right;margin-right: 6px;}
 
 	#masonry_box .goods-info .goods-price .raty img {letter-spacing: normal;word-spacing: normal;display: inline-block;width: 16px;height: 16px;margin: 2px 0;}
+	
+	#masonry_box .lt-item{line-height: 20px;background:rgba(255,255,255,0.9);display: block;clear: both;}
+	#masonry_box .lt-item em{color:#666;font-weight:600;}
+	#masonry_box .rule-num{margin-left:20px;}
+	#masonry_box .rule-price{float: right;margin-right:20px;color:#666;font-weight:600;}
 
 </style>
  
@@ -70,7 +73,7 @@ if(fragment){
 </div>
 <!--HomeFocusLayout End-->
 <?php echo loadadv(1089);?>
-<!--海关条-->
+<!--海关条
 <?php if($loadadv = loadadv(11,'html')){?>
 <div style="width:100%; border-bottom:1px solid #e7e7e7;">
 	<div class="index-width">
@@ -79,7 +82,7 @@ if(fragment){
 	</div>
 </div>
 <?php }?>
-
+-->
 <!--首页右上角广告图-->
 <?php if($loadadv = loadadv(1058,'html')){?>
 <div class="activityVenue">
@@ -87,14 +90,14 @@ if(fragment){
 </div>
 <?php }?>
 
-<!--每日上新-->
+<!--每日上新
 <div class="updateDaily"><img src="<?php echo SHOP_TEMPLATES_URL;?>/images/shop/gb04.png" alt="每日上新" /></div>
 <div class="home-sale-layout index-width mt30">
   <div class="left-layout"> <?php echo $output['web_html']['index_sale'];?> </div>
   <div id="2F"></div>
 </div>
-
-<!--天天特价-->
+-->
+<!--天天特价
 <?php if (!empty($output['group_list'])) { ?>
 <div class="updateDaily"><img src="<?php echo SHOP_TEMPLATES_URL;?>/images/shop/gb12.png" alt="天天特价" /></div>
 <div class="home-sale-layout index-width tttj_index mt30">
@@ -173,8 +176,8 @@ if(fragment){
 	</ul>
 </div>
 <?php } ?>
-
-<!--超低折扣-->
+-->
+<!--超低折扣
 <?php if (!empty($output['xianshi_item'])) { ?>
 <div class="updateDaily"><img src="<?php echo SHOP_TEMPLATES_URL;?>/images/shop/gb28.png" alt="超低折扣" /></div>
 <div class="home-sale-layout xstm_index index-width mt30">
@@ -209,7 +212,7 @@ if(fragment){
 	</div>
 </div>
 <?php } ?>
-
+-->
 
 <!--StandardLayout Begin--> 
 <?php echo $output['web_html']['index'];?>
@@ -225,14 +228,14 @@ if(fragment){
 
 
 <!-- 瀑布流加载首页商品 -->
-<div class="home-sale-layout wrapper" style="display:none;">
+<div class="home-sale-layout wrapper" >
 	<div id="masonry_box" class="masonry_box">
 		<ul class="col"></ul>
 		<ul class="col"></ul>
 		<ul class="col"></ul>
 		<ul class="col"></ul>
 		<ul class="col" style="margin-right:0"></ul>
-		<a href="javascript:" class="loadMeinvMOre" id="loadMeinvMOre">点击更多商品</a>
+		<a href="javascript:" class="loadMeinvMOre" id="loadMeinvMOre">点击查看更多商品</a>
 	</div>
 </div>
 

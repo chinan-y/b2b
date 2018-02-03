@@ -65,6 +65,7 @@
     <li><a id="demo4Btn" href="#demo4" class="demoBtn">物流运费</a></li>
     <li><a id="demo5Btn" href="#demo5" class="demoBtn">发票信息</a></li>
     <li><a id="demo6Btn" href="#demo6" class="demoBtn">其他信息</a></li>
+    <li><a id="demo7Btn" href="#demo7" class="demoBtn">保税商品</a></li>
   </ul>
 </div>
 <?php if ($output['edit_goods_sign']) {?>
@@ -76,17 +77,25 @@
   <li><i class="icon icon-list-alt"></i>
     <h6>STEP.1</h6>
     <h2>选择商品分类</h2>
-    <i class="arrow icon-angle-right"></i> </li>
+    <i class="arrow icon-angle-right"></i> 
+  </li>
   <li class="current"><i class="icon icon-edit"></i>
     <h6>STEP.2</h6>
     <h2>填写商品详情</h2>
-    <i class="arrow icon-angle-right"></i> </li>
+    <i class="arrow icon-angle-right"></i> 
+  </li>
   <li><i class="icon icon-camera-retro "></i>
     <h6>STEP.3</h6>
     <h2>上传商品图片</h2>
-    <i class="arrow icon-angle-right"></i> </li>
-  <li><i class="icon icon-ok-circle"></i>
+    <i class="arrow icon-angle-right"></i> 
+  </li>
+  <li><i class="icon icon-edit"></i>
     <h6>STEP.4</h6>
+    <h2>添加价格规则</h2>
+    <i class="arrow icon-angle-right"></i> 
+  </li>
+  <li><i class="icon icon-ok-circle"></i>
+    <h6>STEP.5</h6>
     <h2>商品发布成功</h2>
   </li>
 </ul>
@@ -112,14 +121,6 @@
           <input name="g_name" type="text" class="text w400" value="<?php echo $output['goods']['goods_name']; ?>" />
           <span></span>
           <p class="hint"><?php echo $lang['store_goods_index_goods_name_help'];?></p>
-        </dd>
-      </dl>
-	  <dl>
-        <dt><i class="required">*</i><?php echo '备案名称'.$lang['nc_colon'];?></dt>
-        <dd>
-          <input name="rec_name" type="text" class="text w400" value="<?php echo $output['goods']['records_name']; ?>" />
-          <span></span>
-          <p class="hint" style="color:red;"><?php echo $lang['store_goods_index_rec_name_help'];?></p>
         </dd>
       </dl>
 	  <dl>
@@ -152,41 +153,10 @@
         </dd>
       </dl>
 	  <dl>
-        <dt><i class="required">*</i>商品来源<?php echo $lang['nc_colon'];?></dt>
-        <dd>
-		  <select name="g_from">
-            <option>请选择来源</option>
-			<?php foreach($output['goods_source'] as $k=>$v){ ?>
-			<option value="<?php echo $k;?>" <?php if($output['goods']['store_from'] == $k){echo 'selected="selected"';}?>><?php echo $k.'|'.$v['source_name'];?></option>
-			<?php } ?>
-          </select>
-          <span></span>
-        </dd>
-      </dl>
-	  <dl>
-        <dt><i class="required">*</i>推单原产国<?php echo $lang['nc_colon'];?></dt>
-        <dd>
-
-		  <select name="g_mess_country_code" id="select">
-            <option value="502" selected="selected">502|美国(默认)</option>
-			<?php foreach($output['messCountrys'] as $k=>$v){ ?>
-			<option value="<?php echo $k;?>" <?php if($output['goods']['mess_country_code'] == $k){echo 'selected="selected"';}?>><?php echo $k.'|'.$v['name'];?></option>
-			<?php } ?>
-          </select>
-		   请输入关键字搜索:&nbsp;<input id="search_input" type="text" class="search_input"/>
-          <div id="search_box" class="search_box">
-            <ul id="hot_word_list" class="hot_word_list">
-            </ul>
-          </div>
-          <span></span>
-		  <p class="hint">用于系统推送到海关2.0使用</p>
-        </dd>
-      </dl>
-	  <dl>
-        <dt><i class="required">*</i>原产国<?php echo $lang['nc_colon'];?></dt>
+        <dt><i class="required"></i>商品原产国<?php echo $lang['nc_colon'];?></dt>
         <dd>
 		  <select name="g_country_code" id="select1">
-            <option value="502" selected="selected">502|美国(默认)</option>
+            <option value="0" selected="selected">请选择</option>
 			<?php foreach($output['messCountrys'] as $k=>$v){ ?>
 			<option value="<?php echo $k;?>" <?php if($output['goods']['country_code'] == $k){echo 'selected="selected"';}?>><?php echo $k.'|'.$v['name'];?></option>
 			<?php } ?>			
@@ -201,7 +171,7 @@
         </dd>
 	  </dl>
 	  <dl>
-		 <dt><i class="required">*</i>供货商<?php echo $lang['nc_colon'];?></dt>
+		 <dt><i class="required"></i>商品供货商<?php echo $lang['nc_colon'];?></dt>
         <dd>
 		  <select name="g_supplier_code">
             <option value="1" selected="selected">请选择</option>
@@ -213,105 +183,13 @@
 		  <p class="hint">用户商品详情及其它地方展示</p>
         </dd>
       </dl>
-        <dl>
-        <dt><i class="required"></i>行邮税号<?php echo $lang['nc_colon'];?></dt>
-        <dd>
-          <input name="g_post_tax_no" type="text" class="text w100" value="<?php echo $output['goods']['post_tax_no']; ?>" />
-          <span></span>
-          <p class="hint">行邮税号关联商品的税率，8位数字格式，海外直邮商品行邮税号填写00000000，税率0%</p>
-        </dd>
-      </dl>
-	  <dl>
-        <dt><i class="required">*</i>商品海关HSCODE<?php echo $lang['nc_colon'];?></dt>
-        <dd>
-          <input name="g_hscode" type="text" class="text w100" value="<?php echo $output['goods']['goods_hscode']; ?>" />
-          <span></span>
-		  <p class="hint">商品海关HSCODE关联商品的税率，10位数字格式，保税进口商品行邮税号填写0000000000，税值(关税+消费税+增值税)</p>
-        </dd>
-      </dl>
-	  
-	  <dl style="display:none;">
-        <dt><i class="required">*</i>申报要素<?php echo $lang['nc_colon'];?></dt>
-        <dd>
-          <textarea name="g_sku_spec" class="textarea h40 w400"><?php echo $output['goods']['sku_spec']; ?></textarea>
-          <span></span>
-        </dd>
-      </dl>
-	  <dl>
-		<dt><i class="required">*</i>计量单位<?php echo $lang['nc_colon'];?></dt>
-        <dd>
-		  <select name="g_pack_units" id="select2">>
-            <option value="0" selected="selected">请选择</option>
-			<?php foreach($output['legalUnit'] as $k=>$v){ ?>
-			<option value="<?php echo $k;?>" <?php if($output['goods']['pack_units'] == $k){echo 'selected="selected"';}?>><?php echo $k.'|'.$v['NAME'];?></option>
-			<?php } ?>
-          </select>
-          <span></span>
-		  请输入关键字搜索:&nbsp;<input id="search_input2" type="text" class="search_input"/>
-          <div id="search_box2" class="search_box2">
-            <ul id="hot_word_list2" class="hot_word_list">
-            </ul>
-          </div>
-          <span></span> 
-		  		  
-        </dd>
-      </dl>
-	  <dl>
-		<dt><i class="required">*</i>法定计量单位<?php echo $lang['nc_colon'];?></dt>
-		<dd>
-		  <input name="unit1" value="<?php echo $output['goods']['unit1']; ?>" type="text" class="text w60" /><span></span>
-		  <p class="hint">统一版备案的法定单位</p>
-		</dd>
-	  </dl>
-	  <dl>
-<dt><i class="required">*</i>法定数量<?php echo $lang['nc_colon'];?></dt>
-		<dd>
-		  <input name="g_reduced" value="<?php echo $output['goods']['goods_reduced']; ?>" type="text" class="text w60" /><span></span>
-		  <p class="hint">商品备案时填写的折算数量，用于海关统一版。</p>
-		</dd>
-	  </dl>
-	  <dl>
-		<dt>第二计量单位<?php echo $lang['nc_colon'];?></dt>
-		<dd>
-		  <input name="unit2" value="<?php echo $output['goods']['unit2']; ?>" type="text" class="text w60" /><span></span>
-		  <p class="hint">根据商编确定</p>
-		</dd>
-	  </dl>
-	  <dl>
-		<dt>第二数量<?php echo $lang['nc_colon'];?></dt>
-		<dd>
-		  <input name="qty2" value="<?php echo $output['goods']['qty2']; ?>" type="text" class="text w60" /><span></span>
-		  <p class="hint">根据商编确定</p>
-		</dd>
-	  </dl>
 	  <dl>
         <dt><i class="required">*</i>商品重量<?php echo $lang['nc_colon'];?></dt>
         <dd>
           <input name="g_weight" value="<?php echo $output['goods']['goods_weight']; ?>" type="text" class="text w60" /><em class="add-on">Kg</em><span></span>
-          <p class="hint">重量必须是0.00~9999999之间的数字，商品重量为计算运费的条件。</p>
+          <p class="hint">重量必须是数字，商品重量为计算运费的条件。</p>
         </dd>
       </dl>
-	  
-	  <dl>
-		<dt style="color:red;font-size:14px;">包装规格<?php echo $lang['nc_colon'];?></dt>
-        <dd>
-		  <select name="g_pack">
-            <option value="0" >请选择</option>
-			<option value="<?php echo $output['goods']['goods_pack'];?>" <?php if($output['goods']['goods_pack']){echo 'selected="selected"';}?>> <?php echo $output['goods']['goods_pack'];?></option>
-			<option value="1">1|毫升</option>
-			<option value="2">2|克</option>
-			<option value="3">3|片</option>
-			<option value="4">4|张</option>
-          </select>
-          <span></span> 
-		<dt style="color:red;font-size:14px;">含量/数量<?php echo $lang['nc_colon'];?></dt>
-		<dd>
-          <input name="g_con_num" value="<?php echo $output['goods']['goods_con_num']; ?>" type="text" class="text w60" /><span></span>
-          <p class="hint">包装规格：1|毫升，2|克，3|片，4|张。包装标注含量以重量计，包装标注含量以体积计，包装标注规格为“片”或“张”的</p>
-          <p class="hint" style="color:red;">含量/数量：根据选择的包装规格如实正确的填写相对应的量（涉及到计算商品税金的问题）</p>
-        </dd>
-      </dl>
-	  
       <dl>
         <dt>商品卖点<?php echo $lang['nc_colon'];?></dt>
         <dd>
@@ -1005,7 +883,7 @@
       </dl>
 
       <dl>
-        <dt><i class="required">*</i>商品返利率<?php echo $lang['nc_colon'];?></dt>
+        <dt><i class="required"></i>商品返利率<?php echo $lang['nc_colon'];?></dt>
         <dd>
           <input name="g_rebate_rate" id ="g_rebate_rate" type="text" class="text w150" placeholder ="输入大于0且小于1的小数"   maxlength="6" value="<?php echo $output['goods']['goods_rebate_rate']; ?>" />
           <span></span>
@@ -1032,6 +910,135 @@
         <dd>
           <textarea name="desc_key" class="textarea h60 w400"><?php echo $output['goods']['desc_key']; ?></textarea>
           <span></span>
+        </dd>
+      </dl>
+	<h3 id="demo7"><?php echo '保税商品'?></h3>
+	  <dl>
+        <dt><i class="required"></i>行邮税号<?php echo $lang['nc_colon'];?></dt>
+        <dd>
+          <input name="g_post_tax_no" type="text" class="text w100" value="<?php echo $output['goods']['post_tax_no']; ?>" />
+          <span></span>
+          <p class="hint">行邮税号关联商品的税率，8位数字格式，海外直邮商品行邮税号填写00000000，税率0%</p>
+        </dd>
+      </dl>
+	  <dl>
+        <dt><i class="required"></i>商品来源<?php echo $lang['nc_colon'];?></dt>
+        <dd>
+		  <select name="g_from">
+            <option>请选择来源</option>
+			<?php foreach($output['goods_source'] as $k=>$v){ ?>
+			<option value="<?php echo $k;?>" <?php if($output['goods']['store_from'] == $k){echo 'selected="selected"';}?>><?php echo $k.'|'.$v['source_name'];?></option>
+			<?php } ?>
+          </select>
+          <span></span>
+        </dd>
+      </dl>
+	  <dl>
+        <dt><i class="required"></i><?php echo '备案名称'.$lang['nc_colon'];?></dt>
+        <dd>
+          <input name="rec_name" type="text" class="text w400" value="<?php echo $output['goods']['records_name']; ?>" />
+          <span></span>
+          <p class="hint" style="color:red;"><?php echo $lang['store_goods_index_rec_name_help'];?></p>
+        </dd>
+      </dl>
+	  <dl>
+        <dt><i class="required"></i>推单原产国<?php echo $lang['nc_colon'];?></dt>
+        <dd>
+		  <select name="g_mess_country_code" id="select">
+            <option value="502" selected="selected">502|美国(默认)</option>
+			<?php foreach($output['messCountrys'] as $k=>$v){ ?>
+			<option value="<?php echo $k;?>" <?php if($output['goods']['mess_country_code'] == $k){echo 'selected="selected"';}?>><?php echo $k.'|'.$v['name'];?></option>
+			<?php } ?>
+          </select>
+		   请输入关键字搜索:&nbsp;<input id="search_input" type="text" class="search_input"/>
+          <div id="search_box" class="search_box">
+            <ul id="hot_word_list" class="hot_word_list">
+            </ul>
+          </div>
+          <span></span>
+		  <p class="hint">用于系统推送到海关使用</p>
+        </dd>
+      </dl>
+	  <dl>
+        <dt><i class="required"></i>商品海关HSCODE<?php echo $lang['nc_colon'];?></dt>
+        <dd>
+          <input name="g_hscode" type="text" class="text w100" value="<?php echo $output['goods']['goods_hscode']; ?>" />
+          <span></span>
+		  <p class="hint">商品海关HSCODE关联商品的税率，10位数字格式，保税进口商品行邮税号填写0000000000，税值(关税+消费税+增值税)</p>
+        </dd>
+      </dl>
+	  
+	  <dl style="display:none;">
+        <dt><i class="required"></i>申报要素<?php echo $lang['nc_colon'];?></dt>
+        <dd>
+          <textarea name="g_sku_spec" class="textarea h40 w400"><?php echo $output['goods']['sku_spec']; ?></textarea>
+          <span></span>
+        </dd>
+      </dl>
+	  <dl>
+		<dt><i class="required"></i>计量单位<?php echo $lang['nc_colon'];?></dt>
+        <dd>
+		  <select name="g_pack_units" id="select2">>
+            <option value="0" selected="selected">请选择</option>
+			<?php foreach($output['legalUnit'] as $k=>$v){ ?>
+			<option value="<?php echo $k;?>" <?php if($output['goods']['pack_units'] == $k){echo 'selected="selected"';}?>><?php echo $k.'|'.$v['NAME'];?></option>
+			<?php } ?>
+          </select>
+          <span></span>
+		  请输入关键字搜索:&nbsp;<input id="search_input2" type="text" class="search_input"/>
+          <div id="search_box2" class="search_box2">
+            <ul id="hot_word_list2" class="hot_word_list">
+            </ul>
+          </div>
+          <span></span> 
+		  		  
+        </dd>
+      </dl>
+	  <dl>
+		<dt><i class="required"></i>法定计量单位<?php echo $lang['nc_colon'];?></dt>
+		<dd>
+		  <input name="unit1" value="<?php echo $output['goods']['unit1']; ?>" type="text" class="text w60" /><span></span>
+		  <p class="hint">统一版备案的法定单位</p>
+		</dd>
+	  </dl>
+	  <dl>
+		<dt><i class="required"></i>法定数量<?php echo $lang['nc_colon'];?></dt>
+		<dd>
+		  <input name="g_reduced" value="<?php echo $output['goods']['goods_reduced']; ?>" type="text" class="text w60" /><span></span>
+		  <p class="hint">商品备案时填写的折算数量，用于海关统一版。</p>
+		</dd>
+	  </dl>
+	  <dl>
+		<dt>第二计量单位<?php echo $lang['nc_colon'];?></dt>
+		<dd>
+		  <input name="unit2" value="<?php echo $output['goods']['unit2']; ?>" type="text" class="text w60" /><span></span>
+		  <p class="hint">根据商编确定</p>
+		</dd>
+	  </dl>
+	  <dl>
+		<dt>第二数量<?php echo $lang['nc_colon'];?></dt>
+		<dd>
+		  <input name="qty2" value="<?php echo $output['goods']['qty2']; ?>" type="text" class="text w60" /><span></span>
+		  <p class="hint">根据商编确定</p>
+		</dd>
+	  </dl>
+	  <dl>
+		<dt style="color:red;font-size:14px;">包装规格<?php echo $lang['nc_colon'];?></dt>
+        <dd>
+		  <select name="g_pack">
+            <option value="0" >请选择</option>
+			<option value="<?php echo $output['goods']['goods_pack'];?>" <?php if($output['goods']['goods_pack']){echo 'selected="selected"';}?>> <?php echo $output['goods']['goods_pack'];?></option>
+			<option value="1">1|毫升</option>
+			<option value="2">2|克</option>
+			<option value="3">3|片</option>
+			<option value="4">4|张</option>
+          </select>
+          <span></span> 
+		<dt style="color:red;font-size:14px;">含量/数量<?php echo $lang['nc_colon'];?></dt>
+		<dd>
+          <input name="g_con_num" value="<?php echo $output['goods']['goods_con_num']; ?>" type="text" class="text w60" /><span></span>
+          <p class="hint">包装规格：1|毫升，2|克，3|片，4|张。包装标注含量以重量计，包装标注含量以体积计，包装标注规格为“片”或“张”的</p>
+          <p class="hint" style="color:red;">含量/数量：根据选择的包装规格如实正确的填写相对应的量（涉及到计算商品税金的问题）</p>
         </dd>
       </dl>
 
@@ -1089,30 +1096,12 @@ $(function(){
                 minlength   : 3,
                 maxlength   : 50
             },
-			rec_name : {
-                required    : true
-            },
-			g_from : {
-                required    : true
-            },
-			g_reduced : {
-                required    : true
-            },
-			unit1 : {
-                required    : true
-            },
 			// g_post_tax_no : {
                 // required    : true
             // },
-			g_hscode :{
-				required    : true
-			},
 			/*g_sku_spec : {
                 required    : true
             },*/
-			g_pack_units : {
-                required    : true
-            },
 			g_weight : {
                 required    : true
             },
@@ -1144,7 +1133,7 @@ $(function(){
                 max         : 999999999
             },
 			g_rebate_rate : {
-                required    : true,
+                // required    : true,
                 number      : true,
                 min         : 0.0000,
                 max         : 0.9999
@@ -1181,36 +1170,14 @@ $(function(){
                 minlength   : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_goods_name_help'];?>',
                 maxlength   : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_goods_name_help'];?>'
             },
-			rec_name  : {
-                required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_rec_name_null'];?>'
-            }, 
-			g_from  : {
-                required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_goods_source_null'];?>'
-                
-            },
-			unit1  : {
-                required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_until_null'];?>'
-                
-            },
-			g_reduced  : {
-                required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_Reduced_null'];?>'
-                
-            },
 			// g_post_tax_no  : {
                 // required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_line_post_ein_null'];?>'
                 
             // },
-			g_hscode   : {
-				required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['stroe_goods_Commodity_HSCODE_null'];?>'
-			},
 			/*g_sku_spec  : {
                 required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_declare_elements_null'];?>'
                 
             },*/
-			g_pack_units  : {
-                required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_declare_unit_null'];?>'
-                
-            },
 			g_weight  : {
                 required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_goods_weight_null'];?>'
                 
@@ -1243,7 +1210,7 @@ $(function(){
                 max         : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_goods_stock_checking'];?>'
             },
 			g_rebate_rate : {
-				required	: '<i class="icon-exclamation-sign"></i>返利率不能为空',
+				// required	: '<i class="icon-exclamation-sign"></i>返利率不能为空',
                 number      : '<i class="icon-exclamation-sign"></i>请填写正确的返利率',
                 min         : '<i class="icon-exclamation-sign"></i>请填写0.0000~0.9999之间的数字',
                 max         : '<i class="icon-exclamation-sign"></i>请填写0.0000~0.9999之间的数字'
@@ -1422,7 +1389,7 @@ function recursionSpec($len,$sign) {
             echo "if (td_".($i+1)."[2] != null) { str += '<input type=\"hidden\" name=\"spec['+spec_bunch+'][color]\" value=\"'+td_".($i+1)."[1]+'\" />';}";
             echo "str +='<td><input type=\"hidden\" name=\"spec['+spec_bunch+'][sp_value]['+td_".($i+1)."[1]+']\" value=\"'+td_".($i+1)."[0]+'\" />'+td_".($i+1)."[0]+'</td>';\n";
         }
-        echo "str +='<td><input class=\"text price\" type=\"text\" name=\"spec['+spec_bunch+'][marketprice]\" data_type=\"marketprice\" nc_type=\"'+spec_bunch+'|marketprice\" value=\"\" /><em class=\"add-on\"><i class=\"icon-renminbi\"></i></em></td><td><input class=\"text price\" type=\"text\" name=\"spec['+spec_bunch+'][price]\" data_type=\"price\" nc_type=\"'+spec_bunch+'|price\" value=\"\" /><em class=\"add-on\"><i class=\"icon-renminbi\"></i></em></td><td><input class=\"text stock\" type=\"text\" name=\"spec['+spec_bunch+'][stock]\" data_type=\"stock\" nc_type=\"'+spec_bunch+'|stock\" value=\"\" /></td><td><input class=\"text stock\" type=\"text\" name=\"spec['+spec_bunch+'][alarm]\" data_type=\"alarm\" nc_type=\"'+spec_bunch+'|alarm\" value=\"\" /></td><td><input class=\"text sku\" type=\"text\" data_type=\"serial\" name=\"spec['+spec_bunch+'][sku]\" nc_type=\"'+spec_bunch+'|sku\" value=\"\" /></td></tr><tr><td></td><td></td><td style=\"color:#3A87AD\">申报要素：</td><td colspan=\"5\"><input class=\"text sku_spec\" type=\"text\" name=\"spec['+spec_bunch+'][sku_spec]\" nc_type=\"'+spec_bunch+'|sku_spec\" value=\"\" /></td></tr>';\n";
+        echo "str +='<td><input class=\"text price\" type=\"text\" name=\"spec['+spec_bunch+'][marketprice]\" data_type=\"marketprice\" nc_type=\"'+spec_bunch+'|marketprice\" value=\"\" /><em class=\"add-on\"><i class=\"icon-renminbi\"></i></em></td><td><input class=\"text price\" type=\"text\" name=\"spec['+spec_bunch+'][price]\" data_type=\"price\" nc_type=\"'+spec_bunch+'|price\" value=\"\" /><em class=\"add-on\"><i class=\"icon-renminbi\"></i></em></td><td><input class=\"text stock\" type=\"text\" name=\"spec['+spec_bunch+'][stock]\" data_type=\"stock\" nc_type=\"'+spec_bunch+'|stock\" value=\"\" /></td><td><input class=\"text stock\" type=\"text\" name=\"spec['+spec_bunch+'][alarm]\" data_type=\"alarm\" nc_type=\"'+spec_bunch+'|alarm\" value=\"\" /></td><td><input class=\"text sku\" type=\"text\" data_type=\"serial\" name=\"spec['+spec_bunch+'][sku]\" nc_type=\"'+spec_bunch+'|sku\" value=\"\" /></td></tr>';\n";
         for($i=0; $i< $len; $i++){
             echo "}\n";
         }

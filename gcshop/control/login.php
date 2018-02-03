@@ -395,18 +395,82 @@ class loginControl extends BaseHomeControl {
 					QueueClient::push('sendMemberMsg', $param);
 				}
 			}
-			/*注册后赠送免费代金券给用户*/
-
-			$_POST['ref_url']	= (strstr($_POST['ref_url'],'logout')=== false && !empty($_POST['ref_url']) ? $_POST['ref_url'] : 'index.php?gct=pointvoucher&gp=index#daijin');// 跳转到个人中心信息完善为积分中心领取代金券index.php?gct=member_information&gp=member
+			/*注册后需要提交资料审核*/
+			$_POST['ref_url']	= 'index.php?gct=login&gp=member_verify';
 			redirect($_POST['ref_url']);
 
         } else {
 			showDialog($member_info['error']);
         }
-		
-		
 	}
-		/**
+	
+	/**
+	 * 会员验证
+	 *
+	 */
+	public function member_verifyOp(){
+		Language::read("home_login_register");
+		$_pic = @unserialize(C('login_pic'));
+		if ($_pic[0] != ''){
+			Tpl::output('lpic',UPLOAD_SITE_URL.'/'.ATTACH_LOGIN.'/'.$_pic[array_rand($_pic)]);
+		}else{
+			Tpl::output('lpic',UPLOAD_SITE_URL.'/'.ATTACH_LOGIN.'/'.rand(1,4).'.jpg');
+		}
+		Tpl::showpage('member_verify'); 
+	}
+	
+	/**
+	 * 提交验证
+	 *
+	 */
+	public function submit_verifyOp(){
+		Language::read("home_login_register");
+		$member_id = $_SESSION['member_id'];
+		if(is_uploaded_file($_FILES['license']['tmp_name'])){ 
+			$upfile    = $_FILES['license'];
+			$name      = $upfile["name"];
+			$_name     = strchr($name,'.');
+			$size      = $upfile["size"];
+			if(($size/1024)>2000){
+				showDialog('图片不能大于2M');
+				TPL::showpage('member_verify');
+			}
+			$tmp_name  = $upfile["tmp_name"];
+			$image = move_uploaded_file($tmp_name,BASE_DATA_PATH.DS.'upload'.DS.'gcshop'.DS.'member'.DS.'license'.DS.$member_id.'_license'.$_name);
+			if($image){
+				$data = array();
+				$data['member_company_name'] = $_POST['company_name'];
+				$data['member_license'] = '/data'.DS.'upload'.DS.'gcshop'.DS.'member'.DS.'license'.DS.$_SESSION['member_id'].'_license'.$_name;
+				$re = Model('member')->editMember(array('member_id'=>$member_id),$data);
+				if($re){
+					$_pic = @unserialize(C('login_pic'));
+					if ($_pic[0] != ''){
+						Tpl::output('lpic',UPLOAD_SITE_URL.'/'.ATTACH_LOGIN.'/'.$_pic[array_rand($_pic)]);
+					}else{
+						Tpl::output('lpic',UPLOAD_SITE_URL.'/'.ATTACH_LOGIN.'/'.rand(1,4).'.jpg');
+					}
+					Tpl::showpage('member_await_verify');
+				}
+			}
+		}
+	}
+	
+	/**
+	 * 等待审核
+	 *
+	 */
+	public function await_verifyOp(){
+		Language::read("home_login_register");
+		$_pic = @unserialize(C('login_pic'));
+		if ($_pic[0] != ''){
+			Tpl::output('lpic',UPLOAD_SITE_URL.'/'.ATTACH_LOGIN.'/'.$_pic[array_rand($_pic)]);
+		}else{
+			Tpl::output('lpic',UPLOAD_SITE_URL.'/'.ATTACH_LOGIN.'/'.rand(1,4).'.jpg');
+		}
+		Tpl::showpage('member_await_verify');
+	}
+	
+	/**
 	 * 会员添加操作
 	 *
 	 * @param
@@ -426,14 +490,11 @@ class loginControl extends BaseHomeControl {
 		    showDialog($lang['invalid_request'],'','error');
 		}
         $register_info = array();
-        //$register_info['username'] = $_POST['user_name'];
 		$register_info['username'] = $_POST['mobile'];
         $register_info['password'] = $_POST['password'];
-		$register_info['mobile']=$_POST['mobile'];
-        //$register_info['password_confirm'] = $_POST['password_confirm'];
+		$register_info['mobile']   = $_POST['mobile'];
 		$register_info['is_membername_modify'] = 1;
 		$register_info['member_mobile_bind'] = 1;
-        //$register_info['email'] = $_POST['email'];
 		$register_info['ref_url'] = $_POST['ref_url'];
 		$mobile_captcha = $_POST['mobile_captcha'];
         $verify_code = $_SESSION['verify_code'];

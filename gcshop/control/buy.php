@@ -27,15 +27,12 @@ class buyControl extends BaseBuyControl {
      * 实物商品 购物车、直接购买第一步:选择收获地址和配送方式
      */
     public function buy_step1Op() {
-		if($_POST['store_id'] != 6){
-			if(!C('site_buy')) halt(C('closed_reason'));
-		}
         //虚拟商品购买分流
         $this->_buy_branch($_POST);
 
         //得到购买数据
         $logic_buy = Logic('buy');
-        $result = $logic_buy->buyStep1($_POST['cart_id'], $_POST['ifcart'], $_SESSION['member_id'], $_SESSION['store_id']);
+        $result = $logic_buy->buyStep1($_POST['cart_id'], $_POST['ifcart'], $_SESSION['member_id'], $_SESSION['store_id'], 1);
         if(!$result['state']) {
             showMessage($result['msg'], '', 'html', 'error');
         } else {

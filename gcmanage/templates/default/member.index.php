@@ -79,9 +79,6 @@
 		  <th>&nbsp;</th>
           <th>ID</th>
           <th colspan="2"><?php echo $lang['member_index_name']?></th>
-		  <th class="align-center"><span fieldname="logins" nc_type="order_by">微信状态</span></th>
-          <th class="align-center"><span fieldname="logins" nc_type="order_by">推荐人ID</span></th>
-		  <th class="align-center"><span fieldname="logins" nc_type="order_by">来源平台</span></th>
 		  <th class="align-center"><span fieldname="logins" nc_type="order_by"><?php echo $lang['member_index_login_time']?></span></th>
           <th class="align-center"><span fieldname="last_login" nc_type="order_by"><?php echo $lang['member_index_last_login']?></span></th>
           <th class="align-center"><?php echo $lang['member_index_points']; ?></th>
@@ -121,11 +118,6 @@
                <div style="font-size:13px; padding-left:10px">&nbsp;&nbsp;<?php echo $v['member_mobile']; ?></div>
                <?php } ?>
               </div></td>
-          <td class="align-center">
-		  <?php if($v['member_wechatunionid'] <> null){if($v['member_wechatopenid']<>null ) {echo "WAP绑定<br/>";} if($v['member_wechatpcopenid']<>null ) {echo "PC绑定";}} else {echo "未绑定";}?>
-		  </td>
-		  <td class="align-center"><?php echo $v['refer_id'];?></td>
-		  <td class="align-center"><?php echo $v['saleplat_id'];?></td>
 		  <td class="align-center"><?php echo $v['member_login_num']; ?></td>
           <td class="w150 align-center"><p><?php echo $v['member_login_time']; ?></p>
             <p><?php echo $v['member_login_ip']; ?></p></td>
@@ -136,7 +128,7 @@
           <td class="align-center"><?php echo $v['member_exppoints'];?></td>
           <td class="align-center"><?php echo $v['member_grade'];?></td>
           <td class="align-center"><?php echo $v['member_state'] == 1?$lang['member_edit_allow']:$lang['member_edit_deny']; ?></td>
-          <td class="align-center"><a href="index.php?gct=member&gp=member_edit&member_id=<?php echo $v['member_id']; ?>"><?php echo $lang['nc_edit']?></a> | <a href="index.php?gct=notice&gp=notice&member_name=<?php echo ltrim(base64_encode($v['member_name']),'='); ?>"><?php echo $lang['member_index_to_message'];?></a></td>
+          <td class="align-center"><?php if($v['member_examine'] == 0){ ?><a href="index.php?gct=member&gp=member_examine&member_id=<?php echo $v['member_id']; ?>"><?php echo '审核'?></a> | <?php } ?><a href="index.php?gct=member&gp=member_edit&member_id=<?php echo $v['member_id']; ?>"><?php echo $lang['nc_edit']?></a> | <a href="index.php?gct=notice&gp=notice&member_name=<?php echo ltrim(base64_encode($v['member_name']),'='); ?>"><?php echo $lang['member_index_to_message'];?></a></td>
         </tr>
         <?php } ?>
         <?php }else { ?>

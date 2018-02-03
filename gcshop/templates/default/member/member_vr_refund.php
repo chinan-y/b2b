@@ -47,7 +47,7 @@
           <!-- store_name -->
           <span> <a href="<?php echo urlShop('show_store','index',array('store_id'=> $val['store_id']), $output['store_list'][$val['store_id']]['store_domain']);?>" title="<?php echo $val['store_name'];?>"><?php echo $val['store_name']; ?></a></span>
 
-          <span member_id="<?php echo $output['store_list'][$val['store_id']]['member_id'];?>">
+          <span member_id="<?php echo $output['store_list'][$val['store_id']]['member_id'];?>" style="display:none;">
           <!-- QQ -->
           <?php if(!empty($output['store_list'][$val['store_id']]['store_qq'])){?>
           <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $output['store_list'][$val['store_id']]['store_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $output['store_list'][$val['store_id']]['store_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $output['store_list'][$val['store_id']]['store_qq'];?>:52" style=" vertical-align: middle;"/></a>

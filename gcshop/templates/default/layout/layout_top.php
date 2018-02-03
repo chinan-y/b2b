@@ -93,19 +93,19 @@ $(function(){
 
     <div class="content-box" id="content-compare">
       <div class="top">
-        <h3>1商品对比</h3>
+        <h3>商品对比</h3>
         <a href="javascript:void(0);" class="close" title="隐藏"></a></div>
       <div id="comparelist"></div>
     </div>
     <div class="content-box" id="content-cart">
       <div class="top">
-        <h3>2我的购物车</h3>
+        <h3>我的购物车</h3>
         <a href="javascript:void(0);" class="close" title="隐藏"></a></div>
       <div id="rtoolbar_cartlist"></div>
     </div>
 	<div class="content-box" id="content-collect">
 	  <div class="top">
-        <h3>3我的收藏</h3>
+        <h3>我的收藏</h3>
         <a href="javascript:void(0);" class="close" title="隐藏"></a></div>
       <div id="collectlist"></div>
     </div>
@@ -298,7 +298,6 @@ backTop('gotopD');
         <dd>
           <ul>
 			<li><a href="<?php echo SHOP_SITE_URL;?>/index.php?gct=member_voucher&gp=index"><?php echo $lang['member_myvoucher']?></a></li>
-			<li><a href="<?php echo SHOP_SITE_URL;?>/index.php?gct=member_snshome&gp=index"><?php echo $lang['member_mypage']?></a></li>
 			<li><a href="<?php echo SHOP_SITE_URL;?>/index.php?gct=member_points&gp=index"><?php echo $lang['member_mypoint']?></a></li>
 			<li><a href="<?php echo SHOP_SITE_URL;?>/index.php?gct=invite&gp=index"><?php echo $lang['member_invitefriends']?></a></li>
 			<li><a href="<?php echo SHOP_SITE_URL;?>/index.php?gct=member_snsfriend&gp=inviter"><?php echo $lang['member_ganenren']?></a></li>

@@ -39,7 +39,7 @@
             <a href="javascript:collect_store('<?php echo $favorites['goods']['store_id'];?>','store','')" title="<?php echo $lang['favorite_collect_store'];?>" nc_store="<?php echo $favorites['goods']['store_id'];?>"> <i class=" icon-plus-sign"></i></a>
             <?php }?>
           </p>
-          <p class="mt5"><span member_id="<?php echo $favorites['goods']['member_id'];?>"></span>
+          <p class="mt5" style="display:none;"><span member_id="<?php echo $favorites['goods']['member_id'];?>"></span>
             <?php if(!empty($favorites['goods']['store_qq'])){?>
             <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $favorites['goods']['store_qq'];?>&site=qq&menu=yes" title="QQ: <?php echo $favorites['goods']['store_qq'];?>"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $favorites['goods']['store_qq'];?>:52" style=" vertical-align: middle;"/></a>
             <?php }?>

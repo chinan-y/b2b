@@ -119,7 +119,24 @@ class goodsControl extends BaseGoodsControl {
 				}
 			}
 		}
-		
+		$member = Model('member')->getMemberInfo(array('member_id'=>$_SESSION['member_id']), 'member_examine,member_company_name');
+		if(!$_SESSION['member_id']){
+			$goods_info['goods_href'] = urlShop('login', 'index');
+			$goods_info['show_note'] = '登录后查看价格';
+			$goods_info['add_cart'] = '登录后查看';
+			$goods_info['show_price'] = 1;
+		}else if($member['member_examine'] ==0 && !$member['member_company_name']){
+			$goods_info['goods_href'] = urlShop('login', 'member_verify');
+			$goods_info['show_note'] = '认证后查看价格';
+			$goods_info['add_cart'] = '认证后查看';
+			$goods_info['show_price'] = 1;
+		}else if($member['member_examine'] ==0 && $member['member_company_name']){
+			$goods_info['goods_href'] = urlShop('login', 'await_verify');
+			$goods_info['show_note'] = '审核后查看价格';
+			$goods_info['add_cart'] = '审核后查看';
+			$goods_info['show_price'] = 1;
+		}
+		$goods_info['rule'] = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods_id))->find();
 		Tpl::output('goods', $goods_info);
 
 		//检测是否抢购中的商品(开始)

@@ -103,19 +103,44 @@ class indexControl extends BaseHomeControl{
 	//json首页推荐商品
 	public function josn_index_goodsOp() {
 		//首页推荐商品
-		$curpage = intval($_REQUEST['curpage']);
-		$curpage = $curpage > 1 ? $curpage : 1;
-
 		$model_goods = Model('goods');
-		$goods_commend_list = $model_goods->getIndexGoodsCommendList($curpage);
-
+		$goods_commend_list = $model_goods->getGoodsList(array('goods_state'=>1),'*','','goods_id desc','','15');
+		$member = Model('member')->getMemberInfo(array('member_id'=>$_SESSION['member_id']), 'member_examine,member_company_name');
 		foreach($goods_commend_list as $key=>$value){
-			
 			$commonid = $model_goods->getGoodsIn(array('goods_id' => $value['goods_id']), 'goods_commonid');
 			$value['goods_commonid'] =  $commonid[0]['goods_commonid'];
 			$goods_commend_list[$key]['goods_href'] = urlShop('goods', 'index', array('goods_id' => $value['goods_id'],'ref'=>$_SESSION['member_id']));
 			$goods_commend_list[$key]['store_href'] = urlShop('show_store', 'index', array('store_id' => $value['store_id'],'ref'=>$_SESSION['member_id']));
 			$goods_commend_list[$key]['goods_image'] = thumb($value, 240);
+			if(!$_SESSION['member_id']){
+				$goods_commend_list[$key]['goods_href'] = urlShop('login', 'index');
+				$goods_commend_list[$key]['add_cart'] = '登录后查看';
+				$goods_commend_list[$key]['goods_promotion_price'] = '登录后查看价格';
+			}else if($member['member_examine'] ==0 && !$member['member_company_name']){
+				$goods_commend_list[$key]['goods_href'] = urlShop('login', 'member_verify');
+				$goods_commend_list[$key]['add_cart'] = '认证后查看';
+				$goods_commend_list[$key]['goods_promotion_price'] = '认证后查看价格';
+			}else if($member['member_examine'] ==0 && $member['member_company_name']){
+				$goods_commend_list[$key]['goods_href'] = urlShop('login', 'await_verify');
+				$goods_commend_list[$key]['add_cart'] = '审核后查看';
+				$goods_commend_list[$key]['goods_promotion_price'] = '审核后查看价格';
+			}else{
+				$goods_commend_list[$key]['add_cart'] = '去下单';
+			}
+			
+			$rule = Model()->table('goods_price_rule')->where(array('goods_id'=>$value['goods_id']))->find();
+			if($rule && $_SESSION['member_id'] && $member['member_company_name'] && $member['member_examine']){
+				$goods_commend_list[$key]['num1'] = $rule['num1'] ? $rule['num1'] : '';
+				$goods_commend_list[$key]['num2'] = $rule['num2'] ? $rule['num2'] : '';
+				$goods_commend_list[$key]['num3'] = $rule['num3'] ? $rule['num3'] : '';
+				$goods_commend_list[$key]['num4'] = $rule['num4'] ? $rule['num4'] : '';
+				$goods_commend_list[$key]['num5'] = $rule['num5'] ? $rule['num5'] : '';
+				$goods_commend_list[$key]['price1'] = $rule['price1'] ? $rule['price1'] : '';
+				$goods_commend_list[$key]['price2'] = $rule['price2'] ? $rule['price2'] : '';
+				$goods_commend_list[$key]['price3'] = $rule['price3'] ? $rule['price3'] : '';
+				$goods_commend_list[$key]['price4'] = $rule['price4'] ? $rule['price4'] : '';
+				$goods_commend_list[$key]['price5'] = $rule['price5'] ? $rule['price5'] : '';
+			}
 		}
 		$array = $goods_commend_list;
 

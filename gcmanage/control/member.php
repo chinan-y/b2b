@@ -264,6 +264,29 @@ class memberControl extends SystemControl{
 		Tpl::output('member_array',$member_array);
 		Tpl::showpage('member.edit');
 	}
+	
+	/**
+	 * 会员审核
+	 */
+	public function member_examineOp(){
+		$lang	= Language::getLangContent();
+		$model_member = Model('member');
+		if (chksubmit()){
+			$update_array = array();
+			$update_array['member_examine']	= 1;
+			$result = $model_member->editMember(array('member_id'=>intval($_POST['member_id'])),$update_array);
+			if ($result){
+				$this->log('审核会员成功'.'[会员ID:'.$_POST['member_id'].']',1);
+				showMessage('审核会员成功','index.php?gct=member&gp=member');
+			}else {
+				showMessage('审核会员失败');
+			}
+		}
+		$condition['member_id'] = intval($_GET['member_id']);
+		$member_array = $model_member->getMemberInfo($condition);
+		Tpl::output('member_array',$member_array);
+		Tpl::showpage('member.examine');
+	}
 
 	/**
 	 * 新增会员

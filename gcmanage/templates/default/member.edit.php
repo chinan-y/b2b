@@ -212,7 +212,7 @@
           <td colspan="3" class="required"><strong class="red">&nbsp;</strong></td>
         </tr>
 		
-		<tr><!--是否开通平台销售员权限，默认开通-->
+		<!--tr>
           <td colspan="1" class="required"><?php echo $lang['member_edit_is_seller'];?></td>
           <td class="vatop rowform onoff">
           	<label 
@@ -242,7 +242,7 @@
                 value="0" type="radio">
 		</td>
           <td class="vatop tips"><?php echo $lang['member_edit_is_seller_tip']; ?></td>
-        </tr>
+        </tr-->
 		
 	<?php if($output['member_array']['is_seller'] == '1'){ ?>   
 		

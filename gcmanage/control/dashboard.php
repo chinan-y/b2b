@@ -74,6 +74,8 @@ class dashboardControl extends SystemControl{
         $statistics['week_add_member'] = $model_member->getMemberCount(array('member_time' => array('egt', $tmp_time)));
         // 预存款提现
         $statistics['cashlist']  = Model('predeposit')->getPdCashCount(array('pdc_payment_state'=>0));
+		// 等待审核
+        $statistics['verify']  = $model_member->getMemberCount(array('member_examine'=>0));
 
         /**
          * 店铺
@@ -150,21 +152,7 @@ class dashboardControl extends SystemControl{
 		$statistics['mall_consult'] = Model('mall_consult')->getMallConsultCount(array('is_reply' => 0));
         // 服务站
         $statistics['delivery_point'] = Model('delivery_point')->getDeliveryPointWaitVerifyCount(array());
-        /**
-         * CMS
-         */
-        if (C('cms_isuse')) {
-            // 文章审核
-            $statistics['cms_article_verify'] = Model('cms_article')->getCmsArticleCount(array('article_state' => 2));
-            // 画报审核
-            $statistics['cms_picture_verify'] = Model('cms_picture')->getCmsPictureCount(array('picture_state' => 2));
-        }
-        /**
-         * 圈子
-         */
-        if (C('circle_isuse')) {
-            $statistics['circle_verify'] = Model('circle')->getCircleUnverifiedCount();
-        }
+        
 		// 招商加盟
 		$statistics['league'] = Model('league')->getMerchConsultCount(array('is_reply' => 0));
 

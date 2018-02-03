@@ -33,7 +33,7 @@
             <input id="pc_cart_enable" name="pc_cart" <?php if($output['list_setting']['pc_cart'] == '1'){ ?>checked="checked"<?php } ?> value="1" type="radio">
             <input id="pc_cart_disabled" name="pc_cart" <?php if($output['list_setting']['pc_cart'] == '0'){ ?>checked="checked"<?php } ?> value="0" type="radio">
 			
-			<label class="required label-l"><?php echo $lang['wap_buy_switch'];?>:</label>
+			<!--label class="required label-l"><?php echo $lang['wap_buy_switch'];?>:</label>
 			<label for="wap_buy_enable" class="cb-enable <?php if($output['list_setting']['wap_buy'] == '1'){ ?>selected<?php } ?>" ><span><?php echo $lang['open'];?></span></label>
             <label for="wap_buy_disabled" class="cb-disable <?php if($output['list_setting']['wap_buy'] == '0'){ ?>selected<?php } ?>" ><span><?php echo $lang['close'];?></span></label>
             <input id="wap_buy_enable" name="wap_buy" <?php if($output['list_setting']['wap_buy'] == '1'){ ?>checked="checked"<?php } ?> value="1" type="radio">
@@ -43,11 +43,11 @@
 			<label for="wap_cart_enable" class="cb-enable <?php if($output['list_setting']['wap_cart'] == '1'){ ?>selected<?php } ?>" ><span><?php echo $lang['open'];?></span></label>
             <label for="wap_cart_disabled" class="cb-disable <?php if($output['list_setting']['wap_cart'] == '0'){ ?>selected<?php } ?>" ><span><?php echo $lang['close'];?></span></label>
             <input id="wap_cart_enable" name="wap_cart" <?php if($output['list_setting']['wap_cart'] == '1'){ ?>checked="checked"<?php } ?> value="1" type="radio">
-            <input id="wap_cart_disabled" name="wap_cart" <?php if($output['list_setting']['wap_cart'] == '0'){ ?>checked="checked"<?php } ?> value="0" type="radio">
+            <input id="wap_cart_disabled" name="wap_cart" <?php if($output['list_setting']['wap_cart'] == '0'){ ?>checked="checked"<?php } ?> value="0" type="radio"-->
 		  </td>
         </tr>
 		
-		<tr class="space">
+		<!--tr class="space">
 			<th colspan="16"><?php echo '注册方式开关'; ?>:</th>
         </tr>
         <tr class="noborder">
@@ -71,7 +71,7 @@
             <input id="weixin_logon_enable" name="weixin_logon" <?php if($output['list_setting']['weixin_logon'] == '1'){ ?>checked="checked"<?php } ?> value="1" type="radio">
             <input id="weixin_logon_disabled" name="weixin_logon" <?php if($output['list_setting']['weixin_logon'] == '0'){ ?>checked="checked"<?php } ?> value="0" type="radio">
 		  </td>
-        </tr>
+        </tr-->
 		
 		<tr class="space">
 			<th colspan="16"><?php echo '库存显示开关'; ?>:</th>
@@ -86,12 +86,12 @@
 		  </td>
         </tr>
 		
-		<tr class="space">
+		<!--tr class="space">
 			<th colspan="16"><?php echo '销售员开通方式开关'; ?>:</th>
         </tr>
 		<tr class="noborder">
 		  <td><label class="required label"><?php echo '购买指定商品成为光彩商品级销售员';?>:</label>商品ID：<input type="text" value="<?php echo $output['list_setting']['seller_goods']; ?>" name="seller_goods" > 如果多个商品ID用英文的逗号隔开，中间不能包含空格</td>
-        </tr>
+        </tr-->
 		
       </tbody>
       <tfoot>

@@ -41,7 +41,7 @@
       <ul class="ncm-friend-list">
         <?php foreach($output['memberlist'] as $k => $v){ ?>
         <li id="recordone_<?php echo $v['member_id']; ?>">
-          <div class="avatar"><a href="index.php?gct=member_snshome&mid=<?php echo $v['member_id'];?>" target="_blank"><img src="<?php if ($v['member_avatar']!='') { echo UPLOAD_SITE_URL.'/'.ATTACH_AVATAR.DS.$v['member_avatar']; } else { echo UPLOAD_SITE_URL.'/'.ATTACH_COMMON.DS.C('default_user_portrait'); } ?>" alt="<?php echo $v['member_name']; ?>" data-param="{'id':<?php echo $v['member_id'];?>}" nctype="mcard" /></a></div>
+          <div class="avatar"><img src="<?php if ($v['member_avatar']!='') { echo UPLOAD_SITE_URL.'/'.ATTACH_AVATAR.DS.$v['member_avatar']; } else { echo UPLOAD_SITE_URL.'/'.ATTACH_COMMON.DS.C('default_user_portrait'); } ?>" alt="<?php echo $v['member_name']; ?>" data-param="{'id':<?php echo $v['member_id'];?>}" nctype="mcard" /></div>
           <dl class="info">
             <dt><a href="index.php?gct=member_snshome&mid=<?php echo $v['member_id'];?>" title="<?php echo $v['friend_tomname']; ?>" target="_blank" data-param="{'id':<?php echo $v['member_id'];?>}" nctype="mcard"><?php echo $v['member_name']; ?></a><i class="<?php echo $v['sex_class']; ?>"></i></dt>
             <dd class="area"><?php echo $v['member_areainfo'];?></dd>

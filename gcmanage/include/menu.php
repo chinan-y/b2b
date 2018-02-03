@@ -35,7 +35,7 @@ $arr = array(
 			7 => array(
 				'args'	=> 'operation',
 				'text'	=> $lang['nc_operation']),
-			8 => array(
+			/*8 => array(
 				'args'	=> 'stat',
 				'text'	=> $lang['nc_stat']),
 			9 =>array(
@@ -46,7 +46,7 @@ $arr = array(
 				'text'  => '分销'),
 			11 =>array(
 				'args'  => 'aliyunoss',
-				'text'  => '对象存储'),
+				'text'  => '对象存储'),*/
 			
 		),
 		'left' =>array(
@@ -68,7 +68,7 @@ $arr = array(
 				'text' => $lang['nc_config'],
 				'list' => array(
 					array('args'=>'base,setting,setting',			'text'=>$lang['nc_web_set']),
-					array('args'=>'qq,account,setting',		        'text'=>$lang['nc_web_account_syn']),
+					// array('args'=>'qq,account,setting',		        'text'=>$lang['nc_web_account_syn']),
 					array('args'=>'param,upload,setting',			'text'=>$lang['nc_upload_set']),
 					array('args'=>'seo,setting,setting',			'text'=>$lang['nc_seo_set']),
 					array('args'=>'email,message,setting',			'text'=>$lang['nc_message_set']),
@@ -241,7 +241,7 @@ $arr = array(
 );
 
 //开启 海关2.0+对接管理菜单
-if(C('mess_isuse') == 1){
+/*if(C('mess_isuse') == 1){
 	$arr['top'][] = array(
 				'args'	=> 'mess',
 				'text'	=> $lang['nc_custom_api']);
@@ -357,7 +357,7 @@ if(C('circle_isuse') == 1){
 					8 => array('args'=>'index,circle_cache,circle','text'=>$lang['nc_circle_cache'])
 			)
 	);
-}
+}*/
 
 return $arr;
 ?>

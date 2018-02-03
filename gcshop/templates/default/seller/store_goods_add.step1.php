@@ -18,8 +18,13 @@
     <h6>STEP.3</h6>
     <h2>上传商品图片</h2>
     <i class="arrow icon-angle-right"></i> </li>
-  <li><i class="icon icon-ok-circle"></i>
+  <li><i class="icon icon-edit"></i>
     <h6>STEP.4</h6>
+    <h2>添加价格规则</h2>
+    <i class="arrow icon-angle-right"></i> 
+  </li>
+  <li><i class="icon icon-ok-circle"></i>
+    <h6>STEP.5</h6>
     <h2>商品发布成功</h2>
   </li>
 </ul>
