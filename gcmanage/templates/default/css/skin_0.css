@@ -121,7 +121,7 @@ h6 { font-size:12px;}
 .mainhd { background: url(../images/sky/body_bg.png) repeat-x 0px 0px;}
 .layout-header { background: url(../images/sky/bg_position.gif) no-repeat 0 0; text-align:left; width:100%; height: 91px; position:relative; z-index:1; zoom:1;}
 /*zmr>v30*/
-.top-nav { background: url(../images/sky/bg_position.gif) no-repeat 0px -91px; max-width:400px; _width:expression((documentElement.clientWidth >320) ? "320px" : "auto" );/* IE6 */ height: 28px; padding-bottom: 29px; position: absolute; z-index:1; top: 0; right: 0;}
+.top-nav { /*background: url(../images/sky/bg_position.gif) no-repeat 0px -91px;*/ max-width:400px; _width:expression((documentElement.clientWidth >320) ? "320px" : "auto" );/* IE6 */ height: 28px; padding-bottom: 29px; position: absolute; z-index:1; top: 0; right: 0;}
 	.top-nav ul { line-height: 20px; color:#999;  height:20px; padding:6px 8px 2px 0px;}
 		.top-nav li { color:#069; background: url(../images/sky/bg_position.gif) no-repeat scroll -638px -96px;  display:inline; padding-left: 4px; margin-left: 2px; float: left;}
 			.top-nav li a { color:#069; background: #CCEDF9 url(../images/sky/bg_position.gif) no-repeat scroll 0 999%; padding-left: 4px;}

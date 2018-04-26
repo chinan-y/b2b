@@ -74,7 +74,7 @@
           <td colspan="2" class="required"><label for="nav_url"><?php echo $lang['navigation_index_url'];?>:</label></td>
         </tr>
         <tr class="noborder">
-          <td class="vatop rowform"><input type="text" value="http://" name="nav_url" id="" class="txt"></td>
+          <td class="vatop rowform"><input type="text" value="https://" name="nav_url" id="" class="txt"></td>
           <td class="vatop tips"></td>
         </tr>
         <tr>
@@ -96,7 +96,7 @@
                 <input type="radio" value="2" name="nav_location">
                 <label><?php echo $lang['navigation_index_bottom'];?></label>
               </li>
-			        <li>
+			  <!--li>
                 <input type="radio" value="3" name="nav_location">
                 <label><?php echo $lang['navigation_index_mobile'];?></label>
               </li>
@@ -107,7 +107,7 @@
               <li>
                 <input type="radio" value="5" name="nav_location">
                 <label><?php echo $lang['navigation_index_app'];?></label>
-              </li>
+              </li-->
             </ul></td>
           <td class="vatop tips"></td>
         </tr>

@@ -53,9 +53,6 @@ class cartControl extends BaseBuyControl {
             $cart['goods_total'] = ncPriceFormat($cart['goods_price'] * $cart['goods_num']);
             $store_cart_list[$cart['store_id']][]= $cart;
 			//$store_cart_list[$cart['store_from']][]= $cart;//by liu 分类分组域有问题未解决
-			if($cart['store_id'] != 6){
-				if(!C('site_buy')) halt(C('closed_reason')); //关闭商品购买流程
-			}
         }
 
 		//判断是否需要拆单

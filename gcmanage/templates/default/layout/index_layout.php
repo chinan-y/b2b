@@ -272,6 +272,7 @@ function addFavorite(url, title) {
               <li><a href="index.php?gct=index&gp=modifypw" target="workspace" ><span><?php echo $lang['nc_modifypw']; ?></span></a></li>
               <li><a href="index.php?gct=index&gp=logout" title="<?php echo $lang['nc_logout'];?>"><span><?php echo $lang['nc_logout'];?></span></a></li>
               <li><a href="<?php echo BASE_SITE_URL;?>" target="_blank" title="<?php echo $lang['nc_homepage'];?>"><span><?php echo $lang['nc_homepage'];?></span></a></li>
+			  <li><a href="<?php echo BASE_SITE_URL;?>/gcshop/index.php?gct=seller_login&op=show_login" target="_blank"><span><?php echo '商家入口';?></span></a></li>
             </ul>
           </div>
           <!-- End of Top navigation -->

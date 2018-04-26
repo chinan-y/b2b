@@ -82,16 +82,7 @@
 	<div class="nc-login-bottom"></div>
   </div>
   <div class="nc-login-left">
-    <ol>
-      <li class="ico05"><i>
-      <li class="ico01"><i></i></li>
-      <li class="ico03"><i></i></li>
-      <li class="ico02"><i></i></li>
-      <li class="ico06"><i></i></li>
-      <li class="ico04"><i></i></li>
-	  <div class="leftpic"><img src="<?php echo $output['lpic'];?>"  border="0"></div>
-      <div class="clear"></div>
-    </ol>
+	<div class="leftpic"><img src="<?php echo $output['lpic'];?>"  border="0"></div>
     </div>
 </div>
   

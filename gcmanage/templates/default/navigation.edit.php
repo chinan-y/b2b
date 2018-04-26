@@ -98,7 +98,7 @@
                 <input type="radio" <?php if($output['navigation_array']['nav_location'] == '2'){ ?>checked="checked"<?php } ?> value="2" name="nav_location" id="nav_location2">
                 <label for="nav_location2"><?php echo $lang['navigation_index_bottom'];?> </label>
               </li>
-			        <li>
+			  <!--li>
                 <input type="radio" <?php if($output['navigation_array']['nav_location'] == '3'){ ?>checked="checked"<?php } ?> value="3" name="nav_location" id="nav_location3">
                 <label for="nav_location3"><?php echo $lang['navigation_index_mobile'];?> </label>
               </li>
@@ -109,7 +109,7 @@
               <li>
                 <input type="radio" <?php if($output['navigation_array']['nav_location'] == '5'){ ?>checked="checked"<?php } ?> value="5" name="nav_location" id="nav_location5">
                 <label for="nav_location5"><?php echo $lang['navigation_index_app'];?> </label>
-              </li>
+              </li-->
             </ul></td>
           <td class="vatop tips"></td>
         </tr>

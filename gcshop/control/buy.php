@@ -144,9 +144,6 @@ class buyControl extends BaseBuyControl {
      * 下单时支付页面
      */
     public function payOp() {
-        if($_GET['store_id'] != 6){
-			if(!C('site_buy')) halt(C('closed_reason')); //关闭商品购买流程
-		}
 		if(strlen($_GET['pay_sn'])>18){
 			$pay_sn=explode(",",substr($_GET['pay_sn'],0,-1));
 			

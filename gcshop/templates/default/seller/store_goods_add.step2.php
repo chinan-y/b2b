@@ -156,7 +156,7 @@
         <dt><i class="required"></i>商品原产国<?php echo $lang['nc_colon'];?></dt>
         <dd>
 		  <select name="g_country_code" id="select1">
-            <option value="0" selected="selected">请选择</option>
+            <option value="" selected="selected"></option>
 			<?php foreach($output['messCountrys'] as $k=>$v){ ?>
 			<option value="<?php echo $k;?>" <?php if($output['goods']['country_code'] == $k){echo 'selected="selected"';}?>><?php echo $k.'|'.$v['name'];?></option>
 			<?php } ?>			
@@ -198,22 +198,8 @@
           <p class="hint">商品卖点最长不能超过140个汉字</p>
         </dd>
       </dl>
-      <dl style="display:none;">
-        <dt nc_type="no_spec"><i class="required">*</i><?php echo $lang['store_goods_index_store_price'].$lang['nc_colon'];?></dt>
-        <dd nc_type="no_spec">
-          <input name="g_price" value="<?php echo $output['goods']['goods_price']; ?>" type="text"  class="text w60" /><em class="add-on"><i class="icon-renminbi"></i></em> <span></span>
-          <p class="hint"><?php echo $lang['store_goods_index_store_price_help'];?>，且不能高于市场价。<br>
-            此价格为商品的税前价格，如果商品存在规格，该价格显示最低价格。</p>
-        </dd>
-      </dl>
-      <dl style="display:none;">
-        <dt><i class="required">*</i>市场价<?php echo $lang['nc_colon'];?></dt>
-        <dd>
-          <input name="g_marketprice" value="<?php echo $output['goods']['goods_marketprice']; ?>" type="text" class="text w60" /><em class="add-on"><i class="icon-renminbi"></i></em> <span></span>
-          <p class="hint"><?php echo $lang['store_goods_index_store_price_help'];?>，此价格仅为市场参考售价，请根据该实际情况认真填写。</p>
-        </dd>
-      </dl>
-      <dl >
+      
+      <dl>
         <dt>成本价<?php echo $lang['nc_colon'];?></dt>
         <dd>
           <input name="g_costprice" value="<?php echo $output['goods']['goods_costprice']; ?>" type="text" class="text w60" /><em class="add-on"><i class="icon-renminbi"></i></em> <span></span>
@@ -251,7 +237,7 @@
       </dl>
       <?php $i++;?>
       <?php }?>
-      <?php }?>
+      
       <dl nc_type="spec_dl" class="spec-bg" style="display:none; overflow: visible;">
         <dt>商品配置<?php echo $lang['nc_colon'];?></dt>
         <dd class="spec-dd">
@@ -302,6 +288,31 @@
           <p class="hint">点击<i class="icon-edit"></i>可批量修改所在列的值。</p><span></span>
         </dd>
       </dl>
+	  <?php }else{?>
+		<dl>
+			<dt nc_type="no_spec"><i class="required">*</i>市场价<?php echo $lang['nc_colon'];?></dt>
+			<dd nc_type="no_spec">
+			  <input name="g_marketprice" value="<?php echo $output['goods']['goods_marketprice']; ?>" type="text" class="text w60" /><em class="add-on"><i class="icon-renminbi"></i></em> <span></span>
+			  <p class="hint"><?php echo $lang['store_goods_index_store_price_help'];?>，此价格仅为市场参考售价，请根据该实际情况认真填写。</p>
+			</dd>
+		</dl>
+		<dl>
+			<dt nc_type="no_spec"><i class="required">*</i><?php echo $lang['store_goods_index_store_price'].$lang['nc_colon'];?></dt>
+			<dd nc_type="no_spec">
+			  <input name="g_price" value="<?php echo $output['goods']['goods_price']; ?>" type="text"  class="text w60" /><em class="add-on"><i class="icon-renminbi"></i></em> <span></span>
+			  <p class="hint"><?php echo $lang['store_goods_index_store_price_help'];?>，商品的卖价，且不能高于市场价。</p>
+			</dd>
+		</dl>
+		<dl>
+			<dt nc_type="no_spec"><i class="required">*</i><?php echo $lang['store_goods_index_goods_no'].$lang['nc_colon'];?></dt>
+			<dd nc_type="no_spec">
+			  <p>
+				<input name="g_serial" value="<?php echo $output['goods']['goods_serial']; ?>" type="text"  class="text"  /><span></span>
+			  </p>
+			  <p class="hint"><?php echo '商家货号是指商家管理商品的编号，支持输入字母、数字、_、/、-和小数点';?></p>
+			</dd>
+		</dl>
+	  <?php }?>
 	  <dl style="display:none;">
         <dt>折扣<?php echo $lang['nc_colon'];?></dt>
         <dd>
@@ -333,16 +344,6 @@
           <span></span>
           <p class="hint">设置最低库存预警值。当库存低于预警值时商家中心商品列表页库存列红字提醒。<br>
             请填写0~255的数字，0为不预警。</p>
-        </dd>
-      </dl>
-
-      <dl style="display:none;">
-        <dt nc_type="no_spec"><?php echo $lang['store_goods_index_goods_no'].$lang['nc_colon'];?></dt>
-        <dd nc_type="no_spec">
-          <p>
-            <input name="g_serial" value="<?php echo $output['goods']['goods_serial']; ?>" type="text"  class="text"  />
-          </p>
-          <p class="hint"><?php echo $lang['store_goods_index_goods_no_help'];?></p>
         </dd>
       </dl>
 
@@ -1102,6 +1103,9 @@ $(function(){
 			/*g_sku_spec : {
                 required    : true
             },*/
+			g_country_code : {
+                required    : true
+            },
 			g_weight : {
                 required    : true
             },
@@ -1109,18 +1113,21 @@ $(function(){
                 maxlength   : 140
             },
             g_price : {
-                /*required    : true,*/
+                required    : true,
                 number      : true,
                 min         : 0.01,
                 max         : 9999999,
                 checkPrice  : true
             },
-            /*g_marketprice : {
+            g_marketprice : {
                 required    : true,
                 number      : true,
                 min         : 0.01,
                 max         : 9999999
-            },*/
+            },
+			g_serial : {
+				required    : true
+			},
             g_costprice : {
                 number      : true,
                 min         : 0.00,
@@ -1178,6 +1185,10 @@ $(function(){
                 required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_declare_elements_null'];?>'
                 
             },*/
+			g_country_code  : {
+                required    : '<i class="icon-exclamation-sign"></i>请选择商品原产国'
+                
+            },
 			g_weight  : {
                 required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_goods_weight_null'];?>'
                 
@@ -1187,21 +1198,24 @@ $(function(){
                 maxlength   : '<i class="icon-exclamation-sign"></i>商品卖点不能超过140个字符'
             },
             g_price : {
-                /*required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_store_price_null'];?>',*/
+                required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_store_price_null'];?>',
                 number      : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_store_price_error'];?>',
                 min         : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_store_price_interval'];?>',
                 max         : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_store_price_interval'];?>'
             },
-            /*g_marketprice : {
-                required    : '<i class="icon-exclamation-sign"></i>请填写市场价',
-                number      : '<i class="icon-exclamation-sign"></i>请填写正确的价格',
-                min         : '<i class="icon-exclamation-sign"></i>请填写0.01~9999999之间的数字',
-                max         : '<i class="icon-exclamation-sign"></i>请填写0.01~9999999之间的数字'
-            },*/
+            g_marketprice : {
+                required    : '<i class="icon-exclamation-sign"></i>请输入市场价',
+                number      : '<i class="icon-exclamation-sign"></i>请输入正确的价格',
+                min         : '<i class="icon-exclamation-sign"></i>请输入0.01~9999999之间的数字',
+                max         : '<i class="icon-exclamation-sign"></i>请输入0.01~9999999之间的数字'
+            },
+			g_serial : {
+				required    : '<i class="icon-exclamation-sign"></i>请输入商家货号'
+			},
             g_costprice : {
-                number      : '<i class="icon-exclamation-sign"></i>请填写正确的价格',
-                min         : '<i class="icon-exclamation-sign"></i>请填写0.00~9999999之间的数字',
-                max         : '<i class="icon-exclamation-sign"></i>请填写0.00~9999999之间的数字'
+                number      : '<i class="icon-exclamation-sign"></i>请输入正确的价格',
+                min         : '<i class="icon-exclamation-sign"></i>请输入0.00~9999999之间的数字',
+                max         : '<i class="icon-exclamation-sign"></i>请输入0.00~9999999之间的数字'
             },
             g_storage : {
                 required    : '<i class="icon-exclamation-sign"></i><?php echo $lang['store_goods_index_goods_stock_null'];?>',
@@ -1211,9 +1225,9 @@ $(function(){
             },
 			g_rebate_rate : {
 				// required	: '<i class="icon-exclamation-sign"></i>返利率不能为空',
-                number      : '<i class="icon-exclamation-sign"></i>请填写正确的返利率',
-                min         : '<i class="icon-exclamation-sign"></i>请填写0.0000~0.9999之间的数字',
-                max         : '<i class="icon-exclamation-sign"></i>请填写0.0000~0.9999之间的数字'
+                number      : '<i class="icon-exclamation-sign"></i>请输入正确的返利率',
+                min         : '<i class="icon-exclamation-sign"></i>请输入0.0000~0.9999之间的数字',
+                max         : '<i class="icon-exclamation-sign"></i>请输入0.0000~0.9999之间的数字'
             },
             /*image_path : {
                 required    : '<i class="icon-exclamation-sign"></i>请设置商品主图'
@@ -1222,16 +1236,16 @@ $(function(){
                 required    : '<i class="icon-exclamation-sign"></i>请选择有效期'
             },
 			g_vlimit : {
-				required	: '<i class="icon-exclamation-sign"></i>请填写1~10之间的数字',
-				range		: '<i class="icon-exclamation-sign"></i>请填写1~10之间的数字'
+				required	: '<i class="icon-exclamation-sign"></i>请输入1~10之间的数字',
+				range		: '<i class="icon-exclamation-sign"></i>请输入1~10之间的数字'
 			},
 			g_fccount : {
-				required	: '<i class="icon-exclamation-sign"></i>请填写1~100之间的数字',
-				range		: '<i class="icon-exclamation-sign"></i>请填写1~100之间的数字'
+				required	: '<i class="icon-exclamation-sign"></i>请输入1~100之间的数字',
+				range		: '<i class="icon-exclamation-sign"></i>请输入1~100之间的数字'
 			},
 			g_fcprefix : {
-				required	: '<i class="icon-exclamation-sign"></i>请填写3~5位的英文字母',
-				rangelength	: '<i class="icon-exclamation-sign"></i>请填写3~5位的英文字母'
+				required	: '<i class="icon-exclamation-sign"></i>请输入3~5位的英文字母',
+				rangelength	: '<i class="icon-exclamation-sign"></i>请输入3~5位的英文字母'
 			},
 			g_saledate : {
 				required	: '<i class="icon-exclamation-sign"></i>请选择有效期'

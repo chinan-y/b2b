@@ -18,6 +18,7 @@ $lang['goods_index_trans_country']		= '全国';
 $lang['goods_index_trans_for_seller']	= '卖家承担运费';
 $lang['goods_index_goods_groupbuy_price']= '抢购价格';
 $lang['goods_index_brand']				= '品牌';
+$lang['goods_index_serial']				= '商品货号';
 $lang['goods_index_sold']				= '累计售出';
 $lang['goods_index_number_of_consult']	= '条评论';
 $lang['goods_index_ci']					= '次';

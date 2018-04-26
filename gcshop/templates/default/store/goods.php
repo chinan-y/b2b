@@ -69,14 +69,14 @@
 			<dd class="show-price"><strong><?php echo $output['goods']['show_note'];?></strong></dd>
 		<?php } else {?>
 			<!-- S 商品参考价格 -->
-			<dl class="">
+			<dl class="" style="display:none;">
 			<dt><?php echo $lang['goods_index_goods_cost_price'];?><?php echo $lang['nc_colon'];?></dt>
 			<dd class="cost-price"><strong><?php echo $lang['currency'].$output['goods']['goods_marketprice'];?></strong></dd>
 			</dl>
 			<!-- E 商品参考价格 -->
 			<!-- S 商品发布价格 -->
 			<dl class="inline">
-			  <dt><?php echo 'XX售价';?><?php echo $lang['nc_colon'];?></dt>
+			  <dt><?php echo '价格';?><?php echo $lang['nc_colon'];?></dt>
 			  <dd class="price">
 				<?php if (isset($output['goods']['title']) && $output['goods']['title'] != '') {?>
 				<span class="tag"><?php echo $output['goods']['title'];?></span>
@@ -497,17 +497,18 @@
           <?php } ?>
           <!--E 满就送 -->
           <?php if(is_array($output['goods']['goods_attr']) || isset($output['goods']['brand_name'])){?>
-          <ul class="nc-goods-sort">'
-            
+          <ul class="nc-goods-sort">
 			<?php if ($output['goods']['goods_valite_time']>0) {?>
-			<li><?php echo $lang['goods_index_best_validate'] ?>：<?php echo date('Y-m-d',$output['goods']['goods_valite_time']);?></li>
+				<li><?php echo $lang['goods_index_best_validate'].$lang['nc_colon'].date('Y-m-d',$output['goods']['goods_valite_time']); ?></li>
 			<?php }?>
-            <?php if(isset($output['goods']['brand_name'])){echo '<li>'.$lang['goods_index_brand'].$lang['nc_colon'].$output['goods']['brand_name'].'</li>';}?>
+			<?php if ($output['goods']['brand_name']) {?>
+				<li><?php echo $lang['goods_index_brand'].$lang['nc_colon'].$output['goods']['brand_name']; ?></li>
+			<?php }?>
+			<?php if ($output['goods']['goods_serial']) {?>
+				<li><?php echo $lang['goods_index_serial'].$lang['nc_colon'].$output['goods']['goods_serial']; ?></li>
+			<?php }?>
             <?php if(is_array($output['goods']['goods_attr']) && !empty($output['goods']['goods_attr'])){?>
-            <?php foreach ($output['goods']['goods_attr'] as $val){ $val= array_values($val);echo '<li>'.$val[0].$lang['nc_colon'].$val[1].'</li>'; }?>
-			<?php if($output['goods']['store_id'] != 6){?>
-            <li><?php echo $lang['goods_index_delivery_warehouse'] ?>：<?php echo $output['regions'][$output['transports'][$output['goods']['transport_id']]['region_id']]['address_name'];?></li>
-            <?php   }?>
+				<?php foreach ($output['goods']['goods_attr'] as $val){ $val= array_values($val);echo '<li>'.$val[0].$lang['nc_colon'].$val[1].'</li>'; }?>
             <?php   }?>
        		
           </ul>

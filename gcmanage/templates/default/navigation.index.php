@@ -25,9 +25,9 @@
               <option value="0" <?php if($output['search_nav_location'] == '0'){ ?>selected="selected"<?php } ?>><?php echo $lang['navigation_index_top'];?></option>
               <option value="1" <?php if($output['search_nav_location'] == '1'){ ?>selected="selected"<?php } ?>><?php echo $lang['navigation_index_center'];?></option>
               <option value="2" <?php if($output['search_nav_location'] == '2'){ ?>selected="selected"<?php } ?>><?php echo $lang['navigation_index_bottom'];?></option>
-              <option value="3" <?php if($output['search_nav_location'] == '3'){ ?>selected="selected"<?php } ?>><?php echo $lang['navigation_index_mobile'];?></option>
+              <!--option value="3" <?php if($output['search_nav_location'] == '3'){ ?>selected="selected"<?php } ?>><?php echo $lang['navigation_index_mobile'];?></option>
               <option value="4" <?php if($output['search_nav_location'] == '4'){ ?>selected="selected"<?php } ?>><?php echo $lang['navigation_index_wechat'];?></option>              
-              <option value="5" <?php if($output['search_nav_location'] == '5'){ ?>selected="selected"<?php } ?>><?php echo $lang['navigation_index_app'];?></option>
+              <option value="5" <?php if($output['search_nav_location'] == '5'){ ?>selected="selected"<?php } ?>><?php echo $lang['navigation_index_app'];?></option-->
             </select></td>
           <td><a href="javascript:document.formSearch.submit();" class="btn-search " title="<?php echo $lang['nc_query'];?>">&nbsp;</a>
             <?php if($output['search_nav_title'] != '' or $output['search_nav_location'] != ''){?>

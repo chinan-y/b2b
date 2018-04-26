@@ -39,7 +39,7 @@
           <td class="vatop tips">勾选允许发布虚拟商品后，在发布该分类的商品时可选择交易类型为“虚拟兑换码”形式。</td>
         </tr>
         <tr>
-          <td colspan="2" class="required"><label class="validation">分佣比例:</label></td>
+          <td colspan="2" class="required"><label class="">分佣比例:</label></td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform"><input id="commis_rate" class="w60" type="text" value="" name="commis_rate">
@@ -166,7 +166,7 @@ $(function(){
                 }
             },
             commis_rate : {
-            	required :true,
+            	// required :true,
                 max :100,
                 min :0,
                 digits :true
@@ -181,7 +181,7 @@ $(function(){
                 remote   : '<?php echo $lang['goods_class_add_name_exists'];?>'
             },
             commis_rate : {
-            	required : '<?php echo $lang['goods_class_add_commis_rate_error'];?>',
+            	// required : '<?php echo $lang['goods_class_add_commis_rate_error'];?>',
                 max :'<?php echo $lang['goods_class_add_commis_rate_error'];?>',
                 min :'<?php echo $lang['goods_class_add_commis_rate_error'];?>',
                 digits :'<?php echo $lang['goods_class_add_commis_rate_error'];?>'

@@ -490,7 +490,7 @@ class loginControl extends BaseHomeControl {
 		    showDialog($lang['invalid_request'],'','error');
 		}
         $register_info = array();
-		$register_info['username'] = $_POST['mobile'];
+		$register_info['username'] = 'gb'.TIMESTAMP;
         $register_info['password'] = $_POST['password'];
 		$register_info['mobile']   = $_POST['mobile'];
 		$register_info['is_membername_modify'] = 1;

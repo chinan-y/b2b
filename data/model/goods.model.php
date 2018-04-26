@@ -1208,24 +1208,15 @@ class goodsModel extends Model{
 		$di = Model('area')->dizhi($goods_info);
 		$goods_info['areaid_1'] = $di[0]['area_name'];
 		$uu[] = array();
-		$uu[] = array('name' => '商品货号','1' => $goods_info['goods_serial']);
-		if($goods_info['store_from'] != 1 && $goods_info['store_from'] != 2){
-			if($goods_info['post_tax_no']){
-				$uu[] = array('name' => '行邮税号','1' => $goods_info['post_tax_no']);
-			}
-			if($goods_info['post_tax_rate']){
-				$uu[] = array('name' => '行邮税率','1' => $goods_info['post_tax_rate']);
-			}
-		}else{
-			if($goods_info['goods_hscode']){
-				$uu[] = array('name' => 'HS编码','1' => $goods_info['goods_hscode']);
-			}
+		if($goods_info['store_from'] == 1 && $goods_info['store_from'] == 2 && $goods_info['goods_hscode']){
+			$uu[] = array('name' => 'HS编码','1' => $goods_info['goods_hscode']);
 		}
 		if($goods_info['areaid_1']){
 			$uu[] = array('name' => '商品发货地','1' => $goods_info['areaid_1']);
 		}
-//		$uu[] = array('name' => '发货仓库','1' => $goods_info['address_name']);
-		
+		if($goods_info['address_name']){
+			$uu[] = array('name' => '发货仓库','1' => $goods_info['address_name']);
+		}
 		foreach($uu as $value){
 			if($value){
 				$goods_info['goods_attr'][] = $value;

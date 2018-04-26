@@ -55,11 +55,7 @@
 	<div class="nc-login-bottom"></div>
   </div>
   <div class="nc-login-left">
-    <ol>
-      <li class="ico04"><i></i></li>
-	  <div class="leftpic"><img src="<?php echo $output['lpic'];?>"  border="0"></div>
-      <div class="clear"></div>
-    </ol>
+    <div class="leftpic"><img src="<?php echo $output['lpic'];?>"  border="0"></div>
     </div>
 </div>
   
