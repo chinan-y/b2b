@@ -209,6 +209,15 @@
         </tr>
 		
 		<tr>
+          <td colspan="3" class="required vatop rowform">公司名称：<?php echo $output['member_array']['member_company_name'];?></td>
+        </tr>
+		<tr>
+          <td colspan="3" class="required vatop rowform">营业执照：
+		  <img src="<?php echo BASE_SITE_URL;?><?php echo $output['member_array']['member_license'];?>" style=" max-width: 1200px;"/>
+		  </td>
+        </tr>
+		
+		<tr>
           <td colspan="3" class="required"><strong class="red">&nbsp;</strong></td>
         </tr>
 		
