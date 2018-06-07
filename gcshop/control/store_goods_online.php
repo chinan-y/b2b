@@ -61,10 +61,10 @@ class store_goods_onlineControl extends BaseSellerControl {
         if (trim($_GET['keyword']) != '') {
             switch ($_GET['search_type']) {
                 case 0:
-                    $where['goods_name'] = array('like', '%' . trim($_GET['keyword']) . '%');
+                    $where['goods_serial'] = array('like', '%' . trim($_GET['keyword']) . '%');
                     break;
                 case 1:
-                    $where['goods_serial'] = array('like', '%' . trim($_GET['keyword']) . '%');
+				    $where['goods_name'] = array('like', '%' . trim($_GET['keyword']) . '%');
                     break;
                 case 2:
                     $where['goods_commonid'] = intval($_GET['keyword']);
