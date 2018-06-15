@@ -128,7 +128,7 @@
           <td class="align-center"><?php echo $v['member_exppoints'];?></td>
           <td class="align-center"><?php echo $v['member_grade'];?></td>
           <td class="align-center"><?php echo $v['member_state'] == 1?$lang['member_edit_allow']:$lang['member_edit_deny']; ?></td>
-          <td class="align-center"><?php if($v['member_examine'] == 0){ ?><a href="index.php?gct=member&gp=member_examine&member_id=<?php echo $v['member_id']; ?>"><?php echo '审核'?></a> | <?php } ?><a href="index.php?gct=member&gp=member_edit&member_id=<?php echo $v['member_id']; ?>"><?php echo $lang['nc_edit']?></a> | <a href="index.php?gct=notice&gp=notice&member_name=<?php echo ltrim(base64_encode($v['member_name']),'='); ?>"><?php echo $lang['member_index_to_message'];?></a></td>
+          <td class="align-center"><?php if($v['member_examine'] == 0){ ?><a href="index.php?gct=member&gp=member_examine&member_id=<?php echo $v['member_id']; ?>"><?php echo '审核'?></a> | <?php }else if($v['member_examine'] == 2){ ?><?php echo '已拒绝 | '; }?><a href="index.php?gct=member&gp=member_edit&member_id=<?php echo $v['member_id']; ?>"><?php echo $lang['nc_edit']?></a> | <a href="index.php?gct=notice&gp=notice&member_name=<?php echo ltrim(base64_encode($v['member_name']),'='); ?>"><?php echo $lang['member_index_to_message'];?></a></td>
         </tr>
         <?php } ?>
         <?php }else { ?>

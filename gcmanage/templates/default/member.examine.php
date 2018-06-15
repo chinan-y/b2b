@@ -56,7 +56,9 @@
       </tbody>
       <tfoot>
         <tr class="tfoot">
-          <td colspan="15"><a href="JavaScript:void(0);" class="btn" id="submitBtn"><span><?php echo '审核';?></span></a></td>
+          <td colspan="15"><a href="JavaScript:void(0);" class="btn" id="submitBtn"><span><?php echo '同意';?></span></a>
+		  <a href="javascript:void(0)" class="btn" onclick ="var reason = prompt('请输入审核不通过的理由:'); if(reason != null){ location.href='index.php?gct=member&gp=member_examine&reason='+ reason +'&member_id=<?php echo $output['member_array']['member_id']; ?>' }"  ><span><?php echo '不同意'; ?></span></a>
+		  </td>
         </tr>
       </tfoot>
     </table>
@@ -65,7 +67,7 @@
 <link href="<?php echo RESOURCE_SITE_URL;?>/js/jquery.Jcrop/jquery.Jcrop.min.css" rel="stylesheet" type="text/css" id="cssfile2" />
 <script type="text/javascript">
 $("#submitBtn").click(function(){
-	if(confirm('确认审核？')){
+	if(confirm('确认审核通过？')){
 		$("#user_form").submit();
 	}
 });

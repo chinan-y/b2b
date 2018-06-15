@@ -182,7 +182,7 @@ class searchControl extends BaseHomeControl {
 					$goods_list[$key]['show_note'] = '认证后查看价格';
 					$goods_list[$key]['add_cart'] = '认证后查看';
 					$goods_list[$key]['show_price'] = 1;
-				}else if($member['member_examine'] ==0 && $member['member_company_name']){
+				}else if(($member['member_examine'] ==0 && $member['member_company_name']) || $member['member_examine'] ==2){
 					$goods_list[$key]['goods_href'] = urlShop('login', 'await_verify');
 					$goods_list[$key]['show_note'] = '审核后查看价格';
 					$goods_list[$key]['add_cart'] = '审核后查看';
@@ -192,7 +192,7 @@ class searchControl extends BaseHomeControl {
 				}
 				
 				$rule = Model()->table('goods_price_rule')->where(array('goods_id'=>$value['goods_id']))->find();
-				if($rule && $_SESSION['member_id'] && $member['member_company_name'] && $member['member_examine']){
+				if($rule && $_SESSION['member_id'] && $member['member_company_name'] && $member['member_examine'] == 1){
 					$goods_list[$key]['rule_info'] = $rule;
 				}
 				

@@ -46,7 +46,6 @@
       <th class="w30">&nbsp;</th>
       <th class="w50">&nbsp;</th>
       <th coltype="editable" column="goods_name" checker="check_required" inputwidth="230px"><?php echo $lang['store_goods_index_goods_name'];?></th>
-      <th class="w50">商品返利率</th>
 	  <th class="w100"><?php echo $lang['store_goods_index_price'];?></th>
       <th class="w100"><?php echo $lang['store_goods_index_stock'];?></th>
       <th class="w100"><?php echo $lang['store_goods_index_add_time'];?></th>
@@ -97,7 +96,6 @@
             <?php }?>
           </dd>
         </dl></td>
-	  <td><span><?php echo ($val['goods_rebate_rate']*100)."%"; ?></span></td>
       <td><span><?php echo $lang['currency'].$val['goods_price']; ?></span></td>
       <td><span <?php if ($output['storage_array'][$val['goods_commonid']]['alarm']) { echo 'style="color:red;"';}?>><?php echo $output['storage_array'][$val['goods_commonid']]['sum'].$lang['piece']; ?></span></td>
       <td class="goods-time"><?php echo @date('Y-m-d',$val['goods_addtime']);?></td>

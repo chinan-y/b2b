@@ -130,7 +130,7 @@ class goodsControl extends BaseGoodsControl {
 			$goods_info['show_note'] = '认证后查看价格';
 			$goods_info['add_cart'] = '认证后查看';
 			$goods_info['show_price'] = 1;
-		}else if($member['member_examine'] ==0 && $member['member_company_name']){
+		}else if(($member['member_examine'] ==0 && $member['member_company_name']) || $member['member_examine'] ==2){
 			$goods_info['goods_href'] = urlShop('login', 'await_verify');
 			$goods_info['show_note'] = '审核后查看价格';
 			$goods_info['add_cart'] = '审核后查看';

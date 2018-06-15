@@ -439,6 +439,8 @@ class loginControl extends BaseHomeControl {
 			$image = move_uploaded_file($tmp_name,BASE_DATA_PATH.DS.'upload'.DS.'gcshop'.DS.'member'.DS.'license'.DS.$member_id.'_license'.$_name);
 			if($image){
 				$data = array();
+				$data['member_examine'] = 0;
+				$data['disagree_content'] = null;
 				$data['member_company_name'] = $_POST['company_name'];
 				$data['member_license'] = '/data'.DS.'upload'.DS.'gcshop'.DS.'member'.DS.'license'.DS.$_SESSION['member_id'].'_license'.$_name;
 				$re = Model('member')->editMember(array('member_id'=>$member_id),$data);
@@ -460,6 +462,8 @@ class loginControl extends BaseHomeControl {
 	 *
 	 */
 	public function await_verifyOp(){
+		$member_info = Model('member')->getMemberInfo(array('member_id'=>$_SESSION['member_id']));
+		Tpl::output('member_info',$member_info);
 		Language::read("home_login_register");
 		$_pic = @unserialize(C('login_pic'));
 		if ($_pic[0] != ''){

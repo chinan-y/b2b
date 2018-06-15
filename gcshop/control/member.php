@@ -18,7 +18,7 @@ class memberControl extends BaseMemberControl{
 		$member_info = $this->member_info;
 		if(!$member_info['member_company_name']){
 			redirect('index.php?gct=login&gp=member_verify');
-		}else if($member_info['member_examine'] == 0){
+		}else if($member_info['member_examine'] == 0 || $member_info['member_examine'] == 2){
 			redirect('index.php?gct=login&gp=await_verify');
 		}else{
 			$member_info['security_level'] = Model('member')->getMemberSecurityLevel($member_info);

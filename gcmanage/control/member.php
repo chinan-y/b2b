@@ -276,8 +276,20 @@ class memberControl extends SystemControl{
 			$update_array['member_examine']	= 1;
 			$result = $model_member->editMember(array('member_id'=>intval($_POST['member_id'])),$update_array);
 			if ($result){
-				$this->log('审核会员成功'.'[会员ID:'.$_POST['member_id'].']',1);
+				$this->log('审核会员成功，'.'[会员ID:'.$_POST['member_id'].']',1);
 				showMessage('审核会员成功','index.php?gct=member&gp=member');
+			}else {
+				showMessage('审核会员失败');
+			}
+		}
+		if($_GET['reason']){
+			$update_array = array();
+			$update_array['member_examine']	= 2;
+			$update_array['disagree_content'] = $_GET['reason'];
+			$result = $model_member->editMember(array('member_id'=>intval($_GET['member_id'])),$update_array);
+			if ($result){
+				$this->log('审核会员不通过，原因：'.$_GET['reason'].'，[会员ID:'.$_GET['member_id'].']',1);
+				showMessage('审核会员不通过成功','index.php?gct=member&gp=member');
 			}else {
 				showMessage('审核会员失败');
 			}

@@ -120,7 +120,7 @@ class indexControl extends BaseHomeControl{
 				$goods_commend_list[$key]['goods_href'] = urlShop('login', 'member_verify');
 				$goods_commend_list[$key]['add_cart'] = '认证后查看';
 				$goods_commend_list[$key]['goods_promotion_price'] = '认证后查看价格';
-			}else if($member['member_examine'] ==0 && $member['member_company_name']){
+			}else if(($member['member_examine'] ==0 && $member['member_company_name']) || $member['member_examine'] ==2){
 				$goods_commend_list[$key]['goods_href'] = urlShop('login', 'await_verify');
 				$goods_commend_list[$key]['add_cart'] = '审核后查看';
 				$goods_commend_list[$key]['goods_promotion_price'] = '审核后查看价格';
@@ -129,7 +129,7 @@ class indexControl extends BaseHomeControl{
 			}
 			
 			$rule = Model()->table('goods_price_rule')->where(array('goods_id'=>$value['goods_id']))->find();
-			if($rule && $_SESSION['member_id'] && $member['member_company_name'] && $member['member_examine']){
+			if($rule && $_SESSION['member_id'] && $member['member_company_name'] && $member['member_examine'] ==1){
 				$goods_commend_list[$key]['num1'] = $rule['num1'] ? $rule['num1'] : '';
 				$goods_commend_list[$key]['num2'] = $rule['num2'] ? $rule['num2'] : '';
 				$goods_commend_list[$key]['num3'] = $rule['num3'] ? $rule['num3'] : '';
