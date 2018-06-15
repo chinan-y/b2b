@@ -100,7 +100,7 @@ $_limit =  array(
 	    array('name'=>$lang['nc_logistics_station'], 'gp'=>null, 'gct'=>'delivery'),
 
 		)),
-	/*array('name'=>$lang['nc_stat'], 'child'=>array(
+	array('name'=>$lang['nc_stat'], 'child'=>array(
 	    array('name'=>$lang['nc_statgeneral'], 'gp'=>null, 'gct'=>'stat_general'),
 	    array('name'=>$lang['nc_statindustry'], 'gp'=>null, 'gct'=>'stat_industry'),
 		array('name'=>$lang['nc_statmember'], 'gp'=>null, 'gct'=>'stat_member'),
@@ -111,7 +111,7 @@ $_limit =  array(
 		array('name'=>$lang['nc_stataftersale'], 	'gp'=>null, 'gct'=>'stat_aftersale'),
 		array('name'=>'导出报表', 	'gp'=>null, 'gct'=>'exportexcel'),
 		)),
-	array('name'=>$lang['nc_live'], 'child'=>array(
+	/*array('name'=>$lang['nc_live'], 'child'=>array(
 	    array('name'=>$lang['nc_live1'], 'gp'=>'live_modifly', 'gct'=>'live'),
 	    array('name'=>$lang['nc_live2'], 'gp'=>'live_manage', 'gct'=>'live'),
 		array('name'=>$lang['nc_live3'], 'gp'=>'live_class_a', 'gct'=>'live'),
