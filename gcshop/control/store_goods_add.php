@@ -240,7 +240,6 @@ class store_goods_addControl extends BaseSellerControl {
 			}
 			$common_array['goods_pack']			= $_POST['g_pack'];
 			$common_array['goods_con_num']		= $_POST['g_con_num'];
-
             $common_array['gc_id']              = intval($_POST['cate_id']);
             $common_array['gc_id_1']            = intval($goods_class['gc_id_1']);
             $common_array['gc_id_2']            = intval($goods_class['gc_id_2']);
@@ -250,7 +249,14 @@ class store_goods_addControl extends BaseSellerControl {
             $common_array['brand_name']         = $_POST['b_name'];
             $common_array['type_id']            = intval($_POST['type_id']);
             $common_array['goods_image']        = $_POST['image_path'];
-            $common_array['goods_price']        = floatval($_POST['g_price']);
+			if($_POST['g_price']){
+				$common_array['goods_price']    = floatval($_POST['g_price']);
+			}else{
+				foreach ($_POST['spec'] as $value) {
+					$common_array['goods_price']= $value['price'];
+					break;
+				}
+			}
             $common_array['goods_marketprice']  = floatval($_POST['g_marketprice']);
             $common_array['goods_costprice']    = floatval($_POST['g_costprice']);
             $common_array['goods_discount']     = floatval($_POST['g_discount']);
@@ -630,22 +636,23 @@ class store_goods_addControl extends BaseSellerControl {
      * 保存价格规则
      */
     public function save_ruleOp() {
-		$goods = Model('goods')->getGoodsInfo(array('goods_commonid'=>$_POST['commonid']),'goods_id');
-		$data = array();
-		$data['goods_id'] = $goods['goods_id'];
-		$data['num1'] = $_POST['num1'] >0 ? $_POST['num1'] : null;
-		$data['num2'] = $_POST['num2'] >0 ? $_POST['num2'] : null;
-		$data['num3'] = $_POST['num3'] >0 ? $_POST['num3'] : null;
-		$data['num4'] = $_POST['num4'] >0 ? $_POST['num4'] : null;
-		$data['num5'] = $_POST['num5'] >0 ? $_POST['num5'] : null;
-		$data['price1'] = $_POST['price1'] >0 ? $_POST['price1'] : null;
-		$data['price2'] = $_POST['price2'] >0 ? $_POST['price2'] : null;
-		$data['price3'] = $_POST['price3'] >0 ? $_POST['price3'] : null;
-		$data['price4'] = $_POST['price4'] >0 ? $_POST['price4'] : null;
-		$data['price5'] = $_POST['price5'] >0 ? $_POST['price5'] : null;
-		
-		$result = Model()->table('goods_price_rule')->where(array('goods_id'=>$goods['goods_id']))->insert($data);
-		
+		$goods = Model('goods')->getGoodsIn(array('goods_commonid'=>$_POST['commonid']),'goods_id');
+		foreach($goods as $val){
+			$data = array();
+			$data['goods_id'] = $val['goods_id'];
+			$data['num1'] = $_POST['num1'] >0 ? $_POST['num1'] : null;
+			$data['num2'] = $_POST['num2'] >0 ? $_POST['num2'] : null;
+			$data['num3'] = $_POST['num3'] >0 ? $_POST['num3'] : null;
+			$data['num4'] = $_POST['num4'] >0 ? $_POST['num4'] : null;
+			$data['num5'] = $_POST['num5'] >0 ? $_POST['num5'] : null;
+			$data['price1'] = $_POST['price1'] >0 ? $_POST['price1'] : null;
+			$data['price2'] = $_POST['price2'] >0 ? $_POST['price2'] : null;
+			$data['price3'] = $_POST['price3'] >0 ? $_POST['price3'] : null;
+			$data['price4'] = $_POST['price4'] >0 ? $_POST['price4'] : null;
+			$data['price5'] = $_POST['price5'] >0 ? $_POST['price5'] : null;
+			
+			$result = Model()->table('goods_price_rule')->where(array('goods_id'=>$val['goods_id']))->insert($data);
+		}
 		if ($result) {
 			redirect(urlShop('store_goods_add', 'add_step_five', array('commonid' => $_POST['commonid'])));
 		} else {
