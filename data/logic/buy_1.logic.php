@@ -905,7 +905,7 @@ class buy_1Logic {
 	    } else {
 	        $num ++;
 	    }
-		return  'gc'.(date('y',time()) % 9+1) . sprintf('%013d', $pay_id) . sprintf('%02d', $num);
+		return  'b2b'.(date('y',time()) % 9+1) . sprintf('%013d', $pay_id) . sprintf('%02d', $num);
 	}
 
 	/**
