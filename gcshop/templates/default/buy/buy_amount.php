@@ -96,7 +96,7 @@ function check_amount(){
 			type:"post",
 			success:function (result){
 				var rData = $.parseJSON(result);
-				if((rData.member_truename == null || rData.member_code == null) && (store_from ==1 || store_from ==2 || store_from ==3 || store_from ==8)){
+				if((!rData.member_truename || !rData.member_code) && (store_from ==1 || store_from ==2 || store_from ==3 || store_from ==8)){
 					check_amount = false;
 					showDialog('<?php echo '请完善您的身份信息';?>', 'error','',function(){ window.location = 'index.php?gct=member&gp=add_identity'},'','','','','','',2);
 					return;
